@@ -111,3 +111,25 @@ Traceback (most recent call last):
     import statsmodels.api as sm
 ModuleNotFoundError: No module named 'statsmodels'
 
+2025-08-05 15:57:12,793 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:57:38,372 - INFO - Applying Drop Rows to columns: ['total_bedrooms']
+2025-08-05 15:57:38,373 - INFO - Dropped 207 rows with missing values
+2025-08-05 15:57:38,374 - INFO - Applied Drop Rows to columns: ['total_bedrooms']
+2025-08-05 16:23:10,853 - ERROR - Prediction error: could not convert string to float: 'NEAR BAY'
+2025-08-05 16:23:27,359 - ERROR - Prediction error: could not convert string to float: 'NEAR BAY'
+2025-08-05 16:25:27,247 - INFO - Loading file: loan_data.csv, Size: 26276 bytes
+2025-08-05 16:25:27,249 - INFO - Successfully loaded data: 381 rows, 13 columns
+2025-08-05 16:25:27,249 - INFO - Initialized cleaned_df in session state
+2025-08-05 16:26:25,848 - INFO - Applying Fill with Mode to columns: ['Gender']
+2025-08-05 16:26:25,849 - INFO - Filled Gender with mode: Male
+2025-08-05 16:26:25,849 - INFO - Applied Fill with Mode to columns: ['Gender']
+2025-08-05 16:27:40,180 - INFO - Applying Fill with Mode to columns: ['Dependents', 'Self_Employed']
+2025-08-05 16:27:40,181 - INFO - Filled Dependents with mode: 0
+2025-08-05 16:27:40,181 - INFO - Filled Self_Employed with mode: No
+2025-08-05 16:27:40,181 - INFO - Applied Fill with Mode to columns: ['Dependents', 'Self_Employed']
+2025-08-05 16:28:00,123 - INFO - Applying Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 16:28:00,124 - INFO - Filled Loan_Amount_Term with median: 360.00
+2025-08-05 16:28:00,124 - INFO - Applied Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 16:28:15,518 - INFO - Applying Fill with Mode to columns: ['Credit_History']
+2025-08-05 16:28:15,519 - INFO - Filled Credit_History with mode: 1.0
+2025-08-05 16:28:15,519 - INFO - Applied Fill with Mode to columns: ['Credit_History']

@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 import logging
 from datetime import datetime
 import traceback
@@ -714,6 +715,7 @@ if df_original is not None:
                                         st.session_state.y_test = y_test
                                         st.session_state.problem_type = problem_type
                                         st.session_state.feature_names = X.columns.tolist()
+                                        st.session_state.scaler = scaler  # Store scaler for predictions
                                         
                                         # Display results
                                         display_model_results(results, problem_type)
@@ -740,6 +742,150 @@ if df_original is not None:
                                 if 'feature_names' in st.session_state:
                                     X_recreated = pd.DataFrame(columns=st.session_state.feature_names)
                                     feature_importance_analysis(st.session_state.model_results, X_recreated, st.session_state.problem_type)
+                            
+                            # Interactive Predictions Section
+                            st.markdown("---")
+                            st.subheader("🔮 Interactive Predictions")
+                            st.write("Make predictions with new data using your trained models!")
+                            
+                            if 'feature_names' in st.session_state and st.session_state.feature_names:
+                                # Get the best model
+                                best_model_name = None
+                                best_score = -float('inf')
+                                
+                                for model_name, results in st.session_state.model_results.items():
+                                    if st.session_state.problem_type == 'Classification':
+                                        score = results.get('accuracy', 0)
+                                    else:
+                                        score = results.get('r2_score', 0)
+                                    
+                                    if score > best_score:
+                                        best_score = score
+                                        best_model_name = model_name
+                                
+                                if best_model_name:
+                                    st.info(f"Using best model: **{best_model_name}** (Score: {best_score:.4f})")
+                                    
+                                    # Create input fields for each feature
+                                    st.write("**Enter feature values:**")
+                                    feature_values = {}
+                                    
+                                    # Get sample data for reference
+                                    sample_data = model_df.drop(columns=[target_column])
+                                    
+                                    # Create columns for better layout
+                                    num_features = len(st.session_state.feature_names)
+                                    cols = st.columns(min(3, num_features))
+                                    
+                                    for i, feature in enumerate(st.session_state.feature_names):
+                                        col_idx = i % len(cols)
+                                        
+                                        with cols[col_idx]:
+                                            if feature in sample_data.columns:
+                                                # Get feature statistics for better input defaults
+                                                if pd.api.types.is_numeric_dtype(sample_data[feature]):
+                                                    mean_val = float(sample_data[feature].mean()) if not sample_data[feature].isna().all() else 0.0
+                                                    min_val = float(sample_data[feature].min()) if not sample_data[feature].isna().all() else 0.0
+                                                    max_val = float(sample_data[feature].max()) if not sample_data[feature].isna().all() else 100.0
+                                                    
+                                                    feature_values[feature] = st.number_input(
+                                                        f"{feature}",
+                                                        value=mean_val,
+                                                        help=f"Range: {min_val:.2f} to {max_val:.2f}"
+                                                    )
+                                                else:
+                                                    # For categorical features
+                                                    unique_values = sample_data[feature].unique()
+                                                    unique_values = [val for val in unique_values if pd.notna(val)]
+                                                    
+                                                    if len(unique_values) > 0:
+                                                        feature_values[feature] = st.selectbox(
+                                                            f"{feature}",
+                                                            options=unique_values
+                                                        )
+                                                    else:
+                                                        feature_values[feature] = st.text_input(f"{feature}")
+                                            else:
+                                                feature_values[feature] = st.number_input(f"{feature}", value=0.0)
+                                    
+                                    # Prediction button
+                                    col1, col2, col3 = st.columns([1, 2, 1])
+                                    with col2:
+                                        if st.button("🚀 Make Prediction", type="primary", use_container_width=True):
+                                            try:
+                                                # Create input dataframe
+                                                input_df = pd.DataFrame([feature_values])
+                                                
+                                                # Get the trained model
+                                                best_model = st.session_state.model_results[best_model_name]['model']
+                                                
+                                                # Apply scaling if needed (for SVM)
+                                                if best_model_name == 'SVM' and 'scaler' in st.session_state:
+                                                    input_scaled = st.session_state.scaler.transform(input_df)
+                                                    prediction = best_model.predict(input_scaled)[0]
+                                                    
+                                                    # For probabilities
+                                                    if hasattr(best_model, 'predict_proba'):
+                                                        proba = best_model.predict_proba(input_scaled)[0]
+                                                    else:
+                                                        proba = None
+                                                else:
+                                                    prediction = best_model.predict(input_df)[0]
+                                                    
+                                                    # For probabilities
+                                                    if hasattr(best_model, 'predict_proba'):
+                                                        proba = best_model.predict_proba(input_df)[0]
+                                                    else:
+                                                        proba = None
+                                                
+                                                # Display prediction
+                                                st.success("✅ Prediction Complete!")
+                                                
+                                                if st.session_state.problem_type == 'Classification':
+                                                    st.metric(
+                                                        label="Predicted Class",
+                                                        value=str(prediction)
+                                                    )
+                                                    
+                                                    # Show prediction probabilities if available
+                                                    if proba is not None:
+                                                        classes = best_model.classes_
+                                                        
+                                                        st.write("**Prediction Probabilities:**")
+                                                        proba_df = pd.DataFrame({
+                                                            'Class': classes,
+                                                            'Probability': proba
+                                                        }).sort_values('Probability', ascending=False)
+                                                        
+                                                        st.dataframe(proba_df, use_container_width=True)
+                                                        
+                                                        # Visualization
+                                                        fig = px.bar(
+                                                            proba_df, 
+                                                            x='Class', 
+                                                            y='Probability',
+                                                            title="Prediction Probabilities"
+                                                        )
+                                                        st.plotly_chart(fig, use_container_width=True)
+                                                
+                                                else:  # Regression
+                                                    st.metric(
+                                                        label="Predicted Value",
+                                                        value=f"{prediction:.4f}"
+                                                    )
+                                                
+                                                # Show input summary
+                                                with st.expander("📋 Input Summary"):
+                                                    st.dataframe(input_df, use_container_width=True)
+                                                
+                                            except Exception as e:
+                                                st.error(f"❌ Prediction failed: {str(e)}")
+                                                logger.error(f"Prediction error: {str(e)}")
+                                
+                                else:
+                                    st.error("❌ No trained models available for prediction.")
+                            else:
+                                st.warning("⚠️ Feature information not available. Please train models first.")
                     else:
                         st.error(f"❌ {validation_message}")
                 else:
