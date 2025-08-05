@@ -24,6 +24,24 @@ def prepare_data_for_modeling(df, target_column, problem_type):
         X = df_model.drop(columns=[target_column])
         y = df_model[target_column]
         
+        # Identify and exclude ID-like columns
+        id_like_columns = []
+        for col in X.columns:
+            # Check if column name suggests it's an ID
+            col_lower = col.lower()
+            if any(id_keyword in col_lower for id_keyword in ['id', '_id', 'uuid', 'key']):
+                id_like_columns.append(col)
+            # Check if all values are unique (likely an ID)
+            elif X[col].nunique() == len(X):
+                id_like_columns.append(col)
+            # Check if it's a string column with mostly unique values
+            elif X[col].dtype == 'object' and X[col].nunique() / len(X) > 0.95:
+                id_like_columns.append(col)
+        
+        if id_like_columns:
+            st.warning(f"Excluding ID-like columns from modeling: {id_like_columns}")
+            X = X.drop(columns=id_like_columns)
+        
         # Handle missing values in target
         if y.isnull().any():
             st.warning(f"Target column '{target_column}' has missing values. Removing rows with missing targets.")
@@ -32,6 +50,7 @@ def prepare_data_for_modeling(df, target_column, problem_type):
             y = y[mask]
         
         # Handle categorical variables in features
+        label_encoders = {}
         categorical_columns = X.select_dtypes(include=['object']).columns
         if len(categorical_columns) > 0:
             for col in categorical_columns:
@@ -40,6 +59,7 @@ def prepare_data_for_modeling(df, target_column, problem_type):
                     # Handle missing values in categorical columns
                     X[col] = X[col].fillna('Missing')
                     X[col] = le.fit_transform(X[col])
+                    label_encoders[col] = le
         
         # Handle missing values in numerical columns
         numerical_columns = X.select_dtypes(include=[np.number]).columns
@@ -48,15 +68,16 @@ def prepare_data_for_modeling(df, target_column, problem_type):
             X[numerical_columns] = imputer.fit_transform(X[numerical_columns])
         
         # Encode target variable if it's categorical (for classification)
+        target_encoder = None
         if problem_type == 'Classification' and y.dtype == 'object':
-            le_target = LabelEncoder()
-            y = le_target.fit_transform(y)
+            target_encoder = LabelEncoder()
+            y = target_encoder.fit_transform(y)
         
-        return X, y, True
+        return X, y, True, label_encoders, target_encoder
         
     except Exception as e:
         st.error(f"Error preparing data: {e}")
-        return None, None, False
+        return None, None, False, None, None
 
 def train_models(X, y, problem_type, test_size=0.2):
     """Train multiple models and return results."""

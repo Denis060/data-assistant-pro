@@ -696,7 +696,7 @@ if df_original is not None:
                             with st.spinner("Preparing data and training models... This may take a moment."):
                                 
                                 # Prepare data
-                                X, y, success = prepare_data_for_modeling(model_df, target_column, problem_type)
+                                X, y, success, label_encoders, target_encoder = prepare_data_for_modeling(model_df, target_column, problem_type)
                                 
                                 if success and X is not None and y is not None:
                                     st.success("✅ Data prepared successfully!")
@@ -716,6 +716,8 @@ if df_original is not None:
                                         st.session_state.problem_type = problem_type
                                         st.session_state.feature_names = X.columns.tolist()
                                         st.session_state.scaler = scaler  # Store scaler for predictions
+                                        st.session_state.label_encoders = label_encoders  # Store encoders
+                                        st.session_state.target_encoder = target_encoder  # Store target encoder
                                         
                                         # Display results
                                         display_model_results(results, problem_type)
@@ -813,30 +815,66 @@ if df_original is not None:
                                     with col2:
                                         if st.button("🚀 Make Prediction", type="primary", use_container_width=True):
                                             try:
-                                                # Create input dataframe
-                                                input_df = pd.DataFrame([feature_values])
-                                                
-                                                # Get the trained model
-                                                best_model = st.session_state.model_results[best_model_name]['model']
-                                                
-                                                # Apply scaling if needed (for SVM)
-                                                if best_model_name == 'SVM' and 'scaler' in st.session_state:
-                                                    input_scaled = st.session_state.scaler.transform(input_df)
-                                                    prediction = best_model.predict(input_scaled)[0]
-                                                    
-                                                    # For probabilities
-                                                    if hasattr(best_model, 'predict_proba'):
-                                                        proba = best_model.predict_proba(input_scaled)[0]
+                                                # Create input dataframe with only the features used in training
+                                                input_data = {}
+                                                for feature in st.session_state.feature_names:
+                                                    if feature in feature_values:
+                                                        input_data[feature] = feature_values[feature]
                                                     else:
-                                                        proba = None
+                                                        st.error(f"Missing value for feature: {feature}")
+                                                        break
                                                 else:
-                                                    prediction = best_model.predict(input_df)[0]
+                                                    # All features are present
+                                                    input_df = pd.DataFrame([input_data])
                                                     
-                                                    # For probabilities
-                                                    if hasattr(best_model, 'predict_proba'):
-                                                        proba = best_model.predict_proba(input_df)[0]
+                                                    # Ensure the column order matches training data
+                                                    input_df = input_df[st.session_state.feature_names]
+                                                    
+                                                    # Apply the same transformations as during training
+                                                    if 'label_encoders' in st.session_state and st.session_state.label_encoders:
+                                                        for col, encoder in st.session_state.label_encoders.items():
+                                                            if col in input_df.columns:
+                                                                # Handle missing values the same way as training
+                                                                input_df[col] = input_df[col].fillna('Missing')
+                                                                # Transform using the stored encoder
+                                                                try:
+                                                                    input_df[col] = encoder.transform(input_df[col])
+                                                                except ValueError as e:
+                                                                    # Handle unseen categories
+                                                                    st.warning(f"Unknown category in {col}. Using 'Missing' category.")
+                                                                    input_df[col] = encoder.transform(['Missing'])
+                                                    
+                                                    # Handle any remaining categorical columns
+                                                    for col in input_df.columns:
+                                                        if input_df[col].dtype == 'object':
+                                                            try:
+                                                                # Try to convert to numeric if possible
+                                                                input_df[col] = pd.to_numeric(input_df[col], errors='coerce')
+                                                                input_df[col] = input_df[col].fillna(0)
+                                                            except:
+                                                                pass
+                                                    
+                                                    # Get the trained model
+                                                    best_model = st.session_state.model_results[best_model_name]['model']
+                                                    
+                                                    # Apply scaling if needed (for SVM)
+                                                    if best_model_name == 'SVM' and 'scaler' in st.session_state:
+                                                        input_scaled = st.session_state.scaler.transform(input_df)
+                                                        prediction = best_model.predict(input_scaled)[0]
+                                                        
+                                                        # For probabilities
+                                                        if hasattr(best_model, 'predict_proba'):
+                                                            proba = best_model.predict_proba(input_scaled)[0]
+                                                        else:
+                                                            proba = None
                                                     else:
-                                                        proba = None
+                                                        prediction = best_model.predict(input_df)[0]
+                                                        
+                                                        # For probabilities
+                                                        if hasattr(best_model, 'predict_proba'):
+                                                            proba = best_model.predict_proba(input_df)[0]
+                                                        else:
+                                                            proba = None
                                                 
                                                 # Display prediction
                                                 st.success("✅ Prediction Complete!")

@@ -133,3 +133,4 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 16:28:15,518 - INFO - Applying Fill with Mode to columns: ['Credit_History']
 2025-08-05 16:28:15,519 - INFO - Filled Credit_History with mode: 1.0
 2025-08-05 16:28:15,519 - INFO - Applied Fill with Mode to columns: ['Credit_History']
+2025-08-05 16:31:43,822 - ERROR - Prediction error: could not convert string to float: 'LP001003'
