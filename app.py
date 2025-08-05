@@ -922,6 +922,172 @@ if df_original is not None:
                                 
                                 else:
                                     st.error("❌ No trained models available for prediction.")
+                            
+                            # Batch Predictions Section
+                            st.markdown("---")
+                            st.subheader("📁 Batch Predictions")
+                            st.write("Upload a CSV file to make predictions for multiple rows at once!")
+                            
+                            if 'feature_names' in st.session_state and st.session_state.feature_names:
+                                # File uploader for batch predictions
+                                batch_file = st.file_uploader(
+                                    "Upload CSV file for batch predictions",
+                                    type=['csv'],
+                                    help=f"CSV should contain columns: {', '.join(st.session_state.feature_names)}"
+                                )
+                                
+                                if batch_file is not None:
+                                    try:
+                                        # Read the uploaded file
+                                        batch_df = pd.read_csv(batch_file)
+                                        
+                                        st.write("**Uploaded Data Preview:**")
+                                        st.dataframe(batch_df.head(), use_container_width=True)
+                                        
+                                        # Validate that required columns are present
+                                        missing_cols = [col for col in st.session_state.feature_names if col not in batch_df.columns]
+                                        extra_cols = [col for col in batch_df.columns if col not in st.session_state.feature_names]
+                                        
+                                        if missing_cols:
+                                            st.error(f"❌ Missing required columns: {missing_cols}")
+                                        else:
+                                            if extra_cols:
+                                                st.info(f"ℹ️ Extra columns will be ignored: {extra_cols}")
+                                            
+                                            # Process batch predictions
+                                            if st.button("🚀 Run Batch Predictions", type="primary"):
+                                                with st.spinner("Processing batch predictions..."):
+                                                    try:
+                                                        # Get the best model
+                                                        best_model_name = None
+                                                        best_score = -float('inf')
+                                                        
+                                                        for model_name, results in st.session_state.model_results.items():
+                                                            if st.session_state.problem_type == 'Classification':
+                                                                score = results.get('accuracy', 0)
+                                                            else:
+                                                                score = results.get('r2_score', 0)
+                                                            
+                                                            if score > best_score:
+                                                                best_score = score
+                                                                best_model_name = model_name
+                                                        
+                                                        if best_model_name:
+                                                            # Prepare the data
+                                                            batch_input = batch_df[st.session_state.feature_names].copy()
+                                                            
+                                                            # Apply the same transformations as during training
+                                                            if 'label_encoders' in st.session_state and st.session_state.label_encoders:
+                                                                for col, encoder in st.session_state.label_encoders.items():
+                                                                    if col in batch_input.columns:
+                                                                        # Handle missing values the same way as training
+                                                                        batch_input[col] = batch_input[col].fillna('Missing')
+                                                                        # Transform using the stored encoder
+                                                                        try:
+                                                                            batch_input[col] = encoder.transform(batch_input[col])
+                                                                        except ValueError:
+                                                                            # Handle unseen categories
+                                                                            st.warning(f"Some unknown categories in {col} were replaced with 'Missing'")
+                                                                            # Replace unknown categories with 'Missing'
+                                                                            known_categories = set(encoder.classes_)
+                                                                            batch_input[col] = batch_input[col].apply(
+                                                                                lambda x: x if x in known_categories else 'Missing'
+                                                                            )
+                                                                            batch_input[col] = encoder.transform(batch_input[col])
+                                                            
+                                                            # Handle any remaining categorical columns
+                                                            for col in batch_input.columns:
+                                                                if batch_input[col].dtype == 'object':
+                                                                    try:
+                                                                        batch_input[col] = pd.to_numeric(batch_input[col], errors='coerce')
+                                                                        batch_input[col] = batch_input[col].fillna(0)
+                                                                    except:
+                                                                        pass
+                                                            
+                                                            # Get the trained model
+                                                            best_model = st.session_state.model_results[best_model_name]['model']
+                                                            
+                                                            # Make predictions
+                                                            if best_model_name == 'SVM' and 'scaler' in st.session_state:
+                                                                batch_scaled = st.session_state.scaler.transform(batch_input)
+                                                                predictions = best_model.predict(batch_scaled)
+                                                                
+                                                                # Get probabilities if available
+                                                                if hasattr(best_model, 'predict_proba') and st.session_state.problem_type == 'Classification':
+                                                                    probabilities = best_model.predict_proba(batch_scaled)
+                                                                else:
+                                                                    probabilities = None
+                                                            else:
+                                                                predictions = best_model.predict(batch_input)
+                                                                
+                                                                # Get probabilities if available
+                                                                if hasattr(best_model, 'predict_proba') and st.session_state.problem_type == 'Classification':
+                                                                    probabilities = best_model.predict_proba(batch_input)
+                                                                else:
+                                                                    probabilities = None
+                                                            
+                                                            # Create results dataframe
+                                                            results_df = batch_df.copy()
+                                                            results_df['Prediction'] = predictions
+                                                            
+                                                            # Add probabilities for classification
+                                                            if probabilities is not None:
+                                                                classes = best_model.classes_
+                                                                for i, class_name in enumerate(classes):
+                                                                    results_df[f'Probability_{class_name}'] = probabilities[:, i]
+                                                            
+                                                            st.success(f"✅ Batch predictions completed using {best_model_name}!")
+                                                            
+                                                            # Display results
+                                                            st.subheader("📊 Prediction Results")
+                                                            st.dataframe(results_df, use_container_width=True)
+                                                            
+                                                            # Statistics
+                                                            col1, col2 = st.columns(2)
+                                                            with col1:
+                                                                st.metric("Total Predictions", len(predictions))
+                                                            with col2:
+                                                                if st.session_state.problem_type == 'Classification':
+                                                                    unique_predictions = len(set(predictions))
+                                                                    st.metric("Unique Classes Predicted", unique_predictions)
+                                                                else:
+                                                                    mean_prediction = np.mean(predictions)
+                                                                    st.metric("Mean Prediction", f"{mean_prediction:.4f}")
+                                                            
+                                                            # Download results
+                                                            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                                                            csv_results = convert_df_to_csv(results_df)
+                                                            st.download_button(
+                                                                label="📥 Download Predictions as CSV",
+                                                                data=csv_results,
+                                                                file_name=f'batch_predictions_{timestamp}.csv',
+                                                                mime='text/csv',
+                                                                help="Download the predictions with original data"
+                                                            )
+                                                            
+                                                            # Visualization for classification
+                                                            if st.session_state.problem_type == 'Classification':
+                                                                st.subheader("📈 Prediction Distribution")
+                                                                prediction_counts = pd.Series(predictions).value_counts()
+                                                                fig = px.bar(
+                                                                    x=prediction_counts.index,
+                                                                    y=prediction_counts.values,
+                                                                    title="Distribution of Predicted Classes",
+                                                                    labels={'x': 'Predicted Class', 'y': 'Count'}
+                                                                )
+                                                                st.plotly_chart(fig, use_container_width=True)
+                                                        
+                                                        else:
+                                                            st.error("❌ No trained models available for batch prediction.")
+                                                    
+                                                    except Exception as e:
+                                                        st.error(f"❌ Batch prediction failed: {str(e)}")
+                                                        logger.error(f"Batch prediction error: {str(e)}")
+                                    
+                                    except Exception as e:
+                                        st.error(f"❌ Error reading CSV file: {str(e)}")
+                                else:
+                                    st.info("📁 Upload a CSV file to start batch predictions")
                             else:
                                 st.warning("⚠️ Feature information not available. Please train models first.")
                     else:

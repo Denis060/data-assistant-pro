@@ -134,3 +134,27 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 16:28:15,519 - INFO - Filled Credit_History with mode: 1.0
 2025-08-05 16:28:15,519 - INFO - Applied Fill with Mode to columns: ['Credit_History']
 2025-08-05 16:31:43,822 - ERROR - Prediction error: could not convert string to float: 'LP001003'
+2025-08-05 16:42:03,219 - INFO - Initialized cleaned_df in session state
+2025-08-05 16:43:36,074 - INFO - Applying Fill with Mode to columns: ['Gender', 'Dependents', 'Self_Employed', 'Credit_History']
+2025-08-05 16:43:36,075 - INFO - Filled Gender with mode: Male
+2025-08-05 16:43:36,075 - INFO - Filled Dependents with mode: 0
+2025-08-05 16:43:36,075 - INFO - Filled Self_Employed with mode: No
+2025-08-05 16:43:36,075 - INFO - Filled Credit_History with mode: 1.0
+2025-08-05 16:43:36,076 - INFO - Applied Fill with Mode to columns: ['Gender', 'Dependents', 'Self_Employed', 'Credit_History']
+2025-08-05 16:43:42,781 - INFO - Applying Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 16:43:42,782 - INFO - Filled Loan_Amount_Term with median: 360.00
+2025-08-05 16:43:42,782 - INFO - Applied Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 16:53:36,147 - INFO - Initialized cleaned_df in session state
+2025-08-05 16:54:57,442 - INFO - Initialized cleaned_df in session state
+2025-08-05 16:56:43,806 - INFO - Initialized cleaned_df in session state
+2025-08-05 16:58:14,456 - INFO - Applying Fill with Mode to columns: ['Gender']
+2025-08-05 16:58:14,456 - INFO - Filled Gender with mode: Male
+2025-08-05 16:58:14,456 - INFO - Applied Fill with Mode to columns: ['Gender']
+2025-08-05 16:59:09,907 - INFO - Applying Fill with Mode to columns: ['Dependents', 'Self_Employed', 'Credit_History']
+2025-08-05 16:59:09,908 - INFO - Filled Dependents with mode: 0
+2025-08-05 16:59:09,908 - INFO - Filled Self_Employed with mode: No
+2025-08-05 16:59:09,908 - INFO - Filled Credit_History with mode: 1.0
+2025-08-05 16:59:09,909 - INFO - Applied Fill with Mode to columns: ['Dependents', 'Self_Employed', 'Credit_History']
+2025-08-05 16:59:21,873 - INFO - Applying Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 16:59:21,874 - INFO - Filled Loan_Amount_Term with median: 360.00
+2025-08-05 16:59:21,874 - INFO - Applied Fill with Median to columns: ['Loan_Amount_Term']
