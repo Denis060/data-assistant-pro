@@ -167,3 +167,12 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 17:15:38,900 - INFO - Successfully loaded data: 381 rows, 13 columns
 2025-08-05 17:16:12,396 - INFO - Initialized cleaned_df in session state
 2025-08-05 17:17:21,191 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:26:38,125 - INFO - Loading file: cleaned_data_20250805_170357.csv, Size: 26491 bytes
+2025-08-05 17:26:38,127 - INFO - Successfully loaded data: 381 rows, 13 columns
+2025-08-05 17:26:38,128 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:26:55,241 - INFO - Loading file: loan_data.csv, Size: 26276 bytes
+2025-08-05 17:26:55,242 - INFO - Successfully loaded data: 381 rows, 13 columns
+2025-08-05 17:26:55,243 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:27:16,162 - INFO - Applying Drop Rows to columns: ['Gender', 'Dependents', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History']
+2025-08-05 17:27:16,163 - INFO - Dropped 73 rows with missing values
+2025-08-05 17:27:16,163 - INFO - Applied Drop Rows to columns: ['Gender', 'Dependents', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History']

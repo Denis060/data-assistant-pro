@@ -105,7 +105,7 @@ logger = logging.getLogger(__name__)
 
 # --- Enhanced Data Loading and Validation Functions ---
 @st.cache_data
-def load_data(uploaded_file):
+def load_data(uploaded_file, delimiter_override=None):
     """Enhanced data loading with comprehensive validation and smart delimiter detection."""
     if uploaded_file is not None:
         try:
@@ -117,19 +117,36 @@ def load_data(uploaded_file):
                 st.error("❌ File too large! Please upload a file smaller than 100MB.")
                 return None
             
-            # Use smart CSV reading with delimiter detection
-            df, delimiter = smart_read_csv(uploaded_file)
+            # Determine delimiter to use
+            if delimiter_override and delimiter_override != 'Auto-detect':
+                # Use manual delimiter selection
+                delimiter_map = {
+                    'Comma (,)': ',',
+                    'Semicolon (;)': ';',
+                    'Tab': '\t',
+                    'Pipe (|)': '|'
+                }
+                delimiter = delimiter_map[delimiter_override]
+                uploaded_file.seek(0)
+                df = pd.read_csv(uploaded_file, sep=delimiter)
+                delimiter_source = "manually selected"
+            else:
+                # Use smart CSV reading with delimiter detection
+                df, delimiter = smart_read_csv(uploaded_file)
+                delimiter_source = "auto-detected"
             
             # Show delimiter detection info
             if delimiter != ',':
                 if delimiter == '\t':
-                    st.info(f"📊 Detected delimiter: Tab-separated values")
+                    st.success(f"📊 Tab-separated file loaded successfully ({delimiter_source})")
                 elif delimiter == ';':
-                    st.info(f"📊 Detected delimiter: Semicolon (;)")
+                    st.success(f"📊 Semicolon-separated file loaded successfully ({delimiter_source})")
                 elif delimiter == '|':
-                    st.info(f"📊 Detected delimiter: Pipe (|)")
+                    st.success(f"📊 Pipe-separated file loaded successfully ({delimiter_source})")
                 else:
-                    st.info(f"📊 Detected delimiter: '{delimiter}'")
+                    st.success(f"📊 File loaded with '{delimiter}' delimiter ({delimiter_source})")
+            else:
+                st.success(f"📊 CSV file loaded successfully ({delimiter_source})")
             
             # Rest of validation stays the same
             
@@ -309,17 +326,46 @@ with st.sidebar:
     st.markdown("---")
     st.header("📁 Upload Your Data")
     
-    # File upload with help text
-    uploaded_file = st.file_uploader(
-        "Choose a CSV file", 
-        type=["csv"],
-        help="Upload a CSV file (max 100MB). Supported encodings: UTF-8, Latin-1, CP1252"
-    )
+    # File format information
+    with st.expander("📖 Supported File Formats"):
+        st.markdown("""
+        **File Types:** CSV, TSV, TXT files
+        
+        **Delimiters:** Automatically detected or manually selected
+        - **Comma (,)** - Standard CSV format  
+        - **Semicolon (;)** - European Excel exports
+        - **Tab** - Tab-separated values
+        - **Pipe (|)** - Alternative format
+        
+        **File Requirements:**
+        - Maximum size: 100MB
+        - Supported encodings: UTF-8, Latin-1, CP1252
+        - First row should contain column headers
+        """)
+    
+    # File upload section with delimiter options
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        # File upload with enhanced help text
+        uploaded_file = st.file_uploader(
+            "Choose a data file", 
+            type=["csv", "tsv", "txt"],
+            help="Upload CSV, TSV, or TXT file with any standard delimiter"
+        )
+    
+    with col2:
+        # Manual delimiter override for main upload
+        main_delimiter_override = st.selectbox(
+            "Delimiter (optional)",
+            options=['Auto-detect', 'Comma (,)', 'Semicolon (;)', 'Tab', 'Pipe (|)'],
+            help="Override if auto-detection fails",
+            key="main_delimiter"
+        )
     
     # Show file info if uploaded
     if uploaded_file is not None:
-        st.info(f"**File:** {uploaded_file.name}")
-        st.info(f"**Size:** {uploaded_file.size / 1024:.1f} KB")
+        st.info(f"**File:** {uploaded_file.name} | **Size:** {uploaded_file.size / 1024:.1f} KB")
     
     # Add sample data option
     st.markdown("---")
@@ -394,7 +440,7 @@ st.markdown("---")
 data_source = None
 if uploaded_file is not None:
     data_source = "uploaded"
-    df_original = load_data(uploaded_file)
+    df_original = load_data(uploaded_file, main_delimiter_override)
 elif 'sample_data' in st.session_state:
     data_source = "sample"
     df_original = st.session_state.sample_data
@@ -423,6 +469,10 @@ if df_original is not None:
                 st.metric("Missing Values", f"{df_original.isnull().sum().sum():,}")
             with col4:
                 st.metric("Memory Usage", f"{df_original.memory_usage().sum() / 1024:.1f} KB")
+            
+            # Show first few rows as preview
+            st.write("**Data Preview:**")
+            st.dataframe(df_original.head(3), use_container_width=True)
 
         # Enhanced tabs
         tab1, tab2, tab3, tab4 = st.tabs([
