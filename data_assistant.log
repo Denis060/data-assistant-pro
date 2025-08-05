@@ -181,3 +181,16 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 17:32:18,999 - INFO - Initialized cleaned_df in session state
 2025-08-05 17:32:32,740 - INFO - Loading file: bank-full.csv, Size: 4610348 bytes
 2025-08-05 17:32:32,776 - INFO - Successfully loaded data: 45211 rows, 17 columns
+2025-08-05 17:56:23,555 - INFO - Loading file: housing.csv, Size: 1423529 bytes
+2025-08-05 17:56:23,569 - INFO - Successfully loaded data: 20640 rows, 10 columns
+2025-08-05 17:56:23,570 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:57:12,769 - INFO - Outlier treatment completed using IQR detection and Cap treatment
+2025-08-05 17:57:12,770 - INFO - Applied Cap outlier treatment using IQR detection
+2025-08-05 17:57:23,892 - INFO - Outlier treatment completed using IQR detection and Cap treatment
+2025-08-05 17:57:23,892 - INFO - Applied Cap outlier treatment using IQR detection
+2025-08-05 17:57:36,346 - INFO - Outlier treatment completed using IQR detection and Remove treatment
+2025-08-05 17:57:36,346 - INFO - Applied Remove outlier treatment using IQR detection
+2025-08-05 17:58:00,172 - INFO - Applying Fill with Mean to columns: ['total_bedrooms']
+2025-08-05 17:58:00,173 - INFO - Filled total_bedrooms with mean: 537.87
+2025-08-05 17:58:00,173 - INFO - Applied Fill with Mean to columns: ['total_bedrooms']
+2025-08-05 17:58:18,388 - INFO - Data types optimized, saved 743040 bytes
