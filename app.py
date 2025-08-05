@@ -11,7 +11,7 @@ from modules.eda import create_eda_report
 from modules.modeling import prepare_data_for_modeling, train_models, display_model_results, create_prediction_plots, feature_importance_analysis
 
 # --- Import our cleaning functions ---
-from modules.cleaning_fixed import handle_missing_values, remove_duplicates, convert_df_to_csv
+from modules.cleaning_fixed import handle_missing_values, remove_duplicates, convert_df_to_csv, handle_outliers
 
 def detect_delimiter(file_content):
     """Detect the delimiter used in a CSV file."""
@@ -501,7 +501,7 @@ if df_original is not None:
                 st.subheader("🛠️ Select Cleaning Operation")
                 cleaning_strategy = st.selectbox(
                     "Choose what you want to clean:",
-                    ["Missing Values", "Duplicate Rows", "Data Type Optimization", "All Operations"],
+                    ["Missing Values", "Duplicate Rows", "Outlier Detection & Treatment", "Data Type Optimization", "All Operations"],
                     help="Select the type of cleaning operation you want to perform"
                 )
                 
@@ -633,6 +633,133 @@ if df_original is not None:
                         else:
                             st.success("✅ No duplicate rows found!")
                     
+                    elif cleaning_strategy == "Outlier Detection & Treatment":
+                        # Outlier detection and treatment
+                        st.write("### 🎯 Outlier Detection & Treatment")
+                        st.write("Detect and handle outliers in numerical columns:")
+                        
+                        # Get numerical columns
+                        numeric_cols = st.session_state.cleaned_df.select_dtypes(include=[np.number]).columns.tolist()
+                        
+                        if not numeric_cols:
+                            st.warning("⚠️ No numerical columns found for outlier detection.")
+                        else:
+                            col1, col2 = st.columns(2)
+                            
+                            with col1:
+                                # Column selection
+                                selected_outlier_cols = st.multiselect(
+                                    "Select columns for outlier detection:",
+                                    options=numeric_cols,
+                                    default=numeric_cols[:3] if len(numeric_cols) >= 3 else numeric_cols,
+                                    help="Choose numerical columns to analyze for outliers"
+                                )
+                                
+                                # Detection method
+                                detection_method = st.selectbox(
+                                    "Detection Method:",
+                                    ["IQR", "Z-Score", "Modified Z-Score"],
+                                    help="IQR: Interquartile Range (robust), Z-Score: Standard deviations, Modified Z-Score: More robust than Z-Score"
+                                )
+                            
+                            with col2:
+                                # Treatment method
+                                treatment_method = st.selectbox(
+                                    "Treatment Method:",
+                                    ["Remove", "Cap", "Replace with Mean", "Replace with Median", "Transform"],
+                                    help="Remove: Delete outlier rows, Cap: Set to boundary values, Replace: Use mean/median, Transform: Apply log transformation"
+                                )
+                                
+                                # Method-specific parameters
+                                if detection_method == "IQR":
+                                    iqr_multiplier = st.slider(
+                                        "IQR Multiplier:",
+                                        min_value=1.0,
+                                        max_value=3.0,
+                                        value=1.5,
+                                        step=0.1,
+                                        help="Higher values = less strict outlier detection"
+                                    )
+                                elif detection_method == "Z-Score":
+                                    zscore_threshold = st.slider(
+                                        "Z-Score Threshold:",
+                                        min_value=2.0,
+                                        max_value=4.0,
+                                        value=3.0,
+                                        step=0.1,
+                                        help="Higher values = less strict outlier detection"
+                                    )
+                                elif detection_method == "Modified Z-Score":
+                                    modified_zscore_threshold = st.slider(
+                                        "Modified Z-Score Threshold:",
+                                        min_value=2.5,
+                                        max_value=4.5,
+                                        value=3.5,
+                                        step=0.1,
+                                        help="Higher values = less strict outlier detection"
+                                    )
+                            
+                            if selected_outlier_cols:
+                                # Preview outliers before treatment
+                                st.write("**Preview Outlier Detection:**")
+                                if st.button("🔍 Detect Outliers", key="preview_outliers"):
+                                    # Prepare parameters
+                                    kwargs = {}
+                                    if detection_method == "IQR":
+                                        kwargs['iqr_multiplier'] = iqr_multiplier
+                                    elif detection_method == "Z-Score":
+                                        kwargs['zscore_threshold'] = zscore_threshold
+                                    elif detection_method == "Modified Z-Score":
+                                        kwargs['modified_zscore_threshold'] = modified_zscore_threshold
+                                    
+                                    # Show outlier statistics without applying treatment
+                                    temp_df = handle_outliers(
+                                        st.session_state.cleaned_df, 
+                                        "Remove",  # Just for detection
+                                        detection_method, 
+                                        selected_outlier_cols, 
+                                        **kwargs
+                                    )
+                                
+                                # Apply outlier treatment
+                                if st.button("🚀 Apply Outlier Treatment", type="primary", key="apply_outliers"):
+                                    try:
+                                        # Prepare parameters
+                                        kwargs = {}
+                                        if detection_method == "IQR":
+                                            kwargs['iqr_multiplier'] = iqr_multiplier
+                                        elif detection_method == "Z-Score":
+                                            kwargs['zscore_threshold'] = zscore_threshold
+                                        elif detection_method == "Modified Z-Score":
+                                            kwargs['modified_zscore_threshold'] = modified_zscore_threshold
+                                        
+                                        original_rows = len(st.session_state.cleaned_df)
+                                        
+                                        # Apply outlier treatment
+                                        st.session_state.cleaned_df = handle_outliers(
+                                            st.session_state.cleaned_df, 
+                                            treatment_method, 
+                                            detection_method, 
+                                            selected_outlier_cols, 
+                                            **kwargs
+                                        )
+                                        
+                                        new_rows = len(st.session_state.cleaned_df)
+                                        
+                                        if treatment_method == "Remove" and new_rows < original_rows:
+                                            st.success(f"✅ Outlier treatment completed! Removed {original_rows - new_rows} rows.")
+                                        else:
+                                            st.success(f"✅ Outlier treatment completed using {treatment_method.lower()} method!")
+                                        
+                                        logger.info(f"Applied {treatment_method} outlier treatment using {detection_method} detection")
+                                        st.rerun()
+                                        
+                                    except Exception as e:
+                                        st.error(f"❌ Error in outlier treatment: {str(e)}")
+                                        logger.error(f"Error in outlier treatment: {str(e)}")
+                            else:
+                                st.info("👆 Please select columns for outlier detection.")
+                    
                     elif cleaning_strategy == "Data Type Optimization":
                         # Data type optimization
                         st.write("### ⚡ Optimize Data Types")
@@ -678,7 +805,8 @@ if df_original is not None:
                         st.info("This will apply all available cleaning strategies in sequence:")
                         st.write("1. Handle missing values (using median/mode)")
                         st.write("2. Remove duplicate rows")
-                        st.write("3. Optimize data types")
+                        st.write("3. Detect and cap outliers (using IQR method)")
+                        st.write("4. Optimize data types")
                         
                         if st.button("Apply All Cleaning Operations", type="primary", key="apply_all"):
                             try:
@@ -704,7 +832,28 @@ if df_original is not None:
                                         st.session_state.cleaned_df = st.session_state.cleaned_df.drop_duplicates()
                                         operations_applied.append(f"Removed {dup_count} duplicate rows")
                                     
-                                    # 3. Optimize data types
+                                    # 3. Handle outliers (using IQR method with capping)
+                                    numeric_cols = st.session_state.cleaned_df.select_dtypes(include=[np.number]).columns.tolist()
+                                    if numeric_cols:
+                                        outlier_cols_treated = 0
+                                        for col in numeric_cols:
+                                            try:
+                                                # Apply IQR-based outlier capping
+                                                st.session_state.cleaned_df = handle_outliers(
+                                                    st.session_state.cleaned_df, 
+                                                    "Cap", 
+                                                    "IQR", 
+                                                    [col], 
+                                                    iqr_multiplier=1.5
+                                                )
+                                                outlier_cols_treated += 1
+                                            except Exception as e:
+                                                logger.warning(f"Could not process outliers for column {col}: {str(e)}")
+                                        
+                                        if outlier_cols_treated > 0:
+                                            operations_applied.append(f"Applied outlier capping to {outlier_cols_treated} numeric columns")
+                                    
+                                    # 4. Optimize data types
                                     original_memory = st.session_state.cleaned_df.memory_usage(deep=True).sum()
                                     for col in st.session_state.cleaned_df.select_dtypes(include=['object']).columns:
                                         try:

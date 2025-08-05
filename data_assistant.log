@@ -176,3 +176,8 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 17:27:16,162 - INFO - Applying Drop Rows to columns: ['Gender', 'Dependents', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History']
 2025-08-05 17:27:16,163 - INFO - Dropped 73 rows with missing values
 2025-08-05 17:27:16,163 - INFO - Applied Drop Rows to columns: ['Gender', 'Dependents', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History']
+2025-08-05 17:32:18,965 - INFO - Loading file: bank-full.csv, Size: 4610348 bytes
+2025-08-05 17:32:18,995 - INFO - Successfully loaded data: 45211 rows, 1 columns
+2025-08-05 17:32:18,999 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:32:32,740 - INFO - Loading file: bank-full.csv, Size: 4610348 bytes
+2025-08-05 17:32:32,776 - INFO - Successfully loaded data: 45211 rows, 17 columns
