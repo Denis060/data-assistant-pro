@@ -2,7 +2,7 @@
 
 An enterprise-grade, end-to-end Streamlit application for automated data cleaning, exploratory data analysis (EDA), and machine learning.
 
-![App Screenshot](/Users/ibrahimfofanah/Desktop/Data Assistant/app.png) <!-- You can upload a screenshot to your repo and link it here -->
+![App Screenshot](app.png) <!-- You can upload a screenshot to your repo and link it here -->
 
 ---
 

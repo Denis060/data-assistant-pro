@@ -1,0 +1,113 @@
+2025-08-05 15:04:36,710 - INFO - Loading file: Loan_Prediction_Dataset.csv, Size: 29496 bytes
+2025-08-05 15:04:36,712 - INFO - Successfully loaded data: 1000 rows, 6 columns
+2025-08-05 15:04:36,712 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:07:47,949 - INFO - Loading file: housing.csv, Size: 1423529 bytes
+2025-08-05 15:07:47,960 - INFO - Successfully loaded data: 20640 rows, 10 columns
+2025-08-05 15:10:10,701 - INFO - Applied all cleaning operations: ['Optimized data types (saved 29.3 KB)']
+2025-08-05 15:10:20,975 - ERROR - Unexpected error in main app: " 5" is not one of the valid encoding data types: O, N, Q, T, G.
+For more details, see https://altair-viz.github.io/user_guide/encodings/index.html#encoding-data-types. If you are trying to use a column name that contains a colon, prefix it with a backslash; for example "column\:name" instead of "column:name".
+Traceback (most recent call last):
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/app.py", line 686, in <module>
+    st.bar_chart(target_counts)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/streamlit/runtime/metrics_util.py", line 443, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/streamlit/elements/vega_charts.py", line 1292, in bar_chart
+    self._altair_chart(
+    ~~~~~~~~~~~~~~~~~~^
+        chart,
+        ^^^^^^
+    ...<2 lines>...
+        add_rows_metadata=add_rows_metadata,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/streamlit/elements/vega_charts.py", line 1883, in _altair_chart
+    vega_lite_spec = _convert_altair_to_vega_lite_spec(altair_chart)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/streamlit/elements/vega_charts.py", line 403, in _convert_altair_to_vega_lite_spec
+    chart_dict = altair_chart.to_dict()
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/vegalite/v5/api.py", line 4033, in to_dict
+    return super().to_dict(**kwds)
+           ~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/vegalite/v5/api.py", line 2004, in to_dict
+    vegalite_spec: Any = _top_schema_base(super(TopLevelMixin, copy)).to_dict(
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        validate=validate, ignore=ignore, context=dict(context, pre_transform=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 1163, in to_dict
+    result = _todict(kwds, context=context, **opts)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 554, in _todict
+    k: _todict(v, context, np_opt, pd_opt)
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 549, in _todict
+    return obj.to_dict(validate=False, context=context)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 1163, in to_dict
+    result = _todict(kwds, context=context, **opts)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 554, in _todict
+    k: _todict(v, context, np_opt, pd_opt)
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 551, in _todict
+    return [_todict(v, context, np_opt, pd_opt) for v in obj]
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/schemapi.py", line 549, in _todict
+    return obj.to_dict(validate=False, context=context)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/vegalite/v5/schema/channels.py", line 193, in to_dict
+    parsed = parse_shorthand(shorthand, data=data)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/altair/utils/core.py", line 692, in parse_shorthand
+    raise ValueError(
+    ...<7 lines>...
+    )
+ValueError: " 5" is not one of the valid encoding data types: O, N, Q, T, G.
+For more details, see https://altair-viz.github.io/user_guide/encodings/index.html#encoding-data-types. If you are trying to use a column name that contains a colon, prefix it with a backslash; for example "column\:name" instead of "column:name".
+
+2025-08-05 15:12:24,922 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:17:47,723 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:21:59,755 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:22:02,023 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:25:17,457 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:27:17,486 - INFO - Initialized cleaned_df in session state
+2025-08-05 15:28:59,299 - INFO - Applying Drop Rows to columns: ['total_bedrooms']
+2025-08-05 15:28:59,301 - INFO - Dropped 207 rows with missing values
+2025-08-05 15:28:59,301 - INFO - Applied Drop Rows to columns: ['total_bedrooms']
+2025-08-05 15:29:22,869 - INFO - Data reset to original state
+2025-08-05 15:29:38,083 - INFO - Applying Fill with Mean to columns: ['total_bedrooms']
+2025-08-05 15:29:38,084 - INFO - Filled total_bedrooms with mean: 537.87
+2025-08-05 15:29:38,084 - INFO - Applied Fill with Mean to columns: ['total_bedrooms']
+2025-08-05 15:31:19,982 - ERROR - Unexpected error in main app: No module named 'statsmodels'
+Traceback (most recent call last):
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/app.py", line 722, in <module>
+    create_prediction_plots(results, problem_type)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/modules/modeling.py", line 225, in create_prediction_plots
+    fig = px.scatter(
+        x=result['y_test'],
+    ...<3 lines>...
+        trendline="ols"
+    )
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/plotly/express/_chart_types.py", line 69, in scatter
+    return make_figure(args=locals(), constructor=go.Scatter)
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/plotly/express/_core.py", line 2682, in make_figure
+    patch, fit_results = make_trace_kwargs(
+                         ~~~~~~~~~~~~~~~~~^
+        args, trace_spec, group, mapping_labels.copy(), sizeref
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/plotly/express/_core.py", line 430, in make_trace_kwargs
+    y_out, hover_header, fit_results = trendline_function(
+                                       ~~~~~~~~~~~~~~~~~~^
+        args["trendline_options"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        non_missing.to_numpy(),  # numpy array
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/ibrahimfofanah/Desktop/Data Assistant/venv/lib/python3.13/site-packages/plotly/express/trendline_functions/__init__.py", line 42, in ols
+    import statsmodels.api as sm
+ModuleNotFoundError: No module named 'statsmodels'
+

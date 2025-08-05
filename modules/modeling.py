@@ -222,13 +222,22 @@ def create_prediction_plots(results, problem_type):
     if problem_type == 'Regression':
         # Create subplots for each model
         for name, result in results.items():
-            fig = px.scatter(
-                x=result['y_test'], 
-                y=result['predictions'],
-                title=f"{name}: Predictions vs Actual",
-                labels={'x': 'Actual Values', 'y': 'Predicted Values'},
-                trendline="ols"
-            )
+            try:
+                fig = px.scatter(
+                    x=result['y_test'], 
+                    y=result['predictions'],
+                    title=f"{name}: Predictions vs Actual",
+                    labels={'x': 'Actual Values', 'y': 'Predicted Values'},
+                    trendline="ols"
+                )
+            except Exception as e:
+                # If trendline fails (missing statsmodels), create without trendline
+                fig = px.scatter(
+                    x=result['y_test'], 
+                    y=result['predictions'],
+                    title=f"{name}: Predictions vs Actual",
+                    labels={'x': 'Actual Values', 'y': 'Predicted Values'}
+                )
             
             # Add perfect prediction line
             min_val = min(min(result['y_test']), min(result['predictions']))

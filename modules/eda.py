@@ -27,7 +27,7 @@ def create_eda_report(df: pd.DataFrame):
         st.subheader("📋 Data Types")
         dtype_df = pd.DataFrame({
             'Column': df.columns,
-            'Data Type': df.dtypes,
+            'Data Type': df.dtypes.astype(str),  # Convert to string to avoid Arrow compatibility issues
             'Non-Null Count': df.count(),
             'Missing Count': df.isnull().sum(),
             'Missing %': (df.isnull().sum() / len(df) * 100).round(2)
