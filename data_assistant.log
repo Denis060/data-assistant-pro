@@ -158,3 +158,12 @@ ModuleNotFoundError: No module named 'statsmodels'
 2025-08-05 16:59:21,873 - INFO - Applying Fill with Median to columns: ['Loan_Amount_Term']
 2025-08-05 16:59:21,874 - INFO - Filled Loan_Amount_Term with median: 360.00
 2025-08-05 16:59:21,874 - INFO - Applied Fill with Median to columns: ['Loan_Amount_Term']
+2025-08-05 17:12:31,132 - INFO - Loading file: bank-full.csv, Size: 4610348 bytes
+2025-08-05 17:12:31,162 - INFO - Successfully loaded data: 45211 rows, 1 columns
+2025-08-05 17:12:31,167 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:15:28,599 - INFO - Loading file: bank.csv, Size: 461474 bytes
+2025-08-05 17:15:28,604 - INFO - Successfully loaded data: 4521 rows, 1 columns
+2025-08-05 17:15:38,898 - INFO - Loading file: cleaned_data_20250805_170357.csv, Size: 26491 bytes
+2025-08-05 17:15:38,900 - INFO - Successfully loaded data: 381 rows, 13 columns
+2025-08-05 17:16:12,396 - INFO - Initialized cleaned_df in session state
+2025-08-05 17:17:21,191 - INFO - Initialized cleaned_df in session state

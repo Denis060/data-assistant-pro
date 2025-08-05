@@ -13,6 +13,85 @@ from modules.modeling import prepare_data_for_modeling, train_models, display_mo
 # --- Import our cleaning functions ---
 from modules.cleaning_fixed import handle_missing_values, remove_duplicates, convert_df_to_csv
 
+def detect_delimiter(file_content):
+    """Detect the delimiter used in a CSV file."""
+    import csv
+    
+    # Try different delimiters
+    delimiters = [',', ';', '\t', '|']
+    
+    # Read first few lines to detect delimiter
+    lines = file_content.split('\n')[:5]  # Check first 5 lines
+    
+    delimiter_scores = {}
+    
+    for delimiter in delimiters:
+        try:
+            # Count how many fields we get with this delimiter
+            field_counts = []
+            for line in lines:
+                if line.strip():  # Skip empty lines
+                    field_count = len(line.split(delimiter))
+                    field_counts.append(field_count)
+            
+            if field_counts:
+                # Score based on consistency of field counts
+                avg_fields = sum(field_counts) / len(field_counts)
+                consistency = 1 - (max(field_counts) - min(field_counts)) / max(field_counts, 1)
+                score = avg_fields * consistency
+                delimiter_scores[delimiter] = score
+        except:
+            delimiter_scores[delimiter] = 0
+    
+    # Return the delimiter with the highest score
+    if delimiter_scores:
+        best_delimiter = max(delimiter_scores, key=delimiter_scores.get)
+        return best_delimiter
+    
+    return ','  # Default to comma
+
+def smart_read_csv(file_buffer):
+    """Read CSV file with automatic delimiter detection."""
+    try:
+        # First, try to read the content as string to detect delimiter
+        file_buffer.seek(0)
+        content = file_buffer.read().decode('utf-8')
+        
+        # Detect delimiter
+        delimiter = detect_delimiter(content)
+        
+        # Reset buffer position
+        file_buffer.seek(0)
+        
+        # Read with detected delimiter
+        df = pd.read_csv(file_buffer, sep=delimiter)
+        
+        return df, delimiter
+        
+    except UnicodeDecodeError:
+        # Try different encodings
+        file_buffer.seek(0)
+        for encoding in ['latin-1', 'iso-8859-1', 'cp1252']:
+            try:
+                content = file_buffer.read().decode(encoding)
+                delimiter = detect_delimiter(content)
+                file_buffer.seek(0)
+                df = pd.read_csv(file_buffer, sep=delimiter, encoding=encoding)
+                return df, delimiter
+            except:
+                continue
+        
+        # If all fails, use default
+        file_buffer.seek(0)
+        df = pd.read_csv(file_buffer)
+        return df, ','
+    
+    except Exception as e:
+        # Last resort - try pandas' built-in delimiter detection
+        file_buffer.seek(0)
+        df = pd.read_csv(file_buffer, sep=None, engine='python')
+        return df, 'auto-detected'
+
 # --- Setup logging ---
 logging.basicConfig(
     level=logging.INFO,
@@ -27,7 +106,7 @@ logger = logging.getLogger(__name__)
 # --- Enhanced Data Loading and Validation Functions ---
 @st.cache_data
 def load_data(uploaded_file):
-    """Enhanced data loading with comprehensive validation."""
+    """Enhanced data loading with comprehensive validation and smart delimiter detection."""
     if uploaded_file is not None:
         try:
             # Log file upload
@@ -38,16 +117,21 @@ def load_data(uploaded_file):
                 st.error("❌ File too large! Please upload a file smaller than 100MB.")
                 return None
             
-            # Read CSV with error handling for different encodings
-            try:
-                df = pd.read_csv(uploaded_file, encoding='utf-8')
-            except UnicodeDecodeError:
-                try:
-                    df = pd.read_csv(uploaded_file, encoding='latin-1')
-                    st.warning("⚠️ File encoding detected as Latin-1. Data loaded successfully.")
-                except UnicodeDecodeError:
-                    df = pd.read_csv(uploaded_file, encoding='cp1252')
-                    st.warning("⚠️ File encoding detected as CP1252. Data loaded successfully.")
+            # Use smart CSV reading with delimiter detection
+            df, delimiter = smart_read_csv(uploaded_file)
+            
+            # Show delimiter detection info
+            if delimiter != ',':
+                if delimiter == '\t':
+                    st.info(f"📊 Detected delimiter: Tab-separated values")
+                elif delimiter == ';':
+                    st.info(f"📊 Detected delimiter: Semicolon (;)")
+                elif delimiter == '|':
+                    st.info(f"📊 Detected delimiter: Pipe (|)")
+                else:
+                    st.info(f"📊 Detected delimiter: '{delimiter}'")
+            
+            # Rest of validation stays the same
             
             # Basic data validation
             if df.empty:
@@ -926,20 +1010,94 @@ if df_original is not None:
                             # Batch Predictions Section
                             st.markdown("---")
                             st.subheader("📁 Batch Predictions")
-                            st.write("Upload a CSV file to make predictions for multiple rows at once!")
+                            st.write("Upload a file to make predictions for multiple rows at once!")
+                            
+                            # File format help
+                            with st.expander("📖 Supported File Formats & Examples"):
+                                st.markdown("""
+                                **Supported Delimiters:**
+                                - **Comma (,)** - Standard CSV format
+                                - **Semicolon (;)** - Common in European Excel exports
+                                - **Tab** - Tab-separated values (.tsv files)
+                                - **Pipe (|)** - Alternative delimiter format
+                                
+                                **File Requirements:**
+                                - Must contain all required feature columns
+                                - Column names must match training data exactly
+                                - Additional columns will be ignored
+                                - Missing values are handled automatically
+                                
+                                **Example formats:**
+                                ```
+                                Comma:     Gender,Education,Income
+                                Semicolon: Gender;Education;Income  
+                                Tab:       Gender    Education    Income
+                                ```
+                                """)
                             
                             if 'feature_names' in st.session_state and st.session_state.feature_names:
-                                # File uploader for batch predictions
-                                batch_file = st.file_uploader(
-                                    "Upload CSV file for batch predictions",
-                                    type=['csv'],
-                                    help=f"CSV should contain columns: {', '.join(st.session_state.feature_names)}"
-                                )
+                                st.write("**File Format Options:**")
+                                col1, col2 = st.columns([2, 1])
+                                
+                                with col1:
+                                    # File uploader for batch predictions
+                                    batch_file = st.file_uploader(
+                                        "Upload CSV file for batch predictions",
+                                        type=['csv', 'txt', 'tsv'],
+                                        help=f"Supports comma, semicolon, tab, and pipe delimiters. Required columns: {', '.join(st.session_state.feature_names)}"
+                                    )
+                                
+                                with col2:
+                                    # Manual delimiter override option
+                                    manual_delimiter = st.selectbox(
+                                        "Override delimiter (optional)",
+                                        options=['Auto-detect', 'Comma (,)', 'Semicolon (;)', 'Tab', 'Pipe (|)'],
+                                        help="Select if auto-detection fails"
+                                    )
                                 
                                 if batch_file is not None:
                                     try:
-                                        # Read the uploaded file
-                                        batch_df = pd.read_csv(batch_file)
+                                        # Determine delimiter to use
+                                        if manual_delimiter == 'Auto-detect':
+                                            # Use smart CSV reading with delimiter detection
+                                            batch_df, delimiter = smart_read_csv(batch_file)
+                                            delimiter_source = "auto-detected"
+                                        else:
+                                            # Use manual delimiter selection
+                                            delimiter_map = {
+                                                'Comma (,)': ',',
+                                                'Semicolon (;)': ';',
+                                                'Tab': '\t',
+                                                'Pipe (|)': '|'
+                                            }
+                                            delimiter = delimiter_map[manual_delimiter]
+                                            batch_file.seek(0)
+                                            batch_df = pd.read_csv(batch_file, sep=delimiter)
+                                            delimiter_source = "manually selected"
+                                        
+                                        # Show delimiter detection info
+                                        delimiter_info = ""
+                                        if delimiter == '\t':
+                                            delimiter_info = f"Tab-separated ({delimiter_source})"
+                                        elif delimiter == ';':
+                                            delimiter_info = f"Semicolon-separated ({delimiter_source})"
+                                        elif delimiter == '|':
+                                            delimiter_info = f"Pipe-separated ({delimiter_source})"
+                                        elif delimiter == ',':
+                                            delimiter_info = f"Comma-separated ({delimiter_source})"
+                                        else:
+                                            delimiter_info = f"'{delimiter}'-separated ({delimiter_source})"
+                                        
+                                        st.success(f"✅ File loaded successfully - {delimiter_info}")
+                                        
+                                        # Show file info
+                                        col1, col2, col3 = st.columns(3)
+                                        with col1:
+                                            st.metric("Rows", len(batch_df))
+                                        with col2:
+                                            st.metric("Columns", len(batch_df.columns))
+                                        with col3:
+                                            st.metric("File Size", f"{batch_file.size / 1024:.1f} KB")
                                         
                                         st.write("**Uploaded Data Preview:**")
                                         st.dataframe(batch_df.head(), use_container_width=True)
