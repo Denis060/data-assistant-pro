@@ -373,31 +373,13 @@ with st.sidebar:
     st.subheader("📊 Try Sample Data")
     if st.button("Load Sample Dataset"):
         try:
-            # Try multiple path approaches for better compatibility
-            sample_paths = [
-                os.path.join("data", "sample_data.csv"),  # Relative to current working directory
-                os.path.join(os.path.dirname(__file__), "data", "sample_data.csv") if __file__ else None,  # Relative to script location
-                "data/sample_data.csv",  # Simple relative path
-            ]
-            
-            sample_df = None
-            for path in sample_paths:
-                if path and os.path.exists(path):
-                    try:
-                        sample_df = pd.read_csv(path)
-                        st.info(f"📁 Loaded sample data from: {path}")
-                        break
-                    except Exception as e:
-                        continue
-            
-            if sample_df is not None:
-                st.session_state.sample_data = sample_df
-                st.session_state.original_df = sample_df.copy()  # Store original for comparison
-                st.success(f"✅ Sample data loaded! ({len(sample_df)} rows, {len(sample_df.columns)} columns)")
-                st.rerun()
+            # Try to load sample data, fallback to demo data if not found
+            sample_path = os.path.join("data", "sample_data.csv")
+            if os.path.exists(sample_path):
+                sample_df = pd.read_csv(sample_path)
+                st.info(f"📁 Loaded from: {sample_path}")
             else:
-                # Create a small sample dataset if file not found
-                st.warning("⚠️ Sample data file not found. Creating a demo dataset...")
+                # Create demo dataset
                 sample_df = pd.DataFrame({
                     'age': [25, 30, 35, 40, 45, 28, 33, 38, 42, 29],
                     'income': [50000, 75000, 85000, 95000, 105000, 60000, 80000, 90000, 100000, 65000],
@@ -405,27 +387,15 @@ with st.sidebar:
                     'experience': [3, 8, 12, 15, 20, 5, 10, 13, 18, 6],
                     'satisfaction': ['High', 'Medium', 'High', 'High', 'Medium', 'High', 'High', 'Medium', 'High', 'High']
                 })
-                st.session_state.sample_data = sample_df
-                st.session_state.original_df = sample_df.copy()
-                st.success("✅ Demo dataset created and loaded!")
-                st.rerun()
-                
+                st.info("📊 Created demo dataset")
+            
+            st.session_state.sample_data = sample_df
+            st.session_state.original_df = sample_df.copy()
+            st.success(f"✅ Sample data loaded! ({len(sample_df)} rows, {len(sample_df.columns)} columns)")
+            st.rerun()
+            
         except Exception as e:
-            st.error(f"❌ Error loading sample data: {e}")
-            # Create emergency fallback dataset
-            try:
-                fallback_df = pd.DataFrame({
-                    'feature_1': np.random.randn(50),
-                    'feature_2': np.random.randn(50),
-                    'category': np.random.choice(['A', 'B', 'C'], 50),
-                    'target': np.random.randint(0, 2, 50)
-                })
-                st.session_state.sample_data = fallback_df
-                st.session_state.original_df = fallback_df.copy()
-                st.info("📊 Created fallback demo dataset")
-                st.rerun()
-            except Exception as fallback_error:
-                st.error(f"❌ Could not create fallback dataset: {fallback_error}")
+            st.error(f"❌ Error: {e}")
     
     # Model Management Section
     st.markdown("---")
