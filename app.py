@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import logging
+import os
 from datetime import datetime
 import traceback
 from modules.eda import create_eda_report
@@ -289,9 +290,9 @@ with st.sidebar:
         
         st.write("**Contact:**")
         st.write("• 📧 Email: ibrahimdenisfofanah060@gmail.com")
-        st.write("• 💼 LinkedIn: /in/ibrahim-fofanah")
-        st.write("• 🔗 GitHub: /https://www.linkedin.com/in/ibrahim-denis-fofanah/")
-        
+        st.write("• 💼 LinkedIn: https://www.linkedin.com/in/ibrahim-denis-fofanah/")
+        st.write("• 🔗 GitHub: https://github.com/Denis060")
+
         st.markdown("---")
         st.markdown("*'Transforming data into intelligent solutions'*")
     
@@ -372,13 +373,59 @@ with st.sidebar:
     st.subheader("📊 Try Sample Data")
     if st.button("Load Sample Dataset"):
         try:
-            sample_df = pd.read_csv("/Users/ibrahimfofanah/Desktop/Data Assistant/data/sample_data.csv")
-            st.session_state.sample_data = sample_df
-            st.session_state.original_df = sample_df.copy()  # Store original for comparison
-            st.success("✅ Sample data loaded!")
-            st.rerun()
+            # Try multiple path approaches for better compatibility
+            sample_paths = [
+                os.path.join("data", "sample_data.csv"),  # Relative to current working directory
+                os.path.join(os.path.dirname(__file__), "data", "sample_data.csv") if __file__ else None,  # Relative to script location
+                "data/sample_data.csv",  # Simple relative path
+            ]
+            
+            sample_df = None
+            for path in sample_paths:
+                if path and os.path.exists(path):
+                    try:
+                        sample_df = pd.read_csv(path)
+                        st.info(f"📁 Loaded sample data from: {path}")
+                        break
+                    except Exception as e:
+                        continue
+            
+            if sample_df is not None:
+                st.session_state.sample_data = sample_df
+                st.session_state.original_df = sample_df.copy()  # Store original for comparison
+                st.success(f"✅ Sample data loaded! ({len(sample_df)} rows, {len(sample_df.columns)} columns)")
+                st.rerun()
+            else:
+                # Create a small sample dataset if file not found
+                st.warning("⚠️ Sample data file not found. Creating a demo dataset...")
+                sample_df = pd.DataFrame({
+                    'age': [25, 30, 35, 40, 45, 28, 33, 38, 42, 29],
+                    'income': [50000, 75000, 85000, 95000, 105000, 60000, 80000, 90000, 100000, 65000],
+                    'education': ['Bachelor', 'Master', 'PhD', 'Master', 'PhD', 'Bachelor', 'Master', 'Bachelor', 'PhD', 'Master'],
+                    'experience': [3, 8, 12, 15, 20, 5, 10, 13, 18, 6],
+                    'satisfaction': ['High', 'Medium', 'High', 'High', 'Medium', 'High', 'High', 'Medium', 'High', 'High']
+                })
+                st.session_state.sample_data = sample_df
+                st.session_state.original_df = sample_df.copy()
+                st.success("✅ Demo dataset created and loaded!")
+                st.rerun()
+                
         except Exception as e:
-            st.error(f"❌ Could not load sample data: {e}")
+            st.error(f"❌ Error loading sample data: {e}")
+            # Create emergency fallback dataset
+            try:
+                fallback_df = pd.DataFrame({
+                    'feature_1': np.random.randn(50),
+                    'feature_2': np.random.randn(50),
+                    'category': np.random.choice(['A', 'B', 'C'], 50),
+                    'target': np.random.randint(0, 2, 50)
+                })
+                st.session_state.sample_data = fallback_df
+                st.session_state.original_df = fallback_df.copy()
+                st.info("📊 Created fallback demo dataset")
+                st.rerun()
+            except Exception as fallback_error:
+                st.error(f"❌ Could not create fallback dataset: {fallback_error}")
     
     # Model Management Section
     st.markdown("---")
