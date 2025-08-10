@@ -1,0 +1,1116 @@
+date,sales_amount,product_category,store_location,promotion_active,weather_condition,day_of_week,month,quarter
+2021-01-01,966.6223361122381,Home & Garden,Phoenix,0,Cloudy,Friday,1,1
+2021-01-02,1075.2060669341183,Sports,Chicago,0,Cloudy,Saturday,1,1
+2021-01-03,1098.6763410657854,Electronics,Los Angeles,0,Snowy,Sunday,1,1
+2021-01-04,1077.2294401239365,Sports,Phoenix,0,Snowy,Monday,1,1
+2021-01-05,911.9998059174292,Home & Garden,Los Angeles,0,Rainy,Tuesday,1,1
+2021-01-06,914.1200814087405,Electronics,New York,0,Snowy,Wednesday,1,1
+2021-01-07,927.3041115053949,Home & Garden,Los Angeles,0,Snowy,Thursday,1,1
+2021-01-08,1066.5144902209884,Electronics,New York,0,Sunny,Friday,1,1
+2021-01-09,1116.6373633935932,Home & Garden,Los Angeles,0,Snowy,Saturday,1,1
+2021-01-10,1114.3453038247567,Books,Los Angeles,1,Sunny,Sunday,1,1
+2021-01-11,1147.6617778597852,Sports,Chicago,1,Rainy,Monday,1,1
+2021-01-12,977.7920982129349,electronics,Chicago,0,Cloudy,Tuesday,1,1
+2021-01-13,914.5142325758025,Sports,Houston,0,Sunny,Wednesday,1,1
+2021-01-14,1007.5064872255815,Electronics,Los Angeles,0,Rainy,Thursday,1,1
+2021-01-15,1036.7240082596556,Electronic,New York,0,Sunny,Friday,1,1
+2021-01-16,1146.217328788728,Electronics,Los Angeles,0,Snowy,Saturday,1,1
+2021-01-17,1253.0744211253766,Home & Garden,Phoenix,1,Rainy,Sunday,1,1
+2021-01-18,1092.100078213871,Clothing,New York,0,Cloudy,Monday,1,1
+2021-01-19,985.7049566209776,Home & Garden,Phoenix,0,Sunny,Tuesday,1,1
+2021-01-20,973.3340287547945,Clothing,Houston,0,Snowy,Wednesday,1,1
+2021-01-21,992.1904570274444,Home & Garden,Phoenix,0,Rainy,Thursday,1,1
+2021-01-22,1128.2126599423877,Clothing,Houston,0,Snowy,Friday,1,1
+2021-01-23,0.0,Electronics,Houston,0,Rainy,Saturday,1,1
+2021-01-24,1329.9816118576712,Electronics,Houston,0,Sunny,Sunday,1,1
+2021-01-25,1109.5641381938988,Clothing,Phoenix,0,Rainy,Monday,1,1
+2021-01-26,1089.1216792233386,Clothing,Houston,1,Sunny,Tuesday,1,1
+2021-01-26,1089.1216792233386,Clothing,Houston,1,Sunny,Tuesday,1,1
+2021-01-27,1059.4939659958814,Sports,Houston,0,Rainy,Wednesday,1,1
+2021-01-28,1045.6644644650823,Electronics,Chicago,0,Snowy,Thursday,1,1
+2021-01-29,1149.2087380939233,Home & Garden,Los Angeles,1,Snowy,Friday,1,1
+2021-01-30,1203.9101650756677,Sports,Houston,0,Sunny,Saturday,1,1
+2021-01-31,1255.2196553477206,CLOTHING,New York,0,Cloudy,Sunday,1,1
+2021-02-01,1152.1423702270304,Home & Garden,New York,0,Sunny,Monday,2,1
+2021-02-02,1057.799630950232,Books,Chicago,0,Snowy,Tuesday,2,1
+2021-02-03,951.200711995265,Books,Phoenix,0,Rainy,Wednesday,2,1
+2021-02-04,1085.0771629466285,Books,Phoenix,0,Cloudy,Thursday,2,1
+2021-02-05,1128.1049327889837,Home & Garden,Phoenix,0,Snowy,Friday,2,1
+2021-02-06,1245.8817979952964,Clothing,Houston,0,Cloudy,Saturday,2,1
+2021-02-07,1234.3228263518495,Home & Garden,Phoenix,0,Sunny,Sunday,2,1
+2021-02-08,1261.7777222098937,Sports,Phoenix,0,Snowy,Monday,2,1
+2021-02-09,1108.3812667297482,Sports,Los Angeles,0,Sunny,Tuesday,2,1
+2021-02-10,1035.006942756453,Books,Houston,0,Snowy,Wednesday,2,1
+2021-02-11,1069.018265645131,CLOTHING,Houston,0,Snowy,Thursday,2,1
+2021-02-12,1195.7070264243025,Sports,New York,0,Sunny,Friday,2,1
+2021-02-13,1398.2693076674207,Electronics,New York,0,Snowy,Saturday,2,1
+2021-02-13,1398.2693076674207,Electronics,New York,0,Snowy,Saturday,2,1
+2021-02-14,1343.6188053039293,Electronics,Los Angeles,0,Cloudy,Sunday,2,1
+2021-02-15,1163.948591750311,Books,Chicago,0,Cloudy,Monday,2,1
+2021-02-16,1152.7268516828653,Books,Houston,0,Sunny,Tuesday,2,1
+2021-02-17,1050.9215668113075,Books,New York,0,Rainy,Wednesday,2,1
+2021-02-18,1093.0049057335589,Sports,Phoenix,0,Cloudy,Thursday,2,1
+2021-02-19,1178.8079624927966,Clothing,Houston,0,Snowy,Friday,2,1
+2021-02-20,1271.162007318589,Books,Houston,0,Sunny,Saturday,2,1
+2021-02-21,1341.8208765300608,Home & Garden,Houston,1,Rainy,Sunday,2,1
+2021-02-22,1233.8210612183457,Books,New York,1,Sunny,Monday,2,1
+2021-02-23,1171.557114788563,Sports,Los Angeles,0,Cloudy,Tuesday,2,1
+2021-02-24,1111.6571088544022,Clothing,New York,0,Snowy,Wednesday,2,1
+2021-02-25,1099.3940373964879,Books,Phoenix,1,Cloudy,Thursday,2,1
+2021-02-26,1188.3597562253885,electronics,Phoenix,0,Sunny,Friday,2,1
+2021-02-27,1265.9837609298372,Books,Chicago,0,Snowy,Saturday,2,1
+2021-02-28,1351.7198557564848,Books,New York,1,Rainy,Sunday,2,1
+2021-03-01,1248.6323660895891,Clothes,New York,0,Cloudy,Monday,3,1
+2021-03-02,1271.5808651791485,Home & Garden,Chicago,0,Sunny,Tuesday,3,1
+2021-03-03,1092.5496603463414,Books,Chicago,0,Snowy,Wednesday,3,1
+2021-03-04,1114.3420899316475,Books,Houston,0,Sunny,Thursday,3,1
+2021-03-05,1180.950959119973,Sports,Houston,1,Rainy,Friday,3,1
+2021-03-06,1309.658711968865,Clothing,Phoenix,0,Rainy,Saturday,3,1
+2021-03-07,1309.8098983158159,Sports,Los Angeles,0,Cloudy,Sunday,3,1
+2021-03-08,1267.4363804266588,Books,Phoenix,0,Rainy,Monday,3,1
+2021-03-09,1251.8409467192585,Books,New York,0,Rainy,Tuesday,3,1
+2021-03-10,1140.4582077377809,Electronics,Los Angeles,0,Cloudy,Wednesday,3,1
+2021-03-11,,Sports,Houston,0,Sunny,Thursday,3,1
+2021-03-12,1264.9846347125067,Clothing,Chicago,0,Cloudy,Friday,3,1
+2021-03-13,-100.0,Books,Chicago,1,Cloudy,Saturday,3,1
+2021-03-14,1390.0678670526252,Electronics,Phoenix,0,Snowy,Sunday,3,1
+2021-03-15,1342.0962890828607,Electronics,New York,0,Rainy,Monday,3,1
+2021-03-16,1238.087080817655,Home & Garden,New York,0,Rainy,Tuesday,3,1
+2021-03-17,1210.1239158205965,Clothing,Chicago,0,Sunny,Wednesday,3,1
+2021-03-18,1150.4299922044186,Electronics,Phoenix,0,Rainy,Thursday,3,1
+2021-03-19,1258.3798983890965,Clothing,Phoenix,0,Sunny,Friday,3,1
+2021-03-20,1350.425260502199,Books,Houston,0,Snowy,Saturday,3,1
+2021-03-21,1369.6167152183314,Home & Garden,Houston,0,Sunny,Sunday,3,1
+2021-03-22,1466.7518499156113,Clothing,Houston,0,Sunny,Monday,3,1
+2021-03-23,1282.4017499985237,Home & Garden,Los Angeles,0,Snowy,Tuesday,3,1
+2021-03-24,1227.9216970935877,Clothing,Phoenix,0,Cloudy,Wednesday,3,1
+2021-03-25,1181.2755675288458,Clothing,Phoenix,1,Snowy,Thursday,3,1
+2021-03-25,1181.2755675288458,Clothing,Phoenix,1,Snowy,Thursday,3,1
+2021-03-26,1271.8675779038429,Sports,Houston,0,Rainy,Friday,3,1
+2021-03-27,1392.9663938923923,Home & Garden,Chicago,0,Rainy,Saturday,3,1
+2021-03-28,1450.416444910466,Clothing,Houston,1,Snowy,Sunday,3,1
+2021-03-29,1279.6602382636722,Sports,Los Angeles,0,Sunny,Monday,3,1
+2021-03-30,1213.0869257111613,Sports,Chicago,0,Snowy,Tuesday,3,1
+2021-03-31,1173.7727168959461,Home & Garden,Phoenix,0,Rainy,Wednesday,3,1
+2021-04-01,1217.012658315766,Books,Los Angeles,0,Snowy,Thursday,4,2
+2021-04-02,1321.814908030507,Home & Garden,Los Angeles,1,Sunny,Friday,4,2
+2021-04-03,1398.1010630541666,Clothing,Chicago,1,Rainy,Saturday,4,2
+2021-04-04,1405.122054513773,Books,Houston,0,Cloudy,Sunday,4,2
+2021-04-05,1291.0909960339034,Home & Garden,Houston,0,Snowy,Monday,4,2
+2021-04-06,1234.4901723942055,Home & Garden,New York,1,Snowy,Tuesday,4,2
+2021-04-07,1122.7431270039942,Home & Garden,Chicago,0,Snowy,Wednesday,4,2
+2021-04-08,1258.4626365900479,Home & Garden,Houston,0,Snowy,Thursday,4,2
+2021-04-09,1289.9571654616268,Books,Los Angeles,0,Rainy,Friday,4,2
+2021-04-10,1308.7228363969566,clothing,Houston,1,Sunny,Saturday,4,2
+2021-04-11,,Sports,Houston,1,Cloudy,Sunday,4,2
+2021-04-12,,Home & Garden,Los Angeles,1,Snowy,Monday,4,2
+2021-04-13,,Sports,Chicago,0,Rainy,Tuesday,4,2
+2021-04-14,,Sports,New York,0,Snowy,Wednesday,4,2
+2021-04-15,,Sports,Houston,0,Cloudy,Thursday,4,2
+2021-04-16,,garden,Houston,0,Snowy,Friday,4,2
+2021-04-17,1392.6613036156427,Home & Garden,Houston,0,Sunny,Saturday,4,2
+2021-04-18,1273.6951435123003,home,Chicago,0,Snowy,Sunday,4,2
+2021-04-19,1279.4334477149337,Home & Garden,Los Angeles,0,Snowy,Monday,4,2
+2021-04-20,1244.03823629413,Electronics,Los Angeles,0,Snowy,Tuesday,4,2
+2021-04-21,1188.7094663398832,Clothing,Los Angeles,0,Sunny,Wednesday,4,2
+2021-04-22,1144.598683288603,Electronics,Los Angeles,0,Rainy,Thursday,4,2
+2021-04-23,1288.8482818227735,Books,Los Angeles,0,Sunny,Friday,4,2
+2021-04-24,1394.479850985781,Tech,Los Angeles,0,Rainy,Saturday,4,2
+2021-04-25,1451.154845936688,Electronics,Houston,0,Sunny,Sunday,4,2
+2021-04-26,1342.5451492331365,Tech,Houston,0,Sunny,Monday,4,2
+2021-04-27,1199.4445817325825,Clothing,Los Angeles,0,Snowy,Tuesday,4,2
+2021-04-28,6094.226766329655,Sports,Los Angeles,0,Sunny,Wednesday,4,2
+2021-04-29,1243.4239063670166,Books,Chicago,0,Rainy,Thursday,4,2
+2021-04-30,1278.340380471565,Books,Chicago,1,Rainy,Friday,4,2
+2021-05-01,,Clothing,Phoenix,0,Rainy,Saturday,5,2
+2021-05-02,1359.6669814633215,Electronics,Houston,0,Rainy,Sunday,5,2
+2021-05-03,1359.0219329451043,Sports,Los Angeles,0,Sunny,Monday,5,2
+2021-05-04,1232.979607109621,Home & Garden,Houston,0,Snowy,Tuesday,5,2
+2021-05-05,1201.756395317163,Clothing,Phoenix,0,Cloudy,Wednesday,5,2
+2021-05-06,1166.136498702073,Sports,Chicago,0,Rainy,Thursday,5,2
+2021-05-07,1284.2794408979216,Clothing,Phoenix,1,Sunny,Friday,5,2
+2021-05-08,1302.6784289296822,clothing,New York,1,Snowy,Saturday,5,2
+2021-05-09,1346.7495864087311,Home & Garden,Chicago,1,Sunny,Sunday,5,2
+2021-05-10,1323.0604455083305,Sports,Houston,1,Rainy,Monday,5,2
+2021-05-11,,Electronics,Chicago,0,Rainy,Tuesday,5,2
+2021-05-12,1157.5872317005299,Sports,Phoenix,0,Snowy,Wednesday,5,2
+2021-05-13,1233.4196246424833,Sports,Los Angeles,0,Sunny,Thursday,5,2
+2021-05-14,1257.446565239177,Electronics,Phoenix,0,Rainy,Friday,5,2
+2021-05-15,1330.8995251737633,Home & Garden,Phoenix,0,Rainy,Saturday,5,2
+2021-05-16,1322.5927084144932,Sports,Los Angeles,1,Cloudy,Sunday,5,2
+2021-05-17,1285.3945993548784,Electronics,Houston,0,Cloudy,Monday,5,2
+2021-05-18,1222.867624551213,Clothing,Houston,0,Rainy,Tuesday,5,2
+2021-05-19,,Clothing,Chicago,0,Cloudy,Wednesday,5,2
+2021-05-20,1108.4985684218898,Electronics,Phoenix,0,Cloudy,Thursday,5,2
+2021-05-21,1302.0128214608771,Apparel,Chicago,0,Rainy,Friday,5,2
+2021-05-22,1319.2588063437433,Sports,Los Angeles,1,Sunny,Saturday,5,2
+2021-05-23,1351.2438573342522,Electronics,New York,0,Sunny,Sunday,5,2
+2021-05-24,1335.3451854961452,Sports,Houston,0,Sunny,Monday,5,2
+2021-05-25,1322.8111855382226,Books,Los Angeles,1,Snowy,Tuesday,5,2
+2021-05-26,1182.8783087212141,Home & Garden,Houston,0,Sunny,Wednesday,5,2
+2021-05-27,1148.542605588854,Home & Garden,Chicago,0,Snowy,Thursday,5,2
+2021-05-28,1258.6615923823256,Home & Garden,New York,0,Snowy,Friday,5,2
+2021-05-29,1346.7300303873615,Electronics,Phoenix,0,Cloudy,Saturday,5,2
+2021-05-30,0.0,Books,Houston,1,Snowy,Sunday,5,2
+2021-05-31,1232.7535761129413,Home & Garden,Phoenix,0,Snowy,Monday,5,2
+2021-06-01,1218.28983236536,Sports,Chicago,0,Snowy,Tuesday,6,2
+2021-06-02,1168.4578676149333,Home & Garden,Houston,0,Snowy,Wednesday,6,2
+2021-06-03,1178.14987307555,Books,Chicago,0,Cloudy,Thursday,6,2
+2021-06-04,1267.8908422465315,Sports,Phoenix,0,Rainy,Friday,6,2
+2021-06-05,1292.870112734027,Sports,Chicago,0,Snowy,Saturday,6,2
+2021-06-06,1382.548702820446,Electronics,Chicago,0,Rainy,Sunday,6,2
+2021-06-07,1363.3127323221456,Electronics,Chicago,0,Sunny,Monday,6,2
+2021-06-08,1151.0140702469992,Clothing,Los Angeles,0,Sunny,Tuesday,6,2
+2021-06-09,1063.9474884381423,Books,Los Angeles,0,Rainy,Wednesday,6,2
+2021-06-10,1140.2926065276235,Sports,Houston,1,Rainy,Thursday,6,2
+2021-06-11,1263.781965817752,Books,Chicago,0,Sunny,Friday,6,2
+2021-06-12,1328.80025395392,Home & Garden,Chicago,0,Cloudy,Saturday,6,2
+2021-06-13,1319.8895809767648,Home & Garden,Chicago,0,Cloudy,Sunday,6,2
+2021-06-14,1140.7291536172056,Clothing,Los Angeles,0,Snowy,Monday,6,2
+2021-06-15,1132.489149002037,Sports,Phoenix,0,Cloudy,Tuesday,6,2
+2021-06-16,1165.9022605076075,Sports,Chicago,0,Cloudy,Wednesday,6,2
+2021-06-17,1040.2953443769145,Clothing,New York,0,Snowy,Thursday,6,2
+2021-06-18,1204.3858154801765,Home & Garden,Houston,0,Snowy,Friday,6,2
+2021-06-19,1250.4407160040128,Sports,Los Angeles,0,Cloudy,Saturday,6,2
+2021-06-20,1328.669222516129,Books,Phoenix,1,Rainy,Sunday,6,2
+2021-06-21,1156.0538755421653,Sports,New York,1,Snowy,Monday,6,2
+2021-06-22,1135.130431010895,Home & Garden,Chicago,0,Rainy,Tuesday,6,2
+2021-06-23,1101.4418046197734,Sports,Los Angeles,0,Sunny,Wednesday,6,2
+2021-06-24,1092.8490401041322,Sports,Chicago,0,Snowy,Thursday,6,2
+2021-06-25,1216.2547471499881,Tech,Houston,0,Rainy,Friday,6,2
+2021-06-26,1184.7535826757166,Sports,Los Angeles,1,Snowy,Saturday,6,2
+2021-06-27,1222.5065856708577,Apparel,New York,0,Snowy,Sunday,6,2
+2021-06-28,1205.6679879172625,Clothing,Phoenix,0,Snowy,Monday,6,2
+2021-06-29,1149.5362671936277,Books,Phoenix,0,Snowy,Tuesday,6,2
+2021-06-30,1101.7059243340386,Sports,Houston,0,Rainy,Wednesday,6,2
+2021-07-01,1101.4980457536049,Books,Phoenix,0,Rainy,Thursday,7,3
+2021-07-02,1122.5184551698944,Home & Garden,Phoenix,0,Rainy,Friday,7,3
+2021-07-03,1214.3164408551597,Home & Garden,Houston,0,Sunny,Saturday,7,3
+2021-07-04,1316.2373804568713,Electronics,New York,0,Snowy,Sunday,7,3
+2021-07-05,1305.3768482339362,Electronics,Los Angeles,0,Snowy,Monday,7,3
+2021-07-06,1145.4747013656352,Sports,Los Angeles,0,Rainy,Tuesday,7,3
+2021-07-07,1075.6169036906902,Sports,Houston,0,Rainy,Wednesday,7,3
+2021-07-08,1017.506407888472,Books,Chicago,0,Snowy,Thursday,7,3
+2021-07-09,1160.7212945745687,Books,Houston,0,Snowy,Friday,7,3
+2021-07-10,1142.2738054072088,Sports,Houston,0,Sunny,Saturday,7,3
+2021-07-11,1309.0560123062953,Sports,Houston,0,Snowy,Sunday,7,3
+2021-07-12,1214.778101865914,Electronics,Houston,0,Rainy,Monday,7,3
+2021-07-13,1094.642193696709,Electronics,Phoenix,0,Sunny,Tuesday,7,3
+2021-07-14,983.0492526192012,Electronics,Phoenix,0,Cloudy,Wednesday,7,3
+2021-07-15,1066.887740545153,Sports,New York,0,Cloudy,Thursday,7,3
+2021-07-16,1058.4320608812195,Books,Houston,0,Snowy,Friday,7,3
+2021-07-17,1193.5796290990465,CLOTHING,Los Angeles,0,Rainy,Saturday,7,3
+2021-07-18,1246.9474893309075,Clothing,Chicago,0,Snowy,Sunday,7,3
+2021-07-19,1134.0545271681774,Books,Phoenix,0,Rainy,Monday,7,3
+2021-07-20,1078.5308176476176,Books,Los Angeles,0,Rainy,Tuesday,7,3
+2021-07-21,1140.5810170238055,Books,Phoenix,1,Rainy,Wednesday,7,3
+2021-07-22,951.6123475890452,Electronics,New York,0,Cloudy,Thursday,7,3
+2021-07-23,1078.2767589739838,Home & Garden,Chicago,0,Snowy,Friday,7,3
+2021-07-24,1179.8334384452985,Sports,Phoenix,0,Snowy,Saturday,7,3
+2021-07-25,1183.2522659942974,Electronics,Chicago,0,Cloudy,Sunday,7,3
+2021-07-26,1176.0638940200124,Clothing,Chicago,0,Rainy,Monday,7,3
+2021-07-27,1091.4154115188173,Sports,Los Angeles,0,Sunny,Tuesday,7,3
+2021-07-28,1010.3293660427352,Books,Phoenix,0,Sunny,Wednesday,7,3
+2021-07-29,1032.0078628402412,Clothing,Chicago,0,Cloudy,Thursday,7,3
+2021-07-30,,Books,Houston,0,Sunny,Friday,7,3
+2021-07-31,1200.8923269719244,Books,Chicago,0,Rainy,Saturday,7,3
+2021-08-01,1204.1253702803704,Books,Chicago,1,Rainy,Sunday,8,3
+2021-08-02,1103.6167734192693,Sports,Phoenix,0,Snowy,Monday,8,3
+2021-08-02,1103.6167734192693,Sports,Phoenix,0,Snowy,Monday,8,3
+2021-08-03,1130.380985082538,Clothing,Houston,0,Rainy,Tuesday,8,3
+2021-08-04,989.6192172162363,Clothing,Chicago,1,Rainy,Wednesday,8,3
+2021-08-05,1021.9030840186406,Books,Phoenix,0,Rainy,Thursday,8,3
+2021-08-06,1084.8157326675914,Electronics,Phoenix,0,Sunny,Friday,8,3
+2021-08-07,1080.5882879942842,Home & Garden,Chicago,0,Sunny,Saturday,8,3
+2021-08-08,1129.9153182455018,Electronics,New York,0,Cloudy,Sunday,8,3
+2021-08-09,1110.7435755759304,Sports,New York,0,Cloudy,Monday,8,3
+2021-08-10,1085.0825960217014,Home & Garden,Los Angeles,1,Sunny,Tuesday,8,3
+2021-08-11,957.1957633241927,Electronics,New York,0,Snowy,Wednesday,8,3
+2021-08-12,1007.945473513135,Clothing,New York,1,Snowy,Thursday,8,3
+2021-08-13,1096.857902680271,Electronics,Phoenix,0,Sunny,Friday,8,3
+2021-08-14,1110.6574339905692,Books,Phoenix,0,Cloudy,Saturday,8,3
+2021-08-15,1121.5143503472461,Sports,Chicago,0,Snowy,Sunday,8,3
+2021-08-16,1078.6315884872292,Electronics,Chicago,1,Rainy,Monday,8,3
+2021-08-17,987.1454386635959,Electronics,Phoenix,0,Snowy,Tuesday,8,3
+2021-08-18,914.2996232646354,Home & Garden,Chicago,1,Snowy,Wednesday,8,3
+2021-08-19,1029.6262134501465,Books,Phoenix,0,Snowy,Thursday,8,3
+2021-08-20,1092.5448869148695,Home & Garden,New York,0,Cloudy,Friday,8,3
+2021-08-21,1085.9296395832662,Sports,Chicago,0,Cloudy,Saturday,8,3
+2021-08-22,1166.4265257380641,Sports,New York,0,Sunny,Sunday,8,3
+2021-08-23,,Books,Los Angeles,0,Snowy,Monday,8,3
+2021-08-24,1008.6462725184418,Home & Garden,Chicago,0,Cloudy,Tuesday,8,3
+2021-08-25,961.004018794757,Books,Phoenix,0,Cloudy,Wednesday,8,3
+2021-08-26,903.522604468749,Home & Garden,Phoenix,0,Sunny,Thursday,8,3
+2021-08-27,954.9679005193233,Clothing,Los Angeles,1,Rainy,Friday,8,3
+2021-08-28,1132.6945982975706,Books,Phoenix,0,Rainy,Saturday,8,3
+2021-08-29,1130.5822862394075,Sports,New York,0,Snowy,Sunday,8,3
+2021-08-30,1083.8045118122295,Home & Garden,Phoenix,0,Rainy,Monday,8,3
+2021-08-31,974.7760844526024,Clothing,Los Angeles,1,Sunny,Tuesday,8,3
+2021-09-01,951.6835960759505,Sports,Houston,1,Cloudy,Wednesday,9,3
+2021-09-02,886.9415070993455,Home & Garden,Houston,0,Rainy,Thursday,9,3
+2021-09-03,1049.5215813462655,Clothes,New York,0,Snowy,Friday,9,3
+2021-09-04,997.7913767763155,Sports,Houston,0,Snowy,Saturday,9,3
+2021-09-05,,Sports,Phoenix,0,Cloudy,Sunday,9,3
+2021-09-06,1065.3673605984677,Apparel,Los Angeles,1,Snowy,Monday,9,3
+2021-09-07,4550.824814695241,Sports,New York,1,Sunny,Tuesday,9,3
+2021-09-08,1010.9076599941665,Home & Garden,Houston,0,Rainy,Wednesday,9,3
+2021-09-09,961.7035435543264,Home & Garden,Phoenix,1,Snowy,Thursday,9,3
+2021-09-10,1006.4948324042689,Sports,Phoenix,0,Rainy,Friday,9,3
+2021-09-11,1216.3400476715312,Electronics,Chicago,0,Cloudy,Saturday,9,3
+2021-09-12,1152.3198993839658,Clothing,Chicago,0,Rainy,Sunday,9,3
+2021-09-13,1104.4328602459482,Electronics,Los Angeles,0,Sunny,Monday,9,3
+2021-09-14,987.9822511447205,Home&Garden,New York,0,Cloudy,Tuesday,9,3
+2021-09-15,917.9578181895957,Sports,Houston,0,Snowy,Wednesday,9,3
+2021-09-16,974.5399272513173,Books,Houston,0,Cloudy,Thursday,9,3
+2021-09-17,900.5130293587116,Books,Phoenix,0,Rainy,Friday,9,3
+2021-09-17,900.5130293587116,Books,Phoenix,0,Rainy,Friday,9,3
+2021-09-18,1026.9670987137245,Electronics,Houston,1,Rainy,Saturday,9,3
+2021-09-19,1064.7796148226878,Electronics,Los Angeles,0,Rainy,Sunday,9,3
+2021-09-20,966.4145476092897,Electronics,Chicago,0,Rainy,Monday,9,3
+2021-09-21,1022.8220373987583,Home & Garden,Phoenix,0,Cloudy,Tuesday,9,3
+2021-09-22,907.1985801706827,Home & Garden,New York,0,Cloudy,Wednesday,9,3
+2021-09-23,1023.2378641223266,Sports,Phoenix,0,Rainy,Thursday,9,3
+2021-09-24,1030.4196284169204,Home & Garden,Houston,0,Snowy,Friday,9,3
+2021-09-25,1075.6932724288752,Sports,Los Angeles,0,Cloudy,Saturday,9,3
+2021-09-26,1131.8509459794993,Sports,New York,0,Sunny,Sunday,9,3
+2021-09-27,1137.2575041682512,Electronics,Phoenix,0,Cloudy,Monday,9,3
+2021-09-28,983.0582140974508,Books,Houston,0,Sunny,Tuesday,9,3
+2021-09-29,1004.5266614998051,Electronics,Phoenix,0,Snowy,Wednesday,9,3
+2021-09-30,1017.0728197497054,Home & Garden,New York,0,Sunny,Thursday,9,3
+2021-10-01,1012.5720742068082,Clothing,Houston,0,Sunny,Friday,10,4
+2021-10-02,1095.821366628039,Home & Garden,Chicago,0,Snowy,Saturday,10,4
+2021-10-03,1113.3130247058937,Books,New York,0,Rainy,Sunday,10,4
+2021-10-04,1027.197788181795,Home & Garden,Chicago,0,Cloudy,Monday,10,4
+2021-10-05,927.3074617948507,Books,Chicago,0,Snowy,Tuesday,10,4
+2021-10-06,923.7735792038915,Clothing,Houston,0,Sunny,Wednesday,10,4
+2021-10-07,847.3087755759568,Clothing,Phoenix,0,Rainy,Thursday,10,4
+2021-10-08,991.6690461079412,Sports,Phoenix,0,Cloudy,Friday,10,4
+2021-10-09,1151.6464023065607,Home & Garden,Los Angeles,0,Snowy,Saturday,10,4
+2021-10-10,1078.495808448957,Sports,New York,0,Cloudy,Sunday,10,4
+2021-10-11,1159.3534730086237,Electronics,New York,0,Rainy,Monday,10,4
+2021-10-12,1039.489985521778,Electronics,Houston,0,Cloudy,Tuesday,10,4
+2021-10-13,1049.6384531076976,Tech,Houston,1,Rainy,Wednesday,10,4
+2021-10-14,1081.1069989964508,Electronics,Los Angeles,0,Snowy,Thursday,10,4
+2021-10-15,1094.7453776882696,Electronics,Los Angeles,0,Rainy,Friday,10,4
+2021-10-16,1107.9652421911717,Home & Garden,Chicago,0,Snowy,Saturday,10,4
+2021-10-17,1075.6161538506578,Sports,Los Angeles,0,Rainy,Sunday,10,4
+2021-10-18,1032.5172701297363,Sports,Phoenix,0,Cloudy,Monday,10,4
+2021-10-19,0.0,Books,Chicago,0,Rainy,Tuesday,10,4
+2021-10-20,894.4186187338909,Electronics,Los Angeles,0,Rainy,Wednesday,10,4
+2021-10-21,979.5767055873316,Clothing,Phoenix,1,Cloudy,Thursday,10,4
+2021-10-22,1130.771496890823,Books,Phoenix,1,Sunny,Friday,10,4
+2021-10-23,1107.1324374145254,Books,Chicago,0,Rainy,Saturday,10,4
+2021-10-24,1238.2995115665617,Home & Garden,Chicago,1,Snowy,Sunday,10,4
+2021-10-25,1117.2890565379298,Books,Phoenix,0,Rainy,Monday,10,4
+2021-10-26,1046.9043068479775,Clothing,Houston,0,Sunny,Tuesday,10,4
+2021-10-27,969.8258458636913,Sports,Chicago,0,Snowy,Wednesday,10,4
+2021-10-28,,Books,New York,0,Cloudy,Thursday,10,4
+2021-10-29,,Home & Garden,Houston,0,Cloudy,Friday,10,4
+2021-10-30,,Electronics,New York,0,Cloudy,Saturday,10,4
+2021-10-31,1225.9694482359455,Clothing,Los Angeles,0,Snowy,Sunday,10,4
+2021-11-01,1188.2474585024324,Electronics,Chicago,0,Rainy,Monday,11,4
+2021-11-02,1032.0852278885743,Books,Chicago,0,Snowy,Tuesday,11,4
+2021-11-03,1030.4820741768474,Sports,Phoenix,1,Snowy,Wednesday,11,4
+2021-11-04,1069.3315330856396,Home & Garden,Chicago,1,Sunny,Thursday,11,4
+2021-11-04,1069.3315330856396,Home & Garden,Chicago,1,Sunny,Thursday,11,4
+2021-11-05,1125.861715297106,Clothing,New York,0,Snowy,Friday,11,4
+2021-11-06,1165.8332188453155,Sports,Houston,0,Cloudy,Saturday,11,4
+2021-11-07,1226.5009315757625,Clothing,Los Angeles,0,Snowy,Sunday,11,4
+2021-11-08,1057.6921749037326,Home & Garden,Houston,0,Sunny,Monday,11,4
+2021-11-09,1092.5942487627544,Home & Garden,New York,1,Snowy,Tuesday,11,4
+2021-11-10,967.0447185926967,Books,Los Angeles,0,Snowy,Wednesday,11,4
+2021-11-11,,Clothing,Phoenix,0,Cloudy,Thursday,11,4
+2021-11-12,1105.452991619995,Books,Chicago,0,Snowy,Friday,11,4
+2021-11-13,1210.168481555675,Clothing,Chicago,0,Rainy,Saturday,11,4
+2021-11-14,1152.6402922526934,Clothing,Phoenix,0,Cloudy,Sunday,11,4
+2021-11-15,1214.6835269809453,Electronics,New York,0,Sunny,Monday,11,4
+2021-11-16,1141.4810745282105,Books,Phoenix,0,Sunny,Tuesday,11,4
+2021-11-17,996.2938568224214,Clothing,New York,0,Sunny,Wednesday,11,4
+2021-11-18,999.7690298768993,Clothing,Los Angeles,0,Snowy,Thursday,11,4
+2021-11-19,1103.9638125074973,Home & Garden,Houston,0,Rainy,Friday,11,4
+2021-11-20,1268.2393513359384,Electronics,Houston,0,Cloudy,Saturday,11,4
+2021-11-21,1250.627847004646,Home & Garden,Phoenix,0,Rainy,Sunday,11,4
+2021-11-22,1193.1556143812736,Books,Chicago,0,Rainy,Monday,11,4
+2021-11-22,1193.1556143812736,Books,Chicago,0,Rainy,Monday,11,4
+2021-11-23,1112.681794549689,Books,Phoenix,0,Sunny,Tuesday,11,4
+2021-11-24,1036.154789837606,Clothing,Chicago,0,Sunny,Wednesday,11,4
+2021-11-25,1109.2918090127848,Sports,Phoenix,0,Rainy,Thursday,11,4
+2021-11-26,1250.3064093637474,Home & Garden,Phoenix,0,Rainy,Friday,11,4
+2021-11-27,1211.716666253043,Books,Houston,0,Cloudy,Saturday,11,4
+2021-11-28,1310.7220343344297,Clothing,Chicago,0,Sunny,Sunday,11,4
+2021-11-29,1226.4919204056257,Clothing,Houston,1,Sunny,Monday,11,4
+2021-11-30,1143.129700296818,Home & Garden,Chicago,1,Snowy,Tuesday,11,4
+2021-12-01,1164.8819798523132,Clothing,Los Angeles,1,Sunny,Wednesday,12,4
+2021-12-01,1164.8819798523132,Clothing,Los Angeles,1,Sunny,Wednesday,12,4
+2021-12-02,1168.6969465091713,Electronics,Los Angeles,1,Cloudy,Thursday,12,4
+2021-12-03,1201.7151909871643,Sports,Los Angeles,0,Snowy,Friday,12,4
+2021-12-04,1329.8548919237903,Home & Garden,New York,1,Cloudy,Saturday,12,4
+2021-12-05,1220.7933507246457,Home & Garden,Houston,0,Sunny,Sunday,12,4
+2021-12-06,1146.7840823693057,Home & Garden,Houston,0,Sunny,Monday,12,4
+2021-12-07,1138.6819415694606,Clothing,Los Angeles,0,Rainy,Tuesday,12,4
+2021-12-08,1073.4951935946792,Clothing,Phoenix,0,Rainy,Wednesday,12,4
+2021-12-09,1135.0756061009158,Home & Garden,Houston,1,Cloudy,Thursday,12,4
+2021-12-10,1286.502341217213,Home & Garden,Chicago,0,Snowy,Friday,12,4
+2021-12-11,1301.2932309926712,Electronics,Houston,0,Sunny,Saturday,12,4
+2021-12-12,1382.1837199431122,Books,Houston,0,Rainy,Sunday,12,4
+2021-12-13,1331.1208754944723,Electronics,Chicago,0,Rainy,Monday,12,4
+2021-12-14,1115.1165290861668,Home & Garden,Los Angeles,1,Sunny,Tuesday,12,4
+2021-12-15,1188.714618140681,Clothing,Los Angeles,1,Sunny,Wednesday,12,4
+2021-12-16,1235.6130624319535,CLOTHING,Chicago,0,Snowy,Thursday,12,4
+2021-12-17,1321.5038099114279,Home & Garden,Houston,0,Rainy,Friday,12,4
+2021-12-18,1337.221941534299,Books,Houston,0,Snowy,Saturday,12,4
+2021-12-19,1370.273212893294,Sports,Los Angeles,1,Snowy,Sunday,12,4
+2021-12-20,1323.7107679952117,Sports,New York,0,Sunny,Monday,12,4
+2021-12-21,1230.3676601038821,Electronics,Los Angeles,0,Snowy,Tuesday,12,4
+2021-12-22,1132.9346953625122,Books,Chicago,0,Sunny,Wednesday,12,4
+2021-12-23,1167.933416068179,Sports,New York,0,Cloudy,Thursday,12,4
+2021-12-24,1321.7364966337298,Books,New York,0,Snowy,Friday,12,4
+2021-12-25,1366.3917111452713,Clothing,Chicago,1,Rainy,Saturday,12,4
+2021-12-26,1402.6755373153444,Clothing,Phoenix,0,Rainy,Sunday,12,4
+2021-12-27,1402.4832262533178,Books,Los Angeles,1,Cloudy,Monday,12,4
+2021-12-28,1269.2528714406021,Home & Garden,Houston,0,Cloudy,Tuesday,12,4
+2021-12-29,1158.57034041082,Sports,Los Angeles,0,Snowy,Wednesday,12,4
+2021-12-30,1349.6877108560727,Sports,Chicago,0,Rainy,Thursday,12,4
+2021-12-31,1306.9962051312712,Clothing,Houston,0,Rainy,Friday,12,4
+2022-01-01,1386.641905071641,Electronics,Phoenix,0,Sunny,Saturday,1,1
+2022-01-02,1442.3804880691855,Sports,Chicago,0,Sunny,Sunday,1,1
+2022-01-03,,Clothing,Los Angeles,0,Rainy,Monday,1,1
+2022-01-04,1292.8617384266488,Clothing,New York,0,Sunny,Tuesday,1,1
+2022-01-05,1217.7580569047118,Books,Chicago,0,Sunny,Wednesday,1,1
+2022-01-06,1318.4230015943338,Books,Chicago,0,Sunny,Thursday,1,1
+2022-01-07,1408.2656471139935,Books,Los Angeles,0,Cloudy,Friday,1,1
+2022-01-08,7629.3581837459615,Electronics,Phoenix,0,Rainy,Saturday,1,1
+2022-01-09,1556.8833825374184,Sports,Los Angeles,0,Rainy,Sunday,1,1
+2022-01-10,1309.9907465783008,Electronics,Los Angeles,0,Rainy,Monday,1,1
+2022-01-11,1356.8497577494427,Electronics,Phoenix,0,Sunny,Tuesday,1,1
+2022-01-12,1217.3590879840863,Books,Phoenix,1,Snowy,Wednesday,1,1
+2022-01-13,1364.506660231675,Apparel,Chicago,0,Snowy,Thursday,1,1
+2022-01-14,1398.7745487958446,Home & Garden,New York,0,Sunny,Friday,1,1
+2022-01-15,1428.5823180253753,Clothes,Los Angeles,0,Cloudy,Saturday,1,1
+2022-01-16,1431.8379564146398,Clothing,New York,0,Cloudy,Sunday,1,1
+2022-01-17,1406.0433277923664,Clothing,Phoenix,0,Rainy,Monday,1,1
+2022-01-18,1315.9887832362422,Clothing,Phoenix,0,Snowy,Tuesday,1,1
+2022-01-19,1372.8218313221084,Electronics,Los Angeles,0,Cloudy,Wednesday,1,1
+2022-01-20,1333.3871992548086,Books,Chicago,1,Snowy,Thursday,1,1
+2022-01-21,1362.39855380182,Books,Los Angeles,1,Snowy,Friday,1,1
+2022-01-22,1515.7236553691191,Clothing,Chicago,0,Cloudy,Saturday,1,1
+2022-01-23,1538.2620551755672,Home & Garden,Houston,1,Sunny,Sunday,1,1
+2022-01-24,1461.5871293780276,Sports,Chicago,0,Rainy,Monday,1,1
+2022-01-25,7239.873696760564,Clothing,Los Angeles,0,Rainy,Tuesday,1,1
+2022-01-26,1365.1379418550873,Clothing,Los Angeles,0,Cloudy,Wednesday,1,1
+2022-01-27,1384.497440268647,Home & Garden,Chicago,1,Sunny,Thursday,1,1
+2022-01-28,1350.010942923874,Electronics,New York,1,Cloudy,Friday,1,1
+2022-01-29,1507.6228311599307,Clothing,Chicago,0,Cloudy,Saturday,1,1
+2022-01-30,1580.9641886580941,Home & Garden,Houston,0,Snowy,Sunday,1,1
+2022-01-31,1516.5716359755556,Electronics,Houston,1,Snowy,Monday,1,1
+2022-02-01,1419.4680343263017,Electronics,New York,0,Rainy,Tuesday,2,1
+2022-02-02,1399.5689361185064,Clothing,Houston,0,Snowy,Wednesday,2,1
+2022-02-03,1410.858322916608,ELECTRONICS,Los Angeles,0,Snowy,Thursday,2,1
+2022-02-04,1510.6051440463461,Clothing,New York,0,Sunny,Friday,2,1
+2022-02-05,,Clothing,New York,0,Cloudy,Saturday,2,1
+2022-02-06,1613.434995548572,Books,New York,0,Cloudy,Sunday,2,1
+2022-02-07,1560.5226427344771,Sports,Chicago,0,Sunny,Monday,2,1
+2022-02-08,1441.7359858431373,Sports,Chicago,1,Snowy,Tuesday,2,1
+2022-02-09,1393.901799569072,Books,New York,0,Snowy,Wednesday,2,1
+2022-02-10,1422.2424230165923,Clothing,Houston,0,Cloudy,Thursday,2,1
+2022-02-11,1437.8961645826582,Home & Garden,Los Angeles,1,Rainy,Friday,2,1
+2022-02-12,1504.5772907136472,Electronics,Los Angeles,1,Cloudy,Saturday,2,1
+2022-02-13,1629.7968147814806,Books,Chicago,0,Rainy,Sunday,2,1
+2022-02-13,1629.7968147814806,Books,Chicago,0,Rainy,Sunday,2,1
+2022-02-14,1581.8192726501038,Books,Phoenix,0,Snowy,Monday,2,1
+2022-02-15,1469.302601457846,Books,New York,0,Rainy,Tuesday,2,1
+2022-02-16,1437.619442691095,Books,Phoenix,0,Rainy,Wednesday,2,1
+2022-02-17,1475.2911805072777,Sports,Los Angeles,1,Rainy,Thursday,2,1
+2022-02-18,1545.7180604857579,Clothing,Chicago,0,Rainy,Friday,2,1
+2022-02-19,1633.3799539220497,Books,Chicago,0,Rainy,Saturday,2,1
+2022-02-20,1563.0521258026986,Books,Chicago,0,Cloudy,Sunday,2,1
+2022-02-21,1659.1904095639052,Books,Chicago,1,Sunny,Monday,2,1
+2022-02-22,1509.3919240243779,Home & Garden,Chicago,0,Snowy,Tuesday,2,1
+2022-02-23,1488.9578660616999,Home & Garden,New York,0,Cloudy,Wednesday,2,1
+2022-02-24,1493.7233733888306,Electronics,Phoenix,0,Sunny,Thursday,2,1
+2022-02-25,1494.0983249455562,Clothing,Los Angeles,0,Cloudy,Friday,2,1
+2022-02-26,1592.4198469754906,Books,Los Angeles,1,Sunny,Saturday,2,1
+2022-02-27,1622.667804526686,Electronics,Chicago,0,Cloudy,Sunday,2,1
+2022-02-28,,Electronics,Chicago,0,Snowy,Monday,2,1
+2022-03-01,1465.48856523626,Clothing,Chicago,1,Snowy,Tuesday,3,1
+2022-03-02,1399.5774836539317,Home & Garden,Houston,0,Rainy,Wednesday,3,1
+2022-03-03,1505.6656849960186,Clothing,Los Angeles,0,Sunny,Thursday,3,1
+2022-03-04,1652.6393490711323,Electronics,Chicago,0,Cloudy,Friday,3,1
+2022-03-05,1603.6653811537078,Clothing,Phoenix,0,Rainy,Saturday,3,1
+2022-03-06,1739.2454361912494,Home & Garden,Houston,0,Cloudy,Sunday,3,1
+2022-03-07,1653.24107003781,Electronics,New York,0,Snowy,Monday,3,1
+2022-03-08,1510.4737527819552,Apparel,Houston,0,Snowy,Tuesday,3,1
+2022-03-09,1413.6665051470027,Books,Houston,0,Sunny,Wednesday,3,1
+2022-03-10,1484.541979908291,Books,Houston,0,Cloudy,Thursday,3,1
+2022-03-11,1542.28051809172,Clothes,Phoenix,0,Cloudy,Friday,3,1
+2022-03-12,1722.2208547669288,Clothing,Los Angeles,0,Rainy,Saturday,3,1
+2022-03-13,1681.975437922096,Home & Garden,Chicago,0,Snowy,Sunday,3,1
+2022-03-14,1655.6853838743198,Electronics,Phoenix,0,Rainy,Monday,3,1
+2022-03-15,1571.2531421315693,Clothing,Phoenix,1,Rainy,Tuesday,3,1
+2022-03-16,1462.734691215229,Electronics,Chicago,0,Sunny,Wednesday,3,1
+2022-03-17,1519.5594444483481,Books,Houston,0,Rainy,Thursday,3,1
+2022-03-18,1646.0437183473402,Electronics,New York,1,Sunny,Friday,3,1
+2022-03-19,1672.1631322184317,Sports,Houston,0,Snowy,Saturday,3,1
+2022-03-20,1683.7232411263346,Home&Garden,Houston,0,Rainy,Sunday,3,1
+2022-03-21,1679.102483128875,Home & Garden,Los Angeles,0,Rainy,Monday,3,1
+2022-03-22,,Electronics,Houston,0,Rainy,Tuesday,3,1
+2022-03-23,1396.7223387410006,Home & Garden,New York,1,Rainy,Wednesday,3,1
+2022-03-24,1542.1106034527209,Electronics,Phoenix,0,Snowy,Thursday,3,1
+2022-03-25,1658.5593052187467,Electronic,Houston,0,Sunny,Friday,3,1
+2022-03-26,1777.0034617294336,Books,Phoenix,0,Snowy,Saturday,3,1
+2022-03-27,1717.3684129516203,Electronics,Los Angeles,1,Sunny,Sunday,3,1
+2022-03-28,1695.9331714304656,Home & Garden,New York,0,Sunny,Monday,3,1
+2022-03-29,1635.064105285201,Sports,Chicago,0,Rainy,Tuesday,3,1
+2022-03-30,1517.778828638905,Clothes,Chicago,1,Rainy,Wednesday,3,1
+2022-03-31,1504.5507542105552,Home & Garden,Los Angeles,0,Rainy,Thursday,3,1
+2022-04-01,1578.6255782172282,Sports,New York,0,Sunny,Friday,4,2
+2022-04-02,1680.25991281804,Home & Garden,Phoenix,1,Cloudy,Saturday,4,2
+2022-04-03,1787.689720037085,Sports,Los Angeles,0,Cloudy,Sunday,4,2
+2022-04-04,1708.5869515662023,Home & Garden,Houston,0,Cloudy,Monday,4,2
+2022-04-05,1565.067109511458,Clothing,Phoenix,0,Snowy,Tuesday,4,2
+2022-04-05,1565.067109511458,Clothing,Phoenix,0,Snowy,Tuesday,4,2
+2022-04-06,1584.9122051262877,Books,Houston,0,Sunny,Wednesday,4,2
+2022-04-07,1565.2626449540019,Books,Houston,0,Cloudy,Thursday,4,2
+2022-04-08,1610.5735132643858,Clothing,Phoenix,0,Sunny,Friday,4,2
+2022-04-08,1610.5735132643858,Clothing,Phoenix,0,Sunny,Friday,4,2
+2022-04-09,1709.0275533202446,Home & Garden,Houston,0,Sunny,Saturday,4,2
+2022-04-10,1740.118477887641,Sports,Chicago,0,Snowy,Sunday,4,2
+2022-04-11,1673.168022418941,Electronics,Phoenix,0,Rainy,Monday,4,2
+2022-04-12,1666.9926908417892,Home & Garden,Los Angeles,0,Rainy,Tuesday,4,2
+2022-04-13,1518.6775272534403,Clothing,Chicago,1,Snowy,Wednesday,4,2
+2022-04-14,1476.625877652518,Books,Los Angeles,0,Snowy,Thursday,4,2
+2022-04-15,1639.7695138036459,Books,New York,1,Sunny,Friday,4,2
+2022-04-16,1687.9066946611883,Home & Garden,Los Angeles,0,Cloudy,Saturday,4,2
+2022-04-17,1654.754274192805,Sports,Phoenix,0,Sunny,Sunday,4,2
+2022-04-18,1701.0408670980237,Clothing,Los Angeles,0,Sunny,Monday,4,2
+2022-04-19,1400.6442084296768,Clothing,New York,1,Cloudy,Tuesday,4,2
+2022-04-20,1541.2732689357404,Sports,Houston,0,Rainy,Wednesday,4,2
+2022-04-21,1427.564622051946,Sports,Phoenix,0,Sunny,Thursday,4,2
+2022-04-22,1624.28170169343,Home & Garden,Chicago,0,Rainy,Friday,4,2
+2022-04-23,1729.6385536706946,Home & Garden,Chicago,0,Rainy,Saturday,4,2
+2022-04-24,1757.5812471520428,Books,Los Angeles,1,Rainy,Sunday,4,2
+2022-04-25,1706.940852416147,Books,Chicago,0,Sunny,Monday,4,2
+2022-04-26,,Sports,New York,0,Cloudy,Tuesday,4,2
+2022-04-27,1534.2523121828478,Electronics,Chicago,1,Cloudy,Wednesday,4,2
+2022-04-28,1508.5041765717256,Electronics,Los Angeles,1,Rainy,Thursday,4,2
+2022-04-29,,Electronics,Chicago,0,Rainy,Friday,4,2
+2022-04-30,1693.219553072742,Clothing,Houston,0,Cloudy,Saturday,4,2
+2022-04-30,1693.219553072742,Clothing,Houston,0,Cloudy,Saturday,4,2
+2022-05-01,1696.317587552611,Home & Garden,Houston,0,Snowy,Sunday,5,2
+2022-05-02,1610.7171634110457,Sports,Chicago,0,Snowy,Monday,5,2
+2022-05-03,1591.0682758092198,Books,Phoenix,0,Rainy,Tuesday,5,2
+2022-05-04,1547.4621777946845,Electronics,Chicago,0,Cloudy,Wednesday,5,2
+2022-05-05,1495.4046358013693,Books,Houston,1,Snowy,Thursday,5,2
+2022-05-06,1606.4946517579322,Home & Garden,Houston,0,Cloudy,Friday,5,2
+2022-05-07,1684.5529594330173,Sports,New York,0,Sunny,Saturday,5,2
+2022-05-08,1703.6391787623231,Electronics,Los Angeles,1,Rainy,Sunday,5,2
+2022-05-09,1653.1726698341988,Electronics,New York,0,Snowy,Monday,5,2
+2022-05-10,1582.5331388574589,Sports,Phoenix,0,Rainy,Tuesday,5,2
+2022-05-11,1571.216187194345,Books,Los Angeles,0,Sunny,Wednesday,5,2
+2022-05-12,,Home & Garden,Chicago,0,Cloudy,Thursday,5,2
+2022-05-13,1582.3247212250712,home,Chicago,1,Rainy,Friday,5,2
+2022-05-14,1684.0950083240798,Home & Garden,Phoenix,0,Snowy,Saturday,5,2
+2022-05-15,1649.4958178293718,Books,Houston,0,Sunny,Sunday,5,2
+2022-05-16,,Books,Chicago,0,Snowy,Monday,5,2
+2022-05-17,,Electronics,New York,0,Cloudy,Tuesday,5,2
+2022-05-18,,Books,Houston,0,Snowy,Wednesday,5,2
+2022-05-19,,Clothing,Chicago,0,Snowy,Thursday,5,2
+2022-05-20,1644.1194951232512,Sports,Houston,0,Snowy,Friday,5,2
+2022-05-21,1694.4874216397438,Books,Los Angeles,0,Sunny,Saturday,5,2
+2022-05-22,1734.973081224596,Home & Garden,Chicago,0,Snowy,Sunday,5,2
+2022-05-23,1652.9455984811325,Books,Chicago,0,Snowy,Monday,5,2
+2022-05-24,1647.247187413526,Electronics,Houston,0,Sunny,Tuesday,5,2
+2022-05-25,1430.2266596812901,Sports,Los Angeles,0,Sunny,Wednesday,5,2
+2022-05-26,1515.0578167609806,Sports,New York,0,Sunny,Thursday,5,2
+2022-05-27,1621.9946848056882,Home & Garden,Los Angeles,0,Cloudy,Friday,5,2
+2022-05-28,1640.8353227314237,Sports,New York,0,Sunny,Saturday,5,2
+2022-05-29,,Clothing,Phoenix,1,Cloudy,Sunday,5,2
+2022-05-30,-100.0,Sports,Los Angeles,0,Sunny,Monday,5,2
+2022-05-31,1459.943716163688,Home & Garden,New York,0,Sunny,Tuesday,5,2
+2022-06-01,1496.5292399605512,Sports,Houston,1,Rainy,Wednesday,6,2
+2022-06-02,1526.102533766048,Books,New York,0,Rainy,Thursday,6,2
+2022-06-03,1653.443045195186,Electronics,Phoenix,0,Rainy,Friday,6,2
+2022-06-04,1638.9271504953663,Books,New York,1,Rainy,Saturday,6,2
+2022-06-05,1693.0305413637798,Clothing,Los Angeles,0,Sunny,Sunday,6,2
+2022-06-06,0.0,Clothing,New York,0,Sunny,Monday,6,2
+2022-06-07,1491.7609727407794,Electronics,Los Angeles,0,Cloudy,Tuesday,6,2
+2022-06-08,1446.1041334807417,Electronics,Phoenix,0,Sunny,Wednesday,6,2
+2022-06-09,1371.0030762483102,Electronics,New York,0,Cloudy,Thursday,6,2
+2022-06-10,1532.9389085032872,Electronics,New York,0,Snowy,Friday,6,2
+2022-06-11,1711.0411627633664,Sports,Phoenix,0,Snowy,Saturday,6,2
+2022-06-12,1640.872846267459,Books,New York,0,Sunny,Sunday,6,2
+2022-06-13,1635.3037730751848,Clothing,Los Angeles,0,Snowy,Monday,6,2
+2022-06-14,1515.3533170213227,Sports,Chicago,0,Sunny,Tuesday,6,2
+2022-06-15,1468.7239003817274,Electronics,Chicago,1,Cloudy,Wednesday,6,2
+2022-06-16,,Home & Garden,Los Angeles,0,Rainy,Thursday,6,2
+2022-06-17,1519.8047174117942,Home & Garden,New York,0,Snowy,Friday,6,2
+2022-06-18,1595.234938558264,Books,Los Angeles,0,Sunny,Saturday,6,2
+2022-06-19,1687.259634720339,Clothing,Phoenix,0,Rainy,Sunday,6,2
+2022-06-20,1572.3289215088137,Clothing,Los Angeles,0,Cloudy,Monday,6,2
+2022-06-21,1473.4991065768993,Books,Chicago,0,Sunny,Tuesday,6,2
+2022-06-22,1478.251658935013,Electronics,Houston,0,Snowy,Wednesday,6,2
+2022-06-23,1460.329666455175,Electronics,Phoenix,1,Cloudy,Thursday,6,2
+2022-06-24,1515.5399670440484,Clothing,New York,1,Sunny,Friday,6,2
+2022-06-25,1581.7110660350886,Clothing,Los Angeles,0,Snowy,Saturday,6,2
+2022-06-26,1573.4530425348898,Clothing,Phoenix,1,Cloudy,Sunday,6,2
+2022-06-27,1481.5945914529593,Electronics,Chicago,0,Cloudy,Monday,6,2
+2022-06-28,1525.2825302832061,Home & Garden,New York,0,Rainy,Tuesday,6,2
+2022-06-29,1391.876390041617,Books,Los Angeles,0,Rainy,Wednesday,6,2
+2022-06-30,1344.6944905363634,Books,Los Angeles,0,Rainy,Thursday,6,2
+2022-07-01,1594.6992691887217,Sports,New York,0,Sunny,Friday,7,3
+2022-07-02,1585.5270484118591,Sports,Houston,0,Cloudy,Saturday,7,3
+2022-07-03,1599.094433344727,Home & Garden,Houston,0,Rainy,Sunday,7,3
+2022-07-04,1461.97792272811,Clothing,Phoenix,0,Snowy,Monday,7,3
+2022-07-05,1481.098193165547,Home & Garden,Los Angeles,0,Sunny,Tuesday,7,3
+2022-07-06,1368.8617502960976,Sports,Phoenix,1,Rainy,Wednesday,7,3
+2022-07-07,1385.7649998995269,Sports,New York,1,Sunny,Thursday,7,3
+2022-07-08,1508.565284825145,Books,Phoenix,1,Cloudy,Friday,7,3
+2022-07-09,1569.5848978818515,Home & Garden,Los Angeles,0,Snowy,Saturday,7,3
+2022-07-10,1531.7467470777854,Electronics,Houston,0,Cloudy,Sunday,7,3
+2022-07-11,1452.5370490893515,Sports,Houston,1,Snowy,Monday,7,3
+2022-07-12,1442.754586627896,Books,New York,1,Cloudy,Tuesday,7,3
+2022-07-13,1381.832744318893,Clothing,Chicago,0,Sunny,Wednesday,7,3
+2022-07-14,1525.044789445835,Home&Garden,Phoenix,0,Cloudy,Thursday,7,3
+2022-07-15,1358.0738610310668,Sports,New York,0,Snowy,Friday,7,3
+2022-07-16,1553.5680770001213,Electronics,Houston,1,Sunny,Saturday,7,3
+2022-07-17,1481.9315841178795,Sports,Los Angeles,0,Sunny,Sunday,7,3
+2022-07-18,1485.8236120265437,Electronics,Los Angeles,1,Snowy,Monday,7,3
+2022-07-19,1395.9993619900188,Home & Garden,Chicago,0,Snowy,Tuesday,7,3
+2022-07-20,1387.9909629668523,Electronics,Chicago,0,Sunny,Wednesday,7,3
+2022-07-21,1406.3294479278097,Electronics,Houston,0,Snowy,Thursday,7,3
+2022-07-22,1521.902754187343,Books,Chicago,0,Cloudy,Friday,7,3
+2022-07-23,1541.8419145719504,Home & Garden,Chicago,0,Cloudy,Saturday,7,3
+2022-07-24,1595.7730124944117,Sports,Los Angeles,0,Cloudy,Sunday,7,3
+2022-07-25,1558.9003756367379,Clothing,Phoenix,0,Sunny,Monday,7,3
+2022-07-26,1413.9723602874628,Home & Garden,Los Angeles,0,Cloudy,Tuesday,7,3
+2022-07-27,1403.4450038761863,Home & Garden,Los Angeles,0,Sunny,Wednesday,7,3
+2022-07-28,1372.4574605970113,Clothing,Houston,0,Snowy,Thursday,7,3
+2022-07-29,1437.445951750348,Sports,Houston,0,Cloudy,Friday,7,3
+2022-07-30,1481.5896959004288,Books,Phoenix,0,Sunny,Saturday,7,3
+2022-07-31,-100.0,Sports,New York,1,Rainy,Sunday,7,3
+2022-08-01,1491.8925608965017,CLOTHING,Chicago,0,Cloudy,Monday,8,3
+2022-08-02,1403.6936834882404,Sports,Chicago,0,Cloudy,Tuesday,8,3
+2022-08-03,1386.7242777905728,Home & Garden,Los Angeles,0,Sunny,Wednesday,8,3
+2022-08-04,1392.3523462824808,Books,Los Angeles,0,Sunny,Thursday,8,3
+2022-08-05,1349.4551407435276,Electronics,Phoenix,1,Snowy,Friday,8,3
+2022-08-06,1426.6234118748534,Sports,Chicago,0,Sunny,Saturday,8,3
+2022-08-07,1522.943504455972,Electronics,Los Angeles,1,Snowy,Sunday,8,3
+2022-08-08,1411.957344063026,Books,Los Angeles,0,Rainy,Monday,8,3
+2022-08-09,1367.3338149265398,Electronics,Houston,0,Snowy,Tuesday,8,3
+2022-08-10,-100.0,Sports,New York,0,Cloudy,Wednesday,8,3
+2022-08-11,1338.5334983953994,Clothing,Phoenix,1,Sunny,Thursday,8,3
+2022-08-12,,Home & Garden,New York,0,Rainy,Friday,8,3
+2022-08-13,1506.6850468435944,Home & Garden,New York,0,Rainy,Saturday,8,3
+2022-08-14,1450.7324650830408,Electronics,Phoenix,0,Sunny,Sunday,8,3
+2022-08-15,1455.2675335080235,Home & Garden,Chicago,0,Cloudy,Monday,8,3
+2022-08-16,1275.7551239204515,Home & Garden,Los Angeles,0,Sunny,Tuesday,8,3
+2022-08-17,1247.9127496329695,Clothing,Phoenix,0,Sunny,Wednesday,8,3
+2022-08-18,1357.5119087269816,Electronics,Los Angeles,0,Sunny,Thursday,8,3
+2022-08-19,1463.029640311704,Clothing,Houston,0,Snowy,Friday,8,3
+2022-08-20,1521.2444041606686,Clothing,New York,1,Rainy,Saturday,8,3
+2022-08-20,1521.2444041606686,Clothing,New York,1,Rainy,Saturday,8,3
+2022-08-21,1531.4849352389763,Books,Houston,0,Rainy,Sunday,8,3
+2022-08-22,1512.2212447841325,Electronics,New York,0,Cloudy,Monday,8,3
+2022-08-23,1398.34262033919,Clothing,Chicago,0,Rainy,Tuesday,8,3
+2022-08-24,1218.1609396877393,Sports,Phoenix,0,Sunny,Wednesday,8,3
+2022-08-25,1360.466857435511,Home & Garden,Chicago,0,Rainy,Thursday,8,3
+2022-08-26,1436.6963442229721,ELECTRONICS,New York,0,Cloudy,Friday,8,3
+2022-08-27,1373.2363096556833,Books,Houston,0,Snowy,Saturday,8,3
+2022-08-28,1451.4661710076211,Clothing,New York,0,Snowy,Sunday,8,3
+2022-08-29,1508.9576041525465,Sports,Chicago,1,Sunny,Monday,8,3
+2022-08-30,1335.7818031532363,Home & Garden,Chicago,1,Sunny,Tuesday,8,3
+2022-08-31,1230.1967919944757,Home & Garden,Houston,0,Rainy,Wednesday,8,3
+2022-09-01,1348.854417442603,Sports,Houston,0,Rainy,Thursday,9,3
+2022-09-02,1369.261941970548,Electronics,Chicago,0,Cloudy,Friday,9,3
+2022-09-03,1441.1388520932385,Home & Garden,New York,1,Sunny,Saturday,9,3
+2022-09-04,1522.7328739240354,Home & Garden,New York,1,Cloudy,Sunday,9,3
+2022-09-05,,Home & Garden,Phoenix,1,Snowy,Monday,9,3
+2022-09-06,1330.9904202711334,Clothing,Chicago,0,Rainy,Tuesday,9,3
+2022-09-07,1298.7795030270768,Clothing,Phoenix,0,Sunny,Wednesday,9,3
+2022-09-08,1292.2948918991679,Home & Garden,Chicago,1,Rainy,Thursday,9,3
+2022-09-09,1424.4673345448648,Books,Phoenix,1,Sunny,Friday,9,3
+2022-09-10,1385.6975724963195,Home & Garden,Los Angeles,1,Snowy,Saturday,9,3
+2022-09-11,1465.9043202486578,Electronic,New York,0,Cloudy,Sunday,9,3
+2022-09-12,1400.465463818522,Books,New York,0,Sunny,Monday,9,3
+2022-09-13,1349.4164922122316,Electronics,Los Angeles,0,Rainy,Tuesday,9,3
+2022-09-14,1223.5236596286898,Sports,Houston,1,Sunny,Wednesday,9,3
+2022-09-15,1374.043249939872,Sports,Los Angeles,1,Cloudy,Thursday,9,3
+2022-09-16,1340.0841928493787,Clothing,New York,0,Snowy,Friday,9,3
+2022-09-17,1508.2929830277767,Clothing,Chicago,0,Rainy,Saturday,9,3
+2022-09-18,,Clothing,Phoenix,0,Snowy,Sunday,9,3
+2022-09-19,1431.461619202342,Sports,New York,0,Snowy,Monday,9,3
+2022-09-20,1346.438525837618,Electronics,Los Angeles,0,Cloudy,Tuesday,9,3
+2022-09-21,1187.4070591288178,Books,Chicago,0,Sunny,Wednesday,9,3
+2022-09-22,1274.6262124698167,Clothing,New York,0,Sunny,Thursday,9,3
+2022-09-23,1540.906487593299,Sports,Los Angeles,0,Sunny,Friday,9,3
+2022-09-24,1467.5999252132049,Clothing,New York,0,Sunny,Saturday,9,3
+2022-09-25,1497.2537396982043,Home & Garden,Los Angeles,0,Rainy,Sunday,9,3
+2022-09-26,1327.222761877883,Books,Los Angeles,1,Snowy,Monday,9,3
+2022-09-27,1324.7647188573465,Electronics,New York,0,Sunny,Tuesday,9,3
+2022-09-28,1265.6305232114998,Clothing,Chicago,0,Snowy,Wednesday,9,3
+2022-09-29,1266.4432220086228,Home & Garden,New York,1,Rainy,Thursday,9,3
+2022-09-30,1411.1328380294976,Home & Garden,New York,0,Rainy,Friday,9,3
+2022-10-01,1440.0587329562318,Books,Chicago,0,Rainy,Saturday,10,4
+2022-10-02,1445.3544277403932,Sports,New York,0,Snowy,Sunday,10,4
+2022-10-03,1354.9025639224415,Sports,Phoenix,0,Sunny,Monday,10,4
+2022-10-04,1287.3407991756324,Clothing,Phoenix,0,Snowy,Tuesday,10,4
+2022-10-05,1240.4136405099748,Clothing,Phoenix,0,Sunny,Wednesday,10,4
+2022-10-06,1292.8773297355585,Sports,Los Angeles,0,Cloudy,Thursday,10,4
+2022-10-07,1364.608481981375,Electronics,Houston,0,Sunny,Friday,10,4
+2022-10-08,1437.422226054202,Electronics,New York,0,Sunny,Saturday,10,4
+2022-10-09,1405.1691756458022,Home & Garden,Houston,0,Sunny,Sunday,10,4
+2022-10-10,1386.3182656672261,Books,Phoenix,0,Rainy,Monday,10,4
+2022-10-11,1357.6171494571993,Electronics,Chicago,0,Cloudy,Tuesday,10,4
+2022-10-12,1371.5396769069364,Clothing,Phoenix,0,Sunny,Wednesday,10,4
+2022-10-13,1399.4486758082508,Electronics,New York,1,Cloudy,Thursday,10,4
+2022-10-14,1499.1662408824873,Books,Houston,0,Snowy,Friday,10,4
+2022-10-15,1492.1649828496677,Apparel,Houston,0,Snowy,Saturday,10,4
+2022-10-16,1497.2305740580152,Books,Los Angeles,0,Rainy,Sunday,10,4
+2022-10-17,1479.3598153806686,Sports,Chicago,0,Snowy,Monday,10,4
+2022-10-18,1344.7781670722475,Books,Phoenix,1,Cloudy,Tuesday,10,4
+2022-10-18,1344.7781670722475,Books,Phoenix,1,Cloudy,Tuesday,10,4
+2022-10-19,1350.5858657834897,Books,Chicago,1,Cloudy,Wednesday,10,4
+2022-10-20,1323.641674460465,Books,New York,0,Cloudy,Thursday,10,4
+2022-10-21,1425.6870027640703,Clothing,Los Angeles,0,Cloudy,Friday,10,4
+2022-10-22,,Books,Phoenix,0,Cloudy,Saturday,10,4
+2022-10-23,1561.6925362310149,Books,New York,0,Rainy,Sunday,10,4
+2022-10-24,1412.2551751725844,Home & Garden,Chicago,0,Sunny,Monday,10,4
+2022-10-25,1345.1275503251557,Clothes,Los Angeles,1,Snowy,Tuesday,10,4
+2022-10-26,1308.2804401228018,Books,Phoenix,0,Cloudy,Wednesday,10,4
+2022-10-27,1304.8834682942597,Electronics,Chicago,0,Snowy,Thursday,10,4
+2022-10-28,1455.578736410597,Books,Phoenix,0,Rainy,Friday,10,4
+2022-10-29,1514.3531507501348,Electronics,Los Angeles,1,Rainy,Saturday,10,4
+2022-10-30,1480.833728222276,Sports,Los Angeles,0,Sunny,Sunday,10,4
+2022-10-31,1451.9916035024207,Sports,Chicago,0,Rainy,Monday,10,4
+2022-11-01,1400.8628184551762,Clothing,Phoenix,1,Sunny,Tuesday,11,4
+2022-11-02,1352.7934503667168,Apparel,Houston,1,Cloudy,Wednesday,11,4
+2022-11-03,1316.626268357523,Sports,New York,0,Rainy,Thursday,11,4
+2022-11-04,1446.1017730967862,Clothing,Los Angeles,1,Snowy,Friday,11,4
+2022-11-05,1557.4068808641773,Electronics,Phoenix,0,Rainy,Saturday,11,4
+2022-11-06,1533.2188512326468,Electronics,Chicago,0,Rainy,Sunday,11,4
+2022-11-07,1445.8719232852952,Home & Garden,Chicago,0,Cloudy,Monday,11,4
+2022-11-08,1479.918641246118,Clothing,Los Angeles,0,Sunny,Tuesday,11,4
+2022-11-09,1393.6127817327606,Clothing,Los Angeles,1,Sunny,Wednesday,11,4
+2022-11-10,1363.739485079408,Home & Garden,Houston,1,Rainy,Thursday,11,4
+2022-11-11,1470.527158713359,Books,Chicago,0,Snowy,Friday,11,4
+2022-11-12,1529.2789904275417,Electronics,Phoenix,0,Rainy,Saturday,11,4
+2022-11-13,1520.0365897990052,Books,New York,1,Snowy,Sunday,11,4
+2022-11-14,1552.7674630797455,Home & Garden,New York,0,Cloudy,Monday,11,4
+2022-11-15,1518.3894502525714,Clothing,Houston,0,Cloudy,Tuesday,11,4
+2022-11-16,1429.5650498735295,Books,Phoenix,0,Sunny,Wednesday,11,4
+2022-11-17,1419.216063233348,Clothing,New York,0,Snowy,Thursday,11,4
+2022-11-18,1472.6388558853184,Home & Garden,New York,1,Rainy,Friday,11,4
+2022-11-19,1436.9744936057755,Sports,Phoenix,1,Rainy,Saturday,11,4
+2022-11-20,1671.3235070240294,Clothing,Phoenix,1,Rainy,Sunday,11,4
+2022-11-21,1508.9072968350515,Books,Los Angeles,0,Rainy,Monday,11,4
+2022-11-22,1500.6628431934369,Books,New York,1,Cloudy,Tuesday,11,4
+2022-11-23,1455.5231341826568,Home & Garden,New York,0,Snowy,Wednesday,11,4
+2022-11-24,1477.0287678249042,Books,Houston,0,Cloudy,Thursday,11,4
+2022-11-25,1443.2556132155173,Electronics,Los Angeles,0,Snowy,Friday,11,4
+2022-11-26,1644.2147636191194,Clothing,Los Angeles,1,Sunny,Saturday,11,4
+2022-11-27,1594.3430819681387,Electronics,New York,0,Snowy,Sunday,11,4
+2022-11-28,1563.2624470811375,Home & Garden,Chicago,0,Rainy,Monday,11,4
+2022-11-29,1478.755692303988,Electronics,Chicago,1,Cloudy,Tuesday,11,4
+2022-11-30,1403.6508249913575,Electronics,Phoenix,0,Rainy,Wednesday,11,4
+2022-12-01,1442.6813642788727,Clothing,Los Angeles,1,Snowy,Thursday,12,4
+2022-12-02,1546.7098393635158,Clothing,New York,0,Snowy,Friday,12,4
+2022-12-03,1574.7440504478827,Sports,New York,0,Sunny,Saturday,12,4
+2022-12-04,1563.3456042403707,Electronics,New York,0,Snowy,Sunday,12,4
+2022-12-05,1639.5442630442042,Clothing,Houston,0,Snowy,Monday,12,4
+2022-12-06,1526.518286324705,Electronics,Chicago,1,Rainy,Tuesday,12,4
+2022-12-07,1368.8276840772178,Electronics,Houston,0,Snowy,Wednesday,12,4
+2022-12-08,1505.6541018245543,Home & Garden,New York,0,Snowy,Thursday,12,4
+2022-12-09,1558.492380920085,Home & Garden,New York,0,Cloudy,Friday,12,4
+2022-12-10,1584.7470443666055,Electronics,Los Angeles,0,Cloudy,Saturday,12,4
+2022-12-11,8230.01786204306,Home & Garden,Los Angeles,0,Sunny,Sunday,12,4
+2022-12-12,1641.7690261102634,Clothing,Chicago,1,Sunny,Monday,12,4
+2022-12-13,1491.0521572357584,Electronics,Phoenix,0,Rainy,Tuesday,12,4
+2022-12-14,1439.8803882423206,Home & Garden,New York,0,Rainy,Wednesday,12,4
+2022-12-15,1485.9165859693655,Clothing,Los Angeles,0,Cloudy,Thursday,12,4
+2022-12-16,1549.4120708510561,Electronics,Chicago,0,Cloudy,Friday,12,4
+2022-12-17,1623.9371992014112,Electronics,Houston,0,Cloudy,Saturday,12,4
+2022-12-18,1646.6337973295178,Home & Garden,New York,0,Sunny,Sunday,12,4
+2022-12-19,1674.3991966424808,Clothing,Phoenix,0,Sunny,Monday,12,4
+2022-12-20,1524.8962212856657,Electronics,Chicago,0,Snowy,Tuesday,12,4
+2022-12-21,1574.5261126624755,Electronics,Phoenix,0,Sunny,Wednesday,12,4
+2022-12-22,1651.8541397100116,Sports,New York,0,Snowy,Thursday,12,4
+2022-12-23,1618.368762046682,Electronics,Chicago,0,Rainy,Friday,12,4
+2022-12-24,,Sports,Los Angeles,0,Sunny,Saturday,12,4
+2022-12-25,1759.7548769642922,Sports,Phoenix,0,Rainy,Sunday,12,4
+2022-12-26,1690.9729768868103,Clothing,Houston,0,Snowy,Monday,12,4
+2022-12-27,1597.3185664736604,Books,Houston,0,Rainy,Tuesday,12,4
+2022-12-28,1452.8897535095982,Sports,Phoenix,0,Rainy,Wednesday,12,4
+2022-12-29,,Clothing,New York,0,Sunny,Thursday,12,4
+2022-12-30,1600.6128100150981,Home & Garden,New York,1,Snowy,Friday,12,4
+2022-12-31,1783.1471103476842,Sports,New York,0,Snowy,Saturday,12,4
+2023-01-01,1848.7066768602485,Books,Houston,0,Cloudy,Sunday,1,1
+2023-01-02,1724.0268446902337,Home & Garden,Houston,0,Sunny,Monday,1,1
+2023-01-03,1643.4696766962754,Sports,Los Angeles,0,Sunny,Tuesday,1,1
+2023-01-04,1629.250145159679,Sports,New York,0,Snowy,Wednesday,1,1
+2023-01-05,1610.708664900507,Books,Houston,0,Sunny,Thursday,1,1
+2023-01-06,1747.4652090464087,Electronics,Houston,0,Rainy,Friday,1,1
+2023-01-07,1888.0845491190169,Books,New York,0,Cloudy,Saturday,1,1
+2023-01-08,1865.6961330569643,Clothing,New York,0,Snowy,Sunday,1,1
+2023-01-09,1712.5753305345313,CLOTHING,Houston,0,Sunny,Monday,1,1
+2023-01-10,1703.227620129245,Books,Phoenix,1,Sunny,Tuesday,1,1
+2023-01-11,1578.073321989762,Books,Houston,1,Rainy,Wednesday,1,1
+2023-01-12,1624.0302454215284,Books,Los Angeles,0,Sunny,Thursday,1,1
+2023-01-13,1799.739148713602,Books,Chicago,0,Sunny,Friday,1,1
+2023-01-14,1750.1644196709487,Books,New York,0,Rainy,Saturday,1,1
+2023-01-15,1803.7791471762303,Sports,Los Angeles,0,Sunny,Sunday,1,1
+2023-01-16,1830.867281788259,Home & Garden,Phoenix,0,Cloudy,Monday,1,1
+2023-01-17,1648.3597576875313,Clothing,Chicago,0,Rainy,Tuesday,1,1
+2023-01-18,1545.4623011977374,Apparel,Houston,0,Snowy,Wednesday,1,1
+2023-01-19,1590.2697062669017,Home & Garden,New York,0,Cloudy,Thursday,1,1
+2023-01-20,1716.7867891153287,Books,Houston,0,Sunny,Friday,1,1
+2023-01-21,1827.6339275039672,Home & Garden,Los Angeles,1,Rainy,Saturday,1,1
+2023-01-22,1837.8674476207893,Books,New York,1,Rainy,Sunday,1,1
+2023-01-23,1777.4756167169342,Clothing,Houston,0,Sunny,Monday,1,1
+2023-01-24,1724.2498595741054,Electronics,New York,0,Snowy,Tuesday,1,1
+2023-01-25,1645.5446250279722,Clothing,Los Angeles,0,Cloudy,Wednesday,1,1
+2023-01-26,1658.9466919026145,Clothing,Houston,0,Sunny,Thursday,1,1
+2023-01-26,1658.9466919026145,Clothing,Houston,0,Sunny,Thursday,1,1
+2023-01-27,1787.4805455093153,Electronics,Chicago,0,Snowy,Friday,1,1
+2023-01-28,1863.9426630487906,Home & Garden,Phoenix,0,Rainy,Saturday,1,1
+2023-01-29,1932.2827245919777,Sports,Houston,0,Rainy,Sunday,1,1
+2023-01-30,1932.2985978316037,Books,New York,1,Rainy,Monday,1,1
+2023-01-31,1643.0597352322332,Books,Houston,0,Sunny,Tuesday,1,1
+2023-02-01,1724.2677917726505,Clothing,New York,0,Snowy,Wednesday,2,1
+2023-02-02,1729.4427800343346,Electronics,Los Angeles,0,Sunny,Thursday,2,1
+2023-02-03,1867.433048245592,Clothing,Phoenix,0,Sunny,Friday,2,1
+2023-02-04,1860.1550363559916,Clothing,New York,0,Cloudy,Saturday,2,1
+2023-02-05,1889.761681049002,Home&Garden,Houston,0,Cloudy,Sunday,2,1
+2023-02-06,1793.6881303230116,Books,Los Angeles,0,Cloudy,Monday,2,1
+2023-02-07,1826.452803443251,Sports,Chicago,1,Snowy,Tuesday,2,1
+2023-02-08,1731.5724886103428,Electronics,Houston,0,Rainy,Wednesday,2,1
+2023-02-09,1804.045102955229,Sports,Phoenix,0,Cloudy,Thursday,2,1
+2023-02-10,1807.9794628128252,Electronics,Los Angeles,0,Rainy,Friday,2,1
+2023-02-11,1877.6827505930946,Books,Houston,0,Snowy,Saturday,2,1
+2023-02-12,1970.4782270917385,Home & Garden,New York,0,Cloudy,Sunday,2,1
+2023-02-13,1866.5787568496996,Sports,New York,0,Cloudy,Monday,2,1
+2023-02-14,1831.7494545037741,Electronics,New York,0,Rainy,Tuesday,2,1
+2023-02-15,1775.041486656427,Clothing,Houston,1,Sunny,Wednesday,2,1
+2023-02-16,1777.5260605821636,Books,Phoenix,0,Snowy,Thursday,2,1
+2023-02-17,1823.3196928349985,garden,New York,0,Snowy,Friday,2,1
+2023-02-18,1953.05715704269,Clothing,Houston,0,Cloudy,Saturday,2,1
+2023-02-19,1919.7853221111545,Home & Garden,Houston,0,Snowy,Sunday,2,1
+2023-02-20,9558.558241351,Electronics,Phoenix,0,Rainy,Monday,2,1
+2023-02-21,1907.3466783811928,Clothing,Los Angeles,0,Sunny,Tuesday,2,1
+2023-02-22,1834.2192896000618,Home & Garden,Los Angeles,0,Sunny,Wednesday,2,1
+2023-02-23,,Books,Houston,0,Snowy,Thursday,2,1
+2023-02-24,1889.4281331407763,Sports,Los Angeles,0,Sunny,Friday,2,1
+2023-02-25,1930.130055838808,Sports,Chicago,0,Rainy,Saturday,2,1
+2023-02-26,1993.2763171311415,Clothing,Phoenix,0,Cloudy,Sunday,2,1
+2023-02-27,1882.1299742073425,Books,Houston,0,Cloudy,Monday,2,1
+2023-02-28,1811.2275693450927,Books,Los Angeles,0,Snowy,Tuesday,2,1
+2023-03-01,1886.3789001029452,Home & Garden,Los Angeles,0,Snowy,Wednesday,3,1
+2023-03-01,1886.3789001029452,Home & Garden,Los Angeles,0,Snowy,Wednesday,3,1
+2023-03-02,1821.362735299323,clothing,Phoenix,1,Snowy,Thursday,3,1
+2023-03-03,1873.1291842586552,Books,New York,0,Cloudy,Friday,3,1
+2023-03-04,1870.0230006219635,Home & Garden,Los Angeles,1,Snowy,Saturday,3,1
+2023-03-05,2006.6688657276832,Books,Phoenix,0,Sunny,Sunday,3,1
+2023-03-06,2056.001169658288,Clothing,New York,0,Cloudy,Monday,3,1
+2023-03-07,1833.8846855500144,Books,Houston,0,Rainy,Tuesday,3,1
+2023-03-08,1791.4988373860406,Books,New York,0,Snowy,Wednesday,3,1
+2023-03-09,1834.7840672513707,Books,Los Angeles,0,Cloudy,Thursday,3,1
+2023-03-10,1881.2333129749475,Sports,Houston,0,Snowy,Friday,3,1
+2023-03-11,2103.752015545708,Electronics,Houston,0,Cloudy,Saturday,3,1
+2023-03-12,,Clothing,New York,0,Cloudy,Sunday,3,1
+2023-03-13,,Sports,Houston,0,Cloudy,Monday,3,1
+2023-03-13,,Sports,Houston,0,Cloudy,Monday,3,1
+2023-03-14,1983.9134334099758,Electronics,New York,0,Rainy,Tuesday,3,1
+2023-03-15,1911.4071364141892,Books,New York,0,Cloudy,Wednesday,3,1
+2023-03-16,1851.347386705756,Books,New York,0,Sunny,Thursday,3,1
+2023-03-17,1913.56868590085,Sports,Phoenix,0,Snowy,Friday,3,1
+2023-03-18,1993.1164020962995,Home & Garden,Los Angeles,0,Snowy,Saturday,3,1
+2023-03-19,2001.5930410272497,Clothing,Houston,0,Snowy,Sunday,3,1
+2023-03-20,1965.3913937738741,Electronics,Chicago,0,Cloudy,Monday,3,1
+2023-03-21,1865.6799214900668,Books,Los Angeles,0,Snowy,Tuesday,3,1
+2023-03-22,1782.4874134187367,Clothing,Chicago,0,Sunny,Wednesday,3,1
+2023-03-23,1738.6772316573376,Books,New York,0,Sunny,Thursday,3,1
+2023-03-24,1991.670928285309,Books,Houston,0,Sunny,Friday,3,1
+2023-03-25,1885.9826875959307,Books,Los Angeles,0,Rainy,Saturday,3,1
+2023-03-26,2057.4925413477617,clothing,Chicago,0,Sunny,Sunday,3,1
+2023-03-27,2035.4297823455076,Sports,Chicago,1,Sunny,Monday,3,1
+2023-03-28,1923.5020070163628,Clothing,Chicago,1,Snowy,Tuesday,3,1
+2023-03-29,1841.221666308362,Clothing,Los Angeles,0,Cloudy,Wednesday,3,1
+2023-03-30,1879.9312060100438,Home & Garden,Phoenix,0,Snowy,Thursday,3,1
+2023-03-31,1926.6491137302437,Home & Garden,New York,0,Rainy,Friday,3,1
+2023-04-01,2022.995437593081,Sports,Houston,0,Rainy,Saturday,4,2
+2023-04-02,2032.1922474418034,Home & Garden,Chicago,0,Rainy,Sunday,4,2
+2023-04-03,1960.4041135542097,Sports,Los Angeles,0,Sunny,Monday,4,2
+2023-04-04,1968.3203406339221,Books,Chicago,0,Sunny,Tuesday,4,2
+2023-04-05,1899.1280050390353,Books,Los Angeles,0,Sunny,Wednesday,4,2
+2023-04-06,1868.1361563473754,Clothing,Phoenix,1,Cloudy,Thursday,4,2
+2023-04-07,1956.8890531820819,Books,Chicago,0,Snowy,Friday,4,2
+2023-04-08,1995.998166265802,Home&Garden,Chicago,0,Sunny,Saturday,4,2
+2023-04-09,2071.2388127368085,Electronics,Houston,0,Rainy,Sunday,4,2
+2023-04-10,1994.433622945585,Clothing,Los Angeles,0,Cloudy,Monday,4,2
+2023-04-11,1896.8094034548058,Sports,Los Angeles,0,Cloudy,Tuesday,4,2
+2023-04-12,1872.4389906846307,Books,Phoenix,0,Rainy,Wednesday,4,2
+2023-04-13,1883.5050083767678,Clothing,Chicago,1,Sunny,Thursday,4,2
+2023-04-14,1915.4134223143906,Clothing,Houston,0,Cloudy,Friday,4,2
+2023-04-15,2081.120574962837,Clothing,New York,0,Rainy,Saturday,4,2
+2023-04-16,2104.8837691282147,Books,Houston,1,Sunny,Sunday,4,2
+2023-04-17,1967.5861854013672,Sports,Houston,0,Cloudy,Monday,4,2
+2023-04-17,1967.5861854013672,Sports,Houston,0,Cloudy,Monday,4,2
+2023-04-18,2074.546084159108,Clothing,Houston,0,Cloudy,Tuesday,4,2
+2023-04-19,1813.5563001643675,Clothing,Houston,0,Snowy,Wednesday,4,2
+2023-04-20,1910.8386033113006,Clothing,Chicago,0,Snowy,Thursday,4,2
+2023-04-21,1986.246802870598,Books,Houston,0,Cloudy,Friday,4,2
+2023-04-22,2072.13955980234,Home & Garden,Los Angeles,0,Cloudy,Saturday,4,2
+2023-04-23,2140.6679730684195,Sports,Los Angeles,0,Cloudy,Sunday,4,2
+2023-04-24,1987.1208883387546,Clothing,Houston,0,Snowy,Monday,4,2
+2023-04-25,1915.8218785121824,Clothing,Los Angeles,0,Sunny,Tuesday,4,2
+2023-04-26,1880.4378290234333,Clothing,Chicago,0,Snowy,Wednesday,4,2
+2023-04-27,1793.871694075636,Books,New York,1,Rainy,Thursday,4,2
+2023-04-28,1962.5209446834413,Home & Garden,Houston,0,Cloudy,Friday,4,2
+2023-04-29,2053.4070483537557,Clothing,Los Angeles,0,Rainy,Saturday,4,2
+2023-04-30,2016.640224257957,Clothing,Los Angeles,0,Rainy,Sunday,4,2
+2023-05-01,2106.457767549465,Books,Chicago,1,Rainy,Monday,5,2
+2023-05-02,1922.8949714383723,Sports,Chicago,0,Snowy,Tuesday,5,2
+2023-05-03,1818.0811682849428,Sports,New York,0,Snowy,Wednesday,5,2
+2023-05-04,1844.8330883637102,Home & Garden,Phoenix,0,Sunny,Thursday,5,2
+2023-05-05,1911.2010432015652,Sports,Phoenix,0,Rainy,Friday,5,2
+2023-05-06,,CLOTHING,Phoenix,0,Rainy,Saturday,5,2
+2023-05-07,2063.229779524394,Books,New York,0,Snowy,Sunday,5,2
+2023-05-08,2012.6415208290523,Clothing,Houston,1,Rainy,Monday,5,2
+2023-05-09,1925.9128909232975,Clothing,Phoenix,1,Snowy,Tuesday,5,2
+2023-05-10,1882.0037569851636,Home & Garden,Phoenix,0,Cloudy,Wednesday,5,2
+2023-05-11,1887.4343241799759,Sports,Los Angeles,1,Cloudy,Thursday,5,2
+2023-05-12,2052.117361214993,Sports,Los Angeles,0,Rainy,Friday,5,2
+2023-05-13,2065.4819856786185,Sports,Houston,0,Sunny,Saturday,5,2
+2023-05-14,9932.463590042495,Clothing,Chicago,1,Snowy,Sunday,5,2
+2023-05-15,1984.4713513940956,Books,New York,0,Cloudy,Monday,5,2
+2023-05-16,1838.1676728886366,Books,Phoenix,0,Cloudy,Tuesday,5,2
+2023-05-17,1840.1454996823627,Clothing,New York,1,Rainy,Wednesday,5,2
+2023-05-18,1786.5255059456035,Electronics,Los Angeles,0,Snowy,Thursday,5,2
+2023-05-19,1921.8568532908484,Clothing,New York,0,Rainy,Friday,5,2
+2023-05-20,2004.7702201850993,Sports,Los Angeles,0,Snowy,Saturday,5,2
+2023-05-21,1960.647814684267,Clothing,New York,0,Sunny,Sunday,5,2
+2023-05-22,1972.9078935664859,Electronics,Los Angeles,1,Snowy,Monday,5,2
+2023-05-23,1865.0011402990017,Clothing,New York,0,Cloudy,Tuesday,5,2
+2023-05-24,1773.1475054327634,Sports,Phoenix,1,Rainy,Wednesday,5,2
+2023-05-25,1891.5282390704274,Home & Garden,Phoenix,1,Snowy,Thursday,5,2
+2023-05-26,1904.4063370948854,Books,Houston,0,Cloudy,Friday,5,2
+2023-05-27,2054.4232362557177,Tech,New York,0,Rainy,Saturday,5,2
+2023-05-28,2025.8402493415326,Home & Garden,Chicago,0,Rainy,Sunday,5,2
+2023-05-29,1940.034534068639,Books,Houston,0,Sunny,Monday,5,2
+2023-05-30,1822.5016646560232,Home & Garden,New York,0,Cloudy,Tuesday,5,2
+2023-05-31,1756.113062930466,Clothing,Chicago,1,Snowy,Wednesday,5,2
+2023-06-01,1841.4636327723445,Clothing,Phoenix,0,Cloudy,Thursday,6,2
+2023-06-02,1926.4820849395358,Books,Phoenix,1,Rainy,Friday,6,2
+2023-06-03,1942.381761695213,Books,Phoenix,0,Sunny,Saturday,6,2
+2023-06-04,9705.905344564697,Clothing,Chicago,0,Snowy,Sunday,6,2
+2023-06-05,1980.3418454125162,Clothing,Los Angeles,0,Sunny,Monday,6,2
+2023-06-06,1893.6424207684868,Books,New York,0,Sunny,Tuesday,6,2
+2023-06-07,1758.8394718632353,Books,Houston,1,Cloudy,Wednesday,6,2
+2023-06-08,1808.0594327316867,Books,Houston,0,Rainy,Thursday,6,2
+2023-06-09,1919.0964254611697,Sports,Phoenix,0,Rainy,Friday,6,2
+2023-06-10,1914.086028785837,Sports,Los Angeles,0,Snowy,Saturday,6,2
+2023-06-11,1942.39455902366,Clothes,New York,0,Sunny,Sunday,6,2
+2023-06-12,1970.7423009192457,Sports,New York,0,Sunny,Monday,6,2
+2023-06-13,1796.1939223749387,Electronics,Houston,0,Sunny,Tuesday,6,2
+2023-06-14,1787.7565619759669,Clothing,Houston,0,Cloudy,Wednesday,6,2
+2023-06-15,1806.1826565736123,Electronics,Houston,0,Rainy,Thursday,6,2
+2023-06-16,1817.2156004525755,Home & Garden,New York,0,Sunny,Friday,6,2
+2023-06-17,2001.989561028146,Electronics,Houston,1,Sunny,Saturday,6,2
+2023-06-18,1891.8577938546614,Home & Garden,New York,0,Rainy,Sunday,6,2
+2023-06-19,1927.1772160975156,Electronics,Phoenix,0,Snowy,Monday,6,2
+2023-06-20,1801.0856974468843,Home & Garden,Los Angeles,0,Cloudy,Tuesday,6,2
+2023-06-21,1772.6687762761676,Home & Garden,Houston,0,Cloudy,Wednesday,6,2
+2023-06-22,1772.6219790027876,Clothing,New York,0,Cloudy,Thursday,6,2
+2023-06-23,1803.4830901434989,Books,Phoenix,0,Rainy,Friday,6,2
+2023-06-24,,Books,Chicago,1,Cloudy,Saturday,6,2
+2023-06-25,1976.4769230551997,Clothing,Phoenix,0,Sunny,Sunday,6,2
+2023-06-26,1883.8599689628193,Home & Garden,Los Angeles,1,Cloudy,Monday,6,2
+2023-06-27,1782.8895162933277,Books,Phoenix,0,Rainy,Tuesday,6,2
+2023-06-28,1650.9251161495858,Books,Houston,0,Cloudy,Wednesday,6,2
+2023-06-29,1722.4524616443769,Electronics,Houston,1,Snowy,Thursday,6,2
+2023-06-30,1805.4901053954438,Sports,Chicago,0,Snowy,Friday,6,2
+2023-07-01,1960.1271254874662,Clothing,New York,0,Rainy,Saturday,7,3
+2023-07-02,1915.6029870736872,Sports,Phoenix,0,Rainy,Sunday,7,3
+2023-07-03,1903.7268179159973,Home & Garden,Chicago,1,Snowy,Monday,7,3
+2023-07-04,1750.2125478891269,Electronics,Houston,0,Cloudy,Tuesday,7,3
+2023-07-05,1629.2174654796654,Books,New York,0,Sunny,Wednesday,7,3
+2023-07-06,1798.390926326364,Electronics,New York,0,Rainy,Thursday,7,3
+2023-07-07,1786.349355851469,Clothing,Los Angeles,0,Snowy,Friday,7,3
+2023-07-07,1786.349355851469,Clothing,Los Angeles,0,Snowy,Friday,7,3
+2023-07-08,1947.2046203081336,Home & Garden,Houston,0,Cloudy,Saturday,7,3
+2023-07-09,,Electronics,New York,0,Rainy,Sunday,7,3
+2023-07-10,1929.741274492963,Electronics,Los Angeles,0,Cloudy,Monday,7,3
+2023-07-11,1930.6296691642854,Electronics,Los Angeles,0,Sunny,Tuesday,7,3
+2023-07-12,1737.0384232639044,Books,Houston,0,Rainy,Wednesday,7,3
+2023-07-13,1663.4410176021663,Home & Garden,New York,0,Sunny,Thursday,7,3
+2023-07-14,,Books,New York,1,Sunny,Friday,7,3
+2023-07-15,1901.9119826354395,Electronics,Phoenix,0,Sunny,Saturday,7,3
+2023-07-16,1838.2748707915848,Books,New York,0,Snowy,Sunday,7,3
+2023-07-17,9052.333101570077,Books,Los Angeles,0,Sunny,Monday,7,3
+2023-07-18,1732.2310087137369,Clothing,Chicago,1,Sunny,Tuesday,7,3
+2023-07-19,1715.42886759037,Sports,Houston,0,Cloudy,Wednesday,7,3
+2023-07-20,1668.8769705371346,Sports,Chicago,0,Snowy,Thursday,7,3
+2023-07-21,1738.5375470784118,Clothing,New York,0,Snowy,Friday,7,3
+2023-07-22,1807.662284147454,Clothing,Los Angeles,0,Snowy,Saturday,7,3
+2023-07-23,1789.6527797760566,Books,Chicago,0,Snowy,Sunday,7,3
+2023-07-24,1858.2631750752205,Books,Houston,0,Sunny,Monday,7,3
+2023-07-25,1741.9118373308115,Home & Garden,Phoenix,0,Cloudy,Tuesday,7,3
+2023-07-26,1720.867538281746,Sports,Chicago,0,Sunny,Wednesday,7,3
+2023-07-27,1662.7310315350458,Books,Phoenix,1,Sunny,Thursday,7,3
+2023-07-28,1737.125853134234,Home & Garden,New York,0,Snowy,Friday,7,3
+2023-07-29,1867.5179975409449,Sports,New York,0,Snowy,Saturday,7,3
+2023-07-30,1911.9916734694784,Home & Garden,Houston,0,Rainy,Sunday,7,3
+2023-07-31,1860.504135139988,Home & Garden,Phoenix,0,Cloudy,Monday,7,3
+2023-08-01,1666.5776605617184,Clothing,Phoenix,1,Snowy,Tuesday,8,3
+2023-08-02,1713.4775180671215,Electronics,Houston,0,Snowy,Wednesday,8,3
+2023-08-03,1758.6059550937416,Electronics,Chicago,0,Sunny,Thursday,8,3
+2023-08-04,1780.6428382752201,Electronics,Houston,0,Sunny,Friday,8,3
+2023-08-05,1893.6121219140541,Home & Garden,New York,1,Sunny,Saturday,8,3
+2023-08-06,1879.2347708957388,Books,Phoenix,1,Snowy,Sunday,8,3
+2023-08-07,1740.9442267481072,Electronics,Los Angeles,0,Cloudy,Monday,8,3
+2023-08-08,1755.0371025036839,Books,Los Angeles,0,Snowy,Tuesday,8,3
+2023-08-09,1671.7560274154914,Sports,New York,0,Snowy,Wednesday,8,3
+2023-08-10,1618.8098618842082,Electronics,Phoenix,0,Cloudy,Thursday,8,3
+2023-08-11,0.0,Home & Garden,Phoenix,0,Snowy,Friday,8,3
+2023-08-12,1843.2416072263602,Clothing,Houston,0,Snowy,Saturday,8,3
+2023-08-13,1960.0630454315062,Home & Garden,Chicago,1,Cloudy,Sunday,8,3
+2023-08-14,1874.388697544254,Books,Houston,0,Snowy,Monday,8,3
+2023-08-15,1595.986795236903,Sports,Los Angeles,0,Rainy,Tuesday,8,3
+2023-08-16,1640.297636992329,Home & Garden,Phoenix,1,Rainy,Wednesday,8,3
+2023-08-17,1732.4268693064907,Clothing,Chicago,1,Sunny,Thursday,8,3
+2023-08-18,1714.4651127697932,Clothing,Houston,0,Snowy,Friday,8,3
+2023-08-19,1786.079916082181,Sports,Chicago,1,Cloudy,Saturday,8,3
+2023-08-20,1802.2720701945286,Electronics,Los Angeles,0,Cloudy,Sunday,8,3
+2023-08-20,1802.2720701945286,Electronics,Los Angeles,0,Cloudy,Sunday,8,3
+2023-08-21,1815.9411463397523,Home & Garden,Chicago,0,Rainy,Monday,8,3
+2023-08-22,1704.788700579616,Home & Garden,Phoenix,0,Sunny,Tuesday,8,3
+2023-08-23,1656.7974876718959,Clothes,Chicago,0,Snowy,Wednesday,8,3
+2023-08-24,1638.358376517455,Books,Chicago,0,Cloudy,Thursday,8,3
+2023-08-25,1812.6084608676247,Home & Garden,Houston,1,Cloudy,Friday,8,3
+2023-08-26,1786.4876760127322,Clothing,Chicago,0,Snowy,Saturday,8,3
+2023-08-27,1864.33414940925,Books,Chicago,0,Sunny,Sunday,8,3
+2023-08-28,1661.3585417426589,Electronics,Los Angeles,0,Rainy,Monday,8,3
+2023-08-29,-100.0,Electronics,Chicago,0,Snowy,Tuesday,8,3
+2023-08-30,1598.7627593087116,Clothing,Houston,0,Snowy,Wednesday,8,3
+2023-08-31,1645.799403548394,Clothing,Houston,0,Snowy,Thursday,8,3
+2023-09-01,1636.7463518607601,Tech,Phoenix,0,Rainy,Friday,9,3
+2023-09-02,1877.047684198787,Clothing,Los Angeles,0,Cloudy,Saturday,9,3
+2023-09-03,1822.160994386027,Sports,New York,0,Snowy,Sunday,9,3
+2023-09-04,1871.4533993990483,Home & Garden,Phoenix,1,Snowy,Monday,9,3
+2023-09-05,1710.7455103760155,Sports,Chicago,0,Snowy,Tuesday,9,3
+2023-09-06,1630.0491018728112,Books,Los Angeles,0,Snowy,Wednesday,9,3
+2023-09-07,1636.3434097094098,Clothing,Phoenix,1,Sunny,Thursday,9,3
+2023-09-08,1746.4377012535474,Clothing,Houston,1,Sunny,Friday,9,3
+2023-09-09,1828.8338755859172,Books,Los Angeles,0,Sunny,Saturday,9,3
+2023-09-10,1835.0572698779945,garden,Los Angeles,0,Cloudy,Sunday,9,3
+2023-09-11,1868.5306720071019,Electronics,Chicago,0,Snowy,Monday,9,3
+2023-09-12,1726.1678447740057,Sports,Los Angeles,0,Snowy,Tuesday,9,3
+2023-09-13,1582.3119468359412,Home & Garden,Los Angeles,0,Snowy,Wednesday,9,3
+2023-09-14,1593.3858925988663,Electronics,New York,0,Snowy,Thursday,9,3
+2023-09-15,1733.2694165757052,Electronics,Chicago,0,Rainy,Friday,9,3
+2023-09-16,1798.5646092013549,Clothing,Los Angeles,0,Rainy,Saturday,9,3
+2023-09-17,1822.446723516987,Books,Los Angeles,1,Rainy,Sunday,9,3
+2023-09-18,1673.3501490222118,Clothing,New York,0,Snowy,Monday,9,3
+2023-09-19,1712.350015882355,Books,New York,0,Rainy,Tuesday,9,3
+2023-09-20,1595.156378265127,Clothing,Houston,0,Rainy,Wednesday,9,3
+2023-09-21,1744.6648790153642,Sports,Chicago,1,Cloudy,Thursday,9,3
+2023-09-22,1723.5596096998431,Clothing,New York,1,Cloudy,Friday,9,3
+2023-09-23,1784.804816094352,Sports,Los Angeles,0,Rainy,Saturday,9,3
+2023-09-24,1834.6239696397274,garden,New York,0,Rainy,Sunday,9,3
+2023-09-25,1723.521604929082,Home & Garden,Phoenix,0,Cloudy,Monday,9,3
+2023-09-26,1753.8865421405822,CLOTHING,Houston,0,Rainy,Tuesday,9,3
+2023-09-27,1735.286483705609,Home & Garden,Houston,0,Snowy,Wednesday,9,3
+2023-09-28,1673.064501633359,Electronics,Chicago,0,Rainy,Thursday,9,3
+2023-09-29,1748.7019342219207,Sports,Houston,0,Snowy,Friday,9,3
+2023-09-30,1764.880091278075,Books,Chicago,0,Rainy,Saturday,9,3
+2023-10-01,1813.9360263733927,Sports,Phoenix,0,Sunny,Sunday,10,4
+2023-10-02,1788.3387069692394,Clothing,Los Angeles,0,Rainy,Monday,10,4
+2023-10-03,1617.8475724259774,Home & Garden,Phoenix,0,Sunny,Tuesday,10,4
+2023-10-04,1701.0351268691938,Home & Garden,Chicago,1,Rainy,Wednesday,10,4
+2023-10-05,1565.7616089647297,Electronics,Chicago,0,Rainy,Thursday,10,4
+2023-10-06,1618.3091240722295,Home & Garden,Chicago,0,Snowy,Friday,10,4
+2023-10-07,1888.2624266496252,Clothing,Los Angeles,0,Cloudy,Saturday,10,4
+2023-10-08,1860.558691290403,Clothing,Chicago,0,Cloudy,Sunday,10,4
+2023-10-09,1721.6248775935858,Books,Phoenix,0,Snowy,Monday,10,4
+2023-10-10,1691.1369426788656,Sports,Los Angeles,0,Cloudy,Tuesday,10,4
+2023-10-11,1642.4353188420353,Sports,Phoenix,0,Sunny,Wednesday,10,4
+2023-10-12,1656.550614434962,Sports,Los Angeles,0,Sunny,Thursday,10,4
+2023-10-13,1679.4168640702137,Books,Chicago,1,Rainy,Friday,10,4
+2023-10-14,1826.6223492065146,Books,Los Angeles,1,Sunny,Saturday,10,4
+2023-10-15,1889.9787520771556,Books,New York,1,Cloudy,Sunday,10,4
+2023-10-16,1693.002896433096,Electronics,Phoenix,1,Sunny,Monday,10,4
+2023-10-17,1670.0834671256634,Books,New York,0,Rainy,Tuesday,10,4
+2023-10-18,1583.9588374812147,Home & Garden,New York,0,Sunny,Wednesday,10,4
+2023-10-19,1624.9793529404278,Electronics,Chicago,1,Cloudy,Thursday,10,4
+2023-10-20,1762.1707318053666,HOME_GARDEN,Chicago,0,Snowy,Friday,10,4
+2023-10-21,,Sports,New York,0,Rainy,Saturday,10,4
+2023-10-22,1931.5433848338823,Clothing,Los Angeles,0,Snowy,Sunday,10,4
+2023-10-23,1796.1688425140453,Sports,Chicago,0,Sunny,Monday,10,4
+2023-10-24,1688.7172393223532,Books,Phoenix,0,Rainy,Tuesday,10,4
+2023-10-25,1561.3265107374039,Clothing,New York,0,Rainy,Wednesday,10,4
+2023-10-26,1684.7875397375315,Sports,Phoenix,0,Sunny,Thursday,10,4
+2023-10-27,1760.9367290876453,Electronics,Phoenix,0,Rainy,Friday,10,4
+2023-10-28,,Books,Phoenix,1,Sunny,Saturday,10,4
+2023-10-29,1810.8200543217383,Sports,New York,0,Snowy,Sunday,10,4
+2023-10-30,1894.8315253071553,Clothing,Houston,0,Snowy,Monday,10,4
+2023-10-31,1705.0204716417654,Home & Garden,Chicago,0,Cloudy,Tuesday,10,4
+2023-11-01,1675.1602252976552,Sports,Phoenix,0,Cloudy,Wednesday,11,4
+2023-11-02,1722.539906793106,Electronics,New York,0,Sunny,Thursday,11,4
+2023-11-03,1768.0365897585318,Clothing,Houston,1,Sunny,Friday,11,4
+2023-11-04,1924.307144553699,Sports,New York,0,Snowy,Saturday,11,4
+2023-11-05,1842.1328691156882,Home & Garden,Chicago,0,Rainy,Sunday,11,4
+2023-11-06,1806.1573608962772,Books,New York,0,Sunny,Monday,11,4
+2023-11-07,1722.944495132837,Books,Los Angeles,0,Rainy,Tuesday,11,4
+2023-11-08,1652.6439212004932,Books,Los Angeles,0,Cloudy,Wednesday,11,4
+2023-11-09,1670.7076480781286,Clothing,Phoenix,0,Snowy,Thursday,11,4
+2023-11-10,1797.2717974686996,Home & Garden,New York,0,Sunny,Friday,11,4
+2023-11-11,1944.5229744359006,Home & Garden,New York,0,Cloudy,Saturday,11,4
+2023-11-12,1840.5454453292273,Sports,Phoenix,0,Sunny,Sunday,11,4
+2023-11-13,1839.0781528842967,Books,Phoenix,0,Cloudy,Monday,11,4
+2023-11-14,1803.0783623282712,Clothing,Houston,0,Snowy,Tuesday,11,4
+2023-11-15,1813.003185041284,Books,New York,0,Sunny,Wednesday,11,4
+2023-11-16,1783.5875748863355,Books,Chicago,1,Sunny,Thursday,11,4
+2023-11-17,1807.8267178591939,Sports,Chicago,0,Rainy,Friday,11,4
+2023-11-18,1871.6431918653502,Sports,Chicago,0,Rainy,Saturday,11,4
+2023-11-19,1978.8556747962266,Sports,Phoenix,0,Sunny,Sunday,11,4
+2023-11-20,1915.8799045645783,Electronics,Phoenix,0,Snowy,Monday,11,4
+2023-11-21,1789.2450135667743,Electronics,Phoenix,0,Rainy,Tuesday,11,4
+2023-11-22,,Clothing,Chicago,0,Sunny,Wednesday,11,4
+2023-11-23,1861.5890376266348,Clothing,Houston,0,Sunny,Thursday,11,4
+2023-11-24,1935.7088913424982,Sports,Los Angeles,0,Cloudy,Friday,11,4
+2023-11-25,1943.9326615706095,Home & Garden,New York,0,Snowy,Saturday,11,4
+2023-11-26,1957.6331999011206,Clothing,Los Angeles,0,Rainy,Sunday,11,4
+2023-11-27,1839.473759730267,Electronics,New York,0,Rainy,Monday,11,4
+2023-11-28,1816.124640575631,Electronics,Phoenix,0,Cloudy,Tuesday,11,4
+2023-11-29,1823.9629267872087,Books,Chicago,0,Sunny,Wednesday,11,4
+2023-11-30,1690.1062036978606,Sports,Los Angeles,0,Rainy,Thursday,11,4
+2023-12-01,1898.8030771302156,Home & Garden,Phoenix,0,Sunny,Friday,12,4
+2023-12-02,1985.155098051655,Sports,New York,1,Rainy,Saturday,12,4
+2023-12-03,2008.50234904272,Electronics,Los Angeles,0,Rainy,Sunday,12,4
+2023-12-04,1891.1114493242237,Home & Garden,Los Angeles,1,Sunny,Monday,12,4
+2023-12-05,1824.8506267205269,Clothing,Los Angeles,0,Sunny,Tuesday,12,4
+2023-12-06,1759.811566146603,Books,Los Angeles,1,Rainy,Wednesday,12,4
+2023-12-07,1913.609625951085,Electronics,Los Angeles,0,Cloudy,Thursday,12,4
+2023-12-08,1974.2634561802736,Books,Phoenix,0,Cloudy,Friday,12,4
+2023-12-09,1997.2510833582517,Sports,New York,0,Cloudy,Saturday,12,4
+2023-12-10,2003.6747538646875,Home & Garden,New York,1,Cloudy,Sunday,12,4
+2023-12-11,1951.6117144488871,Sports,Houston,0,Cloudy,Monday,12,4
+2023-12-12,1853.6955432237382,Books,Chicago,0,Sunny,Tuesday,12,4
+2023-12-13,1725.445759457051,Tech,Los Angeles,1,Rainy,Wednesday,12,4
+2023-12-14,1844.8908589969744,Books,New York,0,Cloudy,Thursday,12,4
+2023-12-15,2026.6323802406514,Electronics,Chicago,0,Snowy,Friday,12,4
+2023-12-16,2022.3065751080712,Books,Chicago,0,Rainy,Saturday,12,4
+2023-12-17,2000.2618466507924,Sports,Phoenix,0,Snowy,Sunday,12,4
+2023-12-18,1994.2560415154626,Books,Los Angeles,0,Sunny,Monday,12,4
+2023-12-19,1887.7492124144567,Clothing,Houston,0,Rainy,Tuesday,12,4
+2023-12-20,,Sports,Chicago,0,Sunny,Wednesday,12,4
+2023-12-21,1816.54470063647,Books,Phoenix,0,Snowy,Thursday,12,4
+2023-12-22,1956.7998023969537,Books,Los Angeles,0,Rainy,Friday,12,4
+2023-12-23,1964.4201458242337,Home & Garden,New York,0,Rainy,Saturday,12,4
+2023-12-24,2061.9470032466925,Sports,Houston,0,Sunny,Sunday,12,4
+2023-12-25,2007.0570960848893,Home & Garden,Los Angeles,0,Rainy,Monday,12,4
+2023-12-26,1964.878475363059,Sports,Phoenix,0,Snowy,Tuesday,12,4
+2023-12-27,1871.079733383118,Electronics,Phoenix,0,Sunny,Wednesday,12,4
+2023-12-28,1850.1518548265283,Sports,Phoenix,1,Snowy,Thursday,12,4
+2023-12-29,9964.91258526483,Sports,Phoenix,0,Rainy,Friday,12,4
+2023-12-30,2120.031297993923,Books,Phoenix,0,Snowy,Saturday,12,4
+2023-12-31,2065.0479050270706,Clothing,Houston,0,Rainy,Sunday,12,4

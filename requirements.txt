@@ -5,3 +5,18 @@ plotly>=5.15.0,<6.0.0
 statsmodels>=0.13.0,<1.0.0
 scipy>=1.10.0,<2.0.0
 numpy>=1.21.0,<2.0.0
+
+# Database dependencies
+sqlalchemy>=2.0.0,<3.0.0
+pymysql>=1.0.0,<2.0.0
+psycopg2-binary>=2.9.0,<3.0.0
+
+# API dependencies
+fastapi>=0.104.0,<1.0.0
+uvicorn>=0.24.0,<1.0.0
+python-multipart>=0.0.6,<1.0.0
+pydantic>=2.4.0,<3.0.0
+requests>=2.31.0,<3.0.0
+
+# Performance monitoring
+psutil>=5.9.0,<6.0.0

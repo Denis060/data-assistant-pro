@@ -6,6 +6,8 @@ env/
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
 # OS-specific files
 .DS_Store
@@ -14,3 +16,30 @@ Thumbs.db
 # IDE files
 .vscode/
 .idea/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Logs and databases
+*.log
+*.db
+*.sqlite3
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Temporary files
+*.tmp
+*.temp
+
+# Development files
+requirements-dev.txt
+test_*.py
+demo_*.py
+*_test.py
