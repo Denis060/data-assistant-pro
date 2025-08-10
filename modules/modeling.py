@@ -23,6 +23,10 @@ from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC, SVR
+from .cache_utils import DataCache, with_progress_cache
+from .error_handler import error_handler, display_smart_error, SmartError, ErrorSeverity
+import hashlib
+import time
 
 # Import diagnostic modules
 try:
@@ -30,6 +34,30 @@ try:
 except ImportError:
     # Fallback if diagnostic modules are not available
     ModelPerformanceDiagnostic = None
+
+
+def get_model_cache_key(X, y, problem_type, test_size, selected_models):
+    """Generate a cache key for model training based on data and parameters"""
+    try:
+        # Create hash based on data shape, problem type, and model selection
+        data_info = f"{X.shape}_{y.shape}_{problem_type}_{test_size}_{sorted(selected_models or [])}"
+        # Add sample of data for uniqueness
+        data_sample = f"{X.iloc[:5].to_string()}_{y.iloc[:5].to_string()}" if hasattr(X, 'iloc') else str(X[:5])
+        cache_content = f"{data_info}_{data_sample}"
+        return hashlib.md5(cache_content.encode()).hexdigest()
+    except Exception:
+        return f"model_{int(time.time())}"
+
+
+@st.cache_data(ttl=7200)  # Cache for 2 hours
+def cached_model_training(cache_key: str, X_data, y_data, problem_type, test_size, selected_models):
+    """Cached model training function"""
+    # Convert back to appropriate format
+    X = pd.DataFrame(X_data) if isinstance(X_data, dict) else X_data
+    y = pd.Series(y_data) if isinstance(y_data, list) else y_data
+    
+    # Call the actual training function
+    return train_models_internal(X, y, problem_type, test_size, selected_models)
     create_performance_improvement_plan = None
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC, SVR
@@ -108,7 +136,7 @@ def prepare_data_for_modeling(df, target_column, problem_type):
         return None, None, False, None, None
 
 
-def train_models(X, y, problem_type, test_size=0.2, selected_models=None):
+def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=None):
     """Train multiple models and return results."""
     try:
         # Split the data
@@ -221,9 +249,82 @@ def train_models(X, y, problem_type, test_size=0.2, selected_models=None):
 
         return results, X_train, X_test, y_train, y_test, scaler, diagnostic_results, improvement_plan
 
-    except Exception as e:
-        st.error(f"Error training models: {e}")
+    except MemoryError as e:
+        context = {
+            'data_shape': (X.shape[0], X.shape[1]) if X is not None else (None, None),
+            'problem_type': problem_type,
+            'selected_models': selected_models,
+            'operation': 'model_training'
+        }
+        
+        smart_error = error_handler.analyze_error(e, context)
+        action = display_smart_error(smart_error)
+        
+        if action == "sample_data_50":
+            st.info("💡 Try reducing your dataset size in the Data Overview section")
+        elif action == "show_column_selector":
+            st.info("💡 Consider feature selection to reduce dimensionality")
+            
         return None, None, None, None, None, None, None, None
+        
+    except ValueError as e:
+        # Handle convergence and other model-specific errors
+        if "did not converge" in str(e) or "max_iter" in str(e):
+            context = {
+                'problem_type': problem_type,
+                'selected_models': selected_models,
+                'error_type': 'convergence'
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            action = display_smart_error(smart_error)
+            
+            if action == "increase_max_iter":
+                st.info("💡 Try increasing max_iter in the Advanced Model Optimizer section")
+            elif action == "scale_features":
+                st.info("💡 Apply feature scaling in the Data Cleaning section")
+        else:
+            # Generic ValueError handling
+            context = {
+                'problem_type': problem_type,
+                'data_shape': (X.shape[0], X.shape[1]) if X is not None else (None, None),
+                'operation': 'model_training'
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            display_smart_error(smart_error)
+            
+        return None, None, None, None, None, None, None, None
+        
+    except Exception as e:
+        context = {
+            'problem_type': problem_type,
+            'data_shape': (X.shape[0], X.shape[1]) if X is not None else (None, None),
+            'selected_models': selected_models,
+            'operation': 'model_training'
+        }
+        
+        smart_error = error_handler.analyze_error(e, context)
+        display_smart_error(smart_error)
+        return None, None, None, None, None, None, None, None
+
+
+def train_models(X, y, problem_type, test_size=0.2, selected_models=None):
+    """Enhanced model training function with caching and progress indicators"""
+    
+    # Generate cache key
+    cache_key = get_model_cache_key(X, y, problem_type, test_size, selected_models)
+    
+    # Convert data for caching (must be serializable)
+    X_data = X.to_dict() if hasattr(X, 'to_dict') else X
+    y_data = y.tolist() if hasattr(y, 'tolist') else y
+    
+    # Use cached training with progress indication
+    return with_progress_cache(
+        f"Training {len(selected_models or ['all'])} model(s)",
+        cached_model_training,
+        cache_key, X_data, y_data, problem_type, test_size, selected_models
+    )
 
 
 def display_model_results(results, problem_type):

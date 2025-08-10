@@ -2,10 +2,12 @@
 
 import io
 import logging
+import time
 from typing import Optional, Tuple
 
 import pandas as pd
 import streamlit as st
+from .error_handler import error_handler, display_smart_error, SmartError, ErrorSeverity
 
 logger = logging.getLogger(__name__)
 
@@ -107,16 +109,31 @@ def load_data(
     """
     if uploaded_file is not None:
         try:
+            # Create progress bar
+            progress_bar = st.progress(0)
+            status_text = st.empty()
+            
             # Log file upload
             logger.info(
                 f"Loading file: {uploaded_file.name}, Size: {uploaded_file.size} bytes"
             )
+            
+            # Step 1: File validation
+            status_text.text("🔍 Validating file...")
+            progress_bar.progress(10)
+            time.sleep(0.1)  # Small delay for visual feedback
 
             # File size validation (max 100MB)
             if uploaded_file.size > 100 * 1024 * 1024:
+                progress_bar.empty()
+                status_text.empty()
                 st.error("❌ File too large! Please upload a file smaller than 100MB.")
                 return None
 
+            # Step 2: Determine delimiter
+            status_text.text("🔧 Detecting file format...")
+            progress_bar.progress(25)
+            
             # Determine delimiter to use
             if delimiter_override and delimiter_override != "Auto-detect":
                 # Use manual delimiter selection
@@ -127,16 +144,42 @@ def load_data(
                     "Pipe (|)": "|",
                 }
                 delimiter = delimiter_map.get(delimiter_override, ",")
+                delimiter_source = "manually selected"
+            else:
+                # Auto-detect delimiter
+                status_text.text("🤖 Auto-detecting delimiter...")
+                progress_bar.progress(40)
+                delimiter_source = "auto-detected"
+            
+            # Step 3: Load data
+            status_text.text("📊 Loading data...")
+            progress_bar.progress(60)
+            
+            if delimiter_override and delimiter_override != "Auto-detect":
                 uploaded_file.seek(0)
                 df = pd.read_csv(uploaded_file, sep=delimiter)
-                delimiter_source = "manually selected"
             else:
                 # Use smart CSV reading with delimiter detection
                 df, delimiter = smart_read_csv(uploaded_file)
-                delimiter_source = "auto-detected"
 
             if df is None:
+                progress_bar.empty()
+                status_text.empty()
                 return None
+                
+            # Step 4: Data validation
+            status_text.text("✅ Validating data structure...")
+            progress_bar.progress(80)
+            time.sleep(0.2)
+            
+            # Step 5: Complete
+            progress_bar.progress(100)
+            status_text.text("🎉 Data loaded successfully!")
+            time.sleep(0.5)
+            
+            # Clean up progress indicators
+            progress_bar.empty()
+            status_text.empty()
 
             # Show delimiter detection info
             if delimiter != ",":
@@ -184,13 +227,89 @@ def load_data(
             st.error("❌ The file appears to be empty or corrupted.")
             logger.error("Empty data error when loading file")
             return None
-        except pd.errors.ParserError as e:
-            st.error(f"❌ Error parsing CSV file: {str(e)}")
-            logger.error(f"Parser error: {str(e)}")
+        except UnicodeDecodeError as e:
+            progress_bar.empty()
+            status_text.empty()
+            
+            # Create context for smart error handling
+            context = {
+                'file_name': uploaded_file.name,
+                'file_size': uploaded_file.size,
+                'encoding_attempted': 'utf-8'  # Default encoding
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            action = display_smart_error(smart_error)
+            
+            # Handle quick fix actions
+            if action == "retry_utf8":
+                return load_data_with_delimiter(uploaded_file, delimiter)
+            elif action == "retry_latin1":
+                uploaded_file.seek(0)
+                try:
+                    df = pd.read_csv(uploaded_file, delimiter=delimiter, encoding='latin-1')
+                    st.success("✅ File loaded successfully with Latin-1 encoding!")
+                    return df
+                except Exception:
+                    st.error("❌ Failed to load with Latin-1 encoding")
+                    return None
+            
             return None
+            
+        except pd.errors.ParserError as e:
+            progress_bar.empty()
+            status_text.empty()
+            
+            context = {
+                'file_name': uploaded_file.name,
+                'delimiter_used': delimiter,
+                'encoding_used': 'utf-8'
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            action = display_smart_error(smart_error)
+            
+            # Handle quick fix actions
+            if action == "auto_detect_delimiter":
+                return retry_with_auto_delimiter(uploaded_file)
+            elif action == "retry_comma":
+                return load_data_with_delimiter(uploaded_file, ',')
+            
+            return None
+            
+        except MemoryError as e:
+            progress_bar.empty()
+            status_text.empty()
+            
+            context = {
+                'file_name': uploaded_file.name,
+                'file_size': uploaded_file.size,
+                'data_shape': (None, None)  # Unknown at this point
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            action = display_smart_error(smart_error)
+            
+            # Handle quick fix actions
+            if action == "sample_data_50":
+                return load_sampled_data(uploaded_file, sample_rate=0.5)
+            elif action == "show_column_selector":
+                st.info("💡 Try loading with fewer columns using the Data Cleaning section")
+            
+            return None
+            
         except Exception as e:
-            st.error(f"❌ Unexpected error loading file: {str(e)}")
-            logger.error(f"Unexpected error loading file: {str(e)}")
+            progress_bar.empty()
+            status_text.empty()
+            
+            context = {
+                'file_name': uploaded_file.name,
+                'file_size': uploaded_file.size,
+                'operation': 'data_loading'
+            }
+            
+            smart_error = error_handler.analyze_error(e, context)
+            display_smart_error(smart_error)
             return None
     return None
 
@@ -242,3 +361,69 @@ def validate_data_for_modeling(
         return False, f"Target column '{target_column}' contains no valid values."
 
     return True, "Data is valid for modeling."
+
+
+# Quick Fix Helper Functions
+
+def load_data_with_encoding(uploaded_file, delimiter: str, encoding: str) -> Optional[pd.DataFrame]:
+    """Load data with specific encoding"""
+    try:
+        uploaded_file.seek(0)  # Reset file position
+        df = pd.read_csv(uploaded_file, delimiter=delimiter, encoding=encoding)
+        st.success(f"✅ File loaded successfully with {encoding} encoding!")
+        return df
+    except Exception as e:
+        st.error(f"❌ Failed to load with {encoding} encoding: {str(e)}")
+        return None
+
+def load_data_with_delimiter(uploaded_file, delimiter: str) -> Optional[pd.DataFrame]:
+    """Load data with specific delimiter"""
+    try:
+        uploaded_file.seek(0)  # Reset file position
+        df = pd.read_csv(uploaded_file, delimiter=delimiter)
+        st.success(f"✅ File loaded successfully with '{delimiter}' delimiter!")
+        return df
+    except Exception as e:
+        st.error(f"❌ Failed to load with '{delimiter}' delimiter: {str(e)}")
+        return None
+
+def retry_with_auto_delimiter(uploaded_file) -> Optional[pd.DataFrame]:
+    """Retry loading with automatic delimiter detection"""
+    try:
+        uploaded_file.seek(0)
+        file_content = uploaded_file.read().decode('utf-8')
+        detected_delimiter = detect_delimiter(file_content)
+        
+        uploaded_file.seek(0)
+        df = pd.read_csv(uploaded_file, delimiter=detected_delimiter)
+        st.success(f"✅ File loaded successfully with auto-detected delimiter: '{detected_delimiter}'")
+        return df
+    except Exception as e:
+        st.error(f"❌ Auto-detection failed: {str(e)}")
+        return None
+
+def load_sampled_data(uploaded_file, sample_rate: float = 0.5) -> Optional[pd.DataFrame]:
+    """Load a sample of the data to reduce memory usage"""
+    try:
+        uploaded_file.seek(0)
+        
+        # First, get the total number of rows
+        temp_df = pd.read_csv(uploaded_file, nrows=1000)  # Read first 1000 rows to estimate
+        uploaded_file.seek(0)
+        
+        # Calculate skip rows for sampling
+        import random
+        total_rows = sum(1 for line in uploaded_file) - 1  # Exclude header
+        uploaded_file.seek(0)
+        
+        rows_to_read = int(total_rows * sample_rate)
+        skip_rows = sorted(random.sample(range(1, total_rows + 1), total_rows - rows_to_read))
+        
+        df = pd.read_csv(uploaded_file, skiprows=skip_rows)
+        st.success(f"✅ Loaded {sample_rate:.0%} sample of data ({len(df):,} rows)")
+        st.info(f"💡 Original data has approximately {total_rows:,} rows")
+        return df
+        
+    except Exception as e:
+        st.error(f"❌ Failed to load sampled data: {str(e)}")
+        return None

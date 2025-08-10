@@ -1,11 +1,13 @@
 # Enhanced modules/cleaning.py
 
 import logging
+import time
 
 import numpy as np
 import pandas as pd
 import streamlit as st
 from scipy import stats
+from .cache_utils import with_progress_cache
 
 # Setup logger
 logger = logging.getLogger(__name__)
@@ -333,14 +335,29 @@ def handle_outliers(
         DataFrame with outliers handled
     """
     try:
+        # Create progress indicators
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
         df_cleaned = df.copy()
 
         if not columns:
+            progress_bar.empty()
+            status_text.empty()
             st.warning("Please select one or more columns for outlier detection.")
             return df_cleaned
 
+        status_text.text("🔍 Initializing outlier detection...")
+        progress_bar.progress(10)
+
         # Show detailed analysis for each column
-        for col in columns:
+        total_columns = len(columns)
+        for i, col in enumerate(columns):
+            # Update progress
+            progress = 10 + (i / total_columns) * 70  # Reserve last 20% for final steps
+            status_text.text(f"🔍 Processing column {i+1}/{total_columns}: {col}")
+            progress_bar.progress(int(progress))
+            
             if col not in df.columns:
                 st.warning(f"Column '{col}' not found in data.")
                 continue
@@ -475,6 +492,15 @@ def handle_outliers(
 
             st.divider()
 
+        # Final progress update
+        status_text.text("✅ Outlier treatment completed!")
+        progress_bar.progress(100)
+        time.sleep(0.3)  # Brief pause for visual feedback
+        
+        # Clean up progress indicators
+        progress_bar.empty()
+        status_text.empty()
+
         logger.info(
             f"Outlier treatment completed using {detection_method} detection and {method} treatment"
         )
@@ -521,11 +547,11 @@ def handle_missing_values(
 
         elif strategy == "Forward Fill":
             for col in columns:
-                df_cleaned[col].fillna(method="ffill", inplace=True)
+                df_cleaned[col] = df_cleaned[col].ffill()
 
         elif strategy == "Backward Fill":
             for col in columns:
-                df_cleaned[col].fillna(method="bfill", inplace=True)
+                df_cleaned[col] = df_cleaned[col].bfill()
 
         else:
             for col in columns:
