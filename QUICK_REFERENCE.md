@@ -84,7 +84,36 @@
 | Visualizations not showing | Refresh page, check System Health |
 | Inconsistent results | Visit System Health tab, run validation |
 
-## 📈 Performance Metrics Cheat Sheet
+## 📈 Export & Reports Quick Reference
+
+### 💾 Data Export Options
+| Format | Button | Contains | Best For |
+|--------|--------|----------|----------|
+| CSV | 📥 Download as CSV | Cleaned dataset | Excel, Python, R, universal compatibility |
+| Excel | 📊 Download as Excel | Data + Summary sheet | Business reports, stakeholder sharing |
+
+### 📋 Report Generation
+| Feature | How to Access | Output | Use Case |
+|---------|---------------|--------|----------|
+| Cleaning Report | Click "📋 Generate Cleaning Report" | Text summary of all operations | Documentation, audit trails |
+| Quality Score | Automatic display | 0-100% data health rating | Quick assessment, progress tracking |
+| Quick Statistics | Automatic display | Before/after comparison | Transformation impact, efficiency |
+
+### 🔄 Export Workflow
+1. **Complete your analysis** (cleaning, modeling)
+2. **Navigate to "📈 Export & Reports" tab**
+3. **Choose format:** CSV (universal) or Excel (enhanced with summary)
+4. **Generate report** if needed for documentation
+5. **Download files** with automatic timestamps (no overwrites)
+
+### 💡 Export Tips
+- **Files auto-named** with timestamps (`cleaned_data_20250810_143022.csv`)
+- **Excel includes summary** with key metrics and statistics
+- **Reports great for** audit trails, team collaboration, compliance
+- **Quality score updates** in real-time as you clean data
+- **Quick stats show** transformation impact and efficiency gains
+
+## 📊 Performance Metrics Cheat Sheet
 
 ### Classification Metrics
 - **Accuracy**: Overall correctness (higher = better)
