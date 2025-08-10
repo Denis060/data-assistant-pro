@@ -24,7 +24,12 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC, SVR
 from .cache_utils import DataCache, with_progress_cache
-from .error_handler_v2 import error_handler, display_smart_error, SmartError, ErrorSeverity
+from .error_handler_v2 import (
+    handle_error,
+    ErrorSeverity,
+    ErrorCategory,
+    StandardizedError
+)
 import hashlib
 import time
 
@@ -257,12 +262,20 @@ def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=Non
             'operation': 'model_training'
         }
         
-        smart_error = error_handler.analyze_error(e, context)
-        action = display_smart_error(smart_error)
+        standardized_error = handle_error(
+            e,
+            message="Model training failed",
+            severity=ErrorSeverity.ERROR,
+            category=ErrorCategory.MODELING,
+            suggested_action="Try reducing dataset size or selecting fewer models"
+        )
         
-        if action == "sample_data_50":
-            st.info("💡 Try reducing your dataset size in the Data Overview section")
-        elif action == "show_column_selector":
+        # Display error to user
+        st.error(f"❌ {standardized_error.message}")
+        if standardized_error.suggested_action:
+            st.info(f"💡 {standardized_error.suggested_action}")
+        
+        # Simplified guidance
             st.info("💡 Consider feature selection to reduce dimensionality")
             
         return None, None, None, None, None, None, None, None
@@ -276,13 +289,18 @@ def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=Non
                 'error_type': 'convergence'
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            action = display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e,
+                message="Model convergence issues",
+                severity=ErrorSeverity.WARNING,
+                category=ErrorCategory.MODELING,
+                suggested_action="Try increasing max_iter or applying feature scaling"
+            )
             
-            if action == "increase_max_iter":
-                st.info("💡 Try increasing max_iter in the Advanced Model Optimizer section")
-            elif action == "scale_features":
-                st.info("💡 Apply feature scaling in the Data Cleaning section")
+            # Display error to user
+            st.warning(f"⚠️ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
         else:
             # Generic ValueError handling
             context = {
@@ -291,8 +309,18 @@ def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=Non
                 'operation': 'model_training'
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e,
+                message="Model training value error",
+                severity=ErrorSeverity.ERROR,
+                category=ErrorCategory.MODELING,
+                suggested_action="Check your data types and feature values"
+            )
+            
+            # Display error to user
+            st.error(f"❌ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
             
         return None, None, None, None, None, None, None, None
         
@@ -304,8 +332,19 @@ def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=Non
             'operation': 'model_training'
         }
         
-        smart_error = error_handler.analyze_error(e, context)
-        display_smart_error(smart_error)
+        standardized_error = handle_error(
+            e,
+            message="Unexpected error during model training",
+            severity=ErrorSeverity.ERROR,
+            category=ErrorCategory.MODELING,
+            suggested_action="Please check your data and try again"
+        )
+        
+        # Display error to user
+        st.error(f"❌ {standardized_error.message}")
+        if standardized_error.suggested_action:
+            st.info(f"💡 {standardized_error.suggested_action}")
+        
         return None, None, None, None, None, None, None, None
 
 

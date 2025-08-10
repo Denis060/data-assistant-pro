@@ -62,7 +62,7 @@ class DataCache:
                     logger.info(f"Cache expired for {cache_key}, recomputing...")
             except Exception as e:
                 # Smart error handling for cache corruption
-                from .error_handler_v2 import error_handler, display_smart_error
+                from .error_handler_v2 import handle_error, ErrorSeverity, ErrorCategory
                 
                 context = {
                     'cache_key': cache_key,
@@ -70,18 +70,21 @@ class DataCache:
                     'operation': 'cache_loading'
                 }
                 
-                smart_error = error_handler.analyze_error(e, context)
-                action = display_smart_error(smart_error)
+                standardized_error = handle_error(
+                    e,
+                    message="Cache file corruption detected",
+                    severity=ErrorSeverity.WARNING,
+                    category=ErrorCategory.SYSTEM,
+                    suggested_action="Cache will be cleared and data recomputed"
+                )
                 
-                if action == "clear_cache":
-                    try:
-                        import os
-                        os.remove(cache_file)
-                        st.success("🧹 Corrupted cache file removed")
-                    except:
-                        pass
-                elif action == "retry_operation":
-                    # Will fall through to recomputation
+                # Display warning and clear cache
+                logger.warning(f"Cache corruption: {standardized_error.message}")
+                try:
+                    import os
+                    os.remove(cache_file)
+                    logger.info("Corrupted cache file removed")
+                except:
                     pass
                 
                 logger.warning(f"Cache loading failed for {cache_key}: {e}")

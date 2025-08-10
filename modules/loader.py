@@ -7,7 +7,12 @@ from typing import Optional, Tuple
 
 import pandas as pd
 import streamlit as st
-from .error_handler_v2 import error_handler, display_smart_error, SmartError, ErrorSeverity
+from .error_handler_v2 import (
+    handle_error, 
+    ErrorSeverity, 
+    ErrorCategory,
+    StandardizedError
+)
 
 logger = logging.getLogger(__name__)
 
@@ -238,22 +243,20 @@ def load_data(
                 'encoding_attempted': 'utf-8'  # Default encoding
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            action = display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e, 
+                message=f"Failed to load file {uploaded_file.name}",
+                severity=ErrorSeverity.ERROR,
+                category=ErrorCategory.DATA_LOADING,
+                suggested_action="Try a different file format or check file encoding"
+            )
             
-            # Handle quick fix actions
-            if action == "retry_utf8":
-                return load_data_with_delimiter(uploaded_file, delimiter)
-            elif action == "retry_latin1":
-                uploaded_file.seek(0)
-                try:
-                    df = pd.read_csv(uploaded_file, delimiter=delimiter, encoding='latin-1')
-                    st.success("✅ File loaded successfully with Latin-1 encoding!")
-                    return df
-                except Exception:
-                    st.error("❌ Failed to load with Latin-1 encoding")
-                    return None
+            # Display error to user
+            st.error(f"❌ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
             
+            # Return None to indicate failure
             return None
             
         except pd.errors.ParserError as e:
@@ -266,15 +269,20 @@ def load_data(
                 'encoding_used': 'utf-8'
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            action = display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e,
+                message=f"Failed to parse CSV file with delimiter '{delimiter}'", 
+                severity=ErrorSeverity.ERROR,
+                category=ErrorCategory.DATA_LOADING,
+                suggested_action="Try auto-detecting delimiter or manually specify format"
+            )
             
-            # Handle quick fix actions
-            if action == "auto_detect_delimiter":
-                return retry_with_auto_delimiter(uploaded_file)
-            elif action == "retry_comma":
-                return load_data_with_delimiter(uploaded_file, ',')
+            # Display error to user
+            st.error(f"❌ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
             
+            # Return None to indicate failure
             return None
             
         except MemoryError as e:
@@ -287,15 +295,20 @@ def load_data(
                 'data_shape': (None, None)  # Unknown at this point
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            action = display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e,
+                message=f"Memory error loading large file {uploaded_file.name}",
+                severity=ErrorSeverity.WARNING,
+                category=ErrorCategory.DATA_LOADING,
+                suggested_action="Try loading a sample of the data or use a smaller file"
+            )
             
-            # Handle quick fix actions
-            if action == "sample_data_50":
-                return load_sampled_data(uploaded_file, sample_rate=0.5)
-            elif action == "show_column_selector":
-                st.info("💡 Try loading with fewer columns using the Data Cleaning section")
+            # Display error to user
+            st.warning(f"⚠️ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
             
+            # Return None to indicate failure
             return None
             
         except Exception as e:
@@ -308,8 +321,19 @@ def load_data(
                 'operation': 'data_loading'
             }
             
-            smart_error = error_handler.analyze_error(e, context)
-            display_smart_error(smart_error)
+            standardized_error = handle_error(
+                e,
+                message=f"Unexpected error loading {uploaded_file.name}",
+                severity=ErrorSeverity.ERROR, 
+                category=ErrorCategory.DATA_LOADING,
+                suggested_action="Please check file format and try again"
+            )
+            
+            # Display error to user
+            st.error(f"❌ {standardized_error.message}")
+            if standardized_error.suggested_action:
+                st.info(f"💡 {standardized_error.suggested_action}")
+            
             return None
     return None
 
