@@ -6,11 +6,12 @@
 3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 4. [Data Cleaning & Quality](#data-cleaning--quality)
 5. [Machine Learning Modeling](#machine-learning-modeling)
-6. [Export & Reports](#export--reports)
-7. [Advanced Features](#advanced-features)
-8. [System Health & Monitoring](#system-health--monitoring)
-9. [Best Practices](#best-practices)
-10. [Troubleshooting](#troubleshooting)
+6. [Model Deployment & Export](#-model-deployment--export)
+7. [Export & Reports](#export--reports)
+8. [Advanced Features](#advanced-features)
+9. [System Health & Monitoring](#system-health--monitoring)
+10. [Best Practices](#best-practices)
+11. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -268,6 +269,147 @@ Choose from multiple algorithms:
 7. Analyze feature importance
 8. Use model for predictions
 ```
+
+### 🚀 Model Deployment & Export
+
+After training your models, the deployment tab provides **5 comprehensive ways** to save and export your trained models for production use.
+
+#### 📦 Available Export Formats
+
+##### 1. Model Summary (.txt)
+**Purpose:** Documentation and reporting
+- **Contains:** Performance metrics, feature names, target column info
+- **Format:** Human-readable text document
+- **Best For:** Stakeholder reports, model documentation, audit trails
+- **Includes:**
+  - Model type and timestamp
+  - Detailed performance metrics (accuracy, precision, recall, F1-score for classification; R², MAE, MSE for regression)
+  - Feature names and target column
+  - Problem type identification
+
+**Example Use Case:** Creating model documentation for compliance or sharing results with non-technical stakeholders.
+
+##### 2. Python Script (.py)
+**Purpose:** Ready-to-use prediction code
+- **Contains:** Complete prediction pipeline with preprocessing
+- **Format:** Executable Python script
+- **Best For:** Integration into existing Python applications
+- **Features:**
+  - Automatic data preprocessing functions
+  - Label encoder handling for categorical variables
+  - Missing value imputation
+  - Feature validation and ordering
+  - Probability predictions for classification
+  - Example usage code
+
+**Example Use Case:** Deploying model predictions in a web application or automated workflow.
+
+##### 3. Pickle Model (.pkl)
+**Purpose:** Standard Python model serialization
+- **Contains:** Raw trained model object
+- **Format:** Python pickle format
+- **Best For:** Quick model loading in Python environments
+- **Usage:**
+  ```python
+  import pickle
+  with open('model.pkl', 'rb') as f:
+      model = pickle.load(f)
+  prediction = model.predict(your_data)
+  ```
+
+**Example Use Case:** Saving models for later use in Jupyter notebooks or Python scripts.
+
+##### 4. Joblib Model (.joblib) ⭐ **Recommended**
+**Purpose:** Optimized scikit-learn model storage
+- **Contains:** Efficiently compressed model object
+- **Format:** Joblib binary format
+- **Best For:** Production deployments with scikit-learn models
+- **Advantages:**
+  - Better performance than pickle
+  - Smaller file sizes
+  - Faster loading times
+  - Industry standard for sklearn models
+- **Usage:**
+  ```python
+  import joblib
+  model = joblib.load('model.joblib')
+  prediction = model.predict(your_data)
+  ```
+
+**Example Use Case:** Production ML pipelines, model serving APIs, batch prediction jobs.
+
+##### 5. Complete Package (.zip) 🎯 **Most Comprehensive**
+**Purpose:** Full deployment package with all components
+- **Contains:**
+  - Trained model (.joblib)
+  - Label encoders (.pkl) - for categorical variable handling
+  - Data scaler (.pkl) - for feature scaling
+  - Model metadata and feature information
+  - Complete ModelPredictor class
+  - Comprehensive prediction script
+- **Format:** ZIP archive with all necessary files
+- **Best For:** Production deployment, sharing complete solutions
+- **Features:**
+  - Self-contained deployment package
+  - Handles all preprocessing automatically
+  - Error handling for unknown categories
+  - Feature validation and ordering
+  - Complete documentation
+
+**ModelPredictor Class Features:**
+```python
+class ModelPredictor:
+    def __init__(self, model_dir='.')  # Load all components
+    def load_model()                   # Load trained model
+    def preprocess_data()              # Handle all preprocessing
+    def predict()                      # Make predictions with confidence
+    def predict_proba()                # Get prediction probabilities
+```
+
+**Example Use Case:** Complete model deployment for production systems, sharing with other teams, or creating standalone prediction services.
+
+#### 🔧 How to Export Models
+
+1. **Navigate to the "🤖 Modeling" tab**
+2. **Train your models** using any of the available algorithms
+3. **Switch to the "🚀 Model Deployment" sub-tab**
+4. **Select model to export** from trained models
+5. **Choose export format** based on your needs
+6. **Click "📥 Export Model"** to generate download
+7. **Download the file** and use in your deployment environment
+
+#### 🎯 Export Format Decision Guide
+
+| **Use Case** | **Recommended Format** | **Why** |
+|-------------|----------------------|---------|
+| **Documentation & Reports** | Model Summary (.txt) | Human-readable, stakeholder-friendly |
+| **Python Integration** | Python Script (.py) | Ready-to-use code with preprocessing |
+| **Quick Prototyping** | Pickle Model (.pkl) | Simple Python serialization |
+| **Production Deployment** | Joblib Model (.joblib) | Optimized performance and size |
+| **Complete Solution** | Complete Package (.zip) | Everything needed for deployment |
+| **Team Collaboration** | Complete Package (.zip) | Self-contained and documented |
+| **Model Serving APIs** | Joblib + Python Script | Performance + integration code |
+
+#### 💡 Deployment Best Practices
+
+**Before Deployment:**
+- Always test exported models with sample data
+- Verify feature names and order match training data
+- Check for missing value handling in your pipeline
+- Validate categorical variable encoding
+
+**Production Considerations:**
+- Use Joblib format for better performance
+- Include error handling for unknown categories
+- Implement data validation before prediction
+- Monitor model performance over time
+- Keep training data statistics for comparison
+
+**Security & Maintenance:**
+- Store models securely with access controls
+- Version your models with timestamps
+- Document model dependencies and requirements
+- Plan for model retraining and updates
 
 ---
 
