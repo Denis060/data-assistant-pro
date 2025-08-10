@@ -174,8 +174,25 @@ def train_models_internal(X, y, problem_type, test_size=0.2, selected_models=Non
             }
         
         # Use selected models or default models
-        if selected_models:
-            models = {name: all_models[name] for name in selected_models if name in all_models}
+        if selected_models and isinstance(selected_models, (list, tuple)) and len(selected_models) > 0:
+            # Validate that selected models exist in all_models
+            valid_models = {name: all_models[name] for name in selected_models if name in all_models}
+            if not valid_models:
+                # If no valid models found, use defaults
+                if problem_type == "Classification":
+                    models = {
+                        "Random Forest": all_models["Random Forest"],
+                        "Logistic Regression": all_models["Logistic Regression"],
+                        "SVM": all_models["SVM"]
+                    }
+                else:
+                    models = {
+                        "Random Forest": all_models["Random Forest"],
+                        "Linear Regression": all_models["Linear Regression"],
+                        "SVM": all_models["SVM"]
+                    }
+            else:
+                models = valid_models
         else:
             # Default models for backward compatibility
             if problem_type == "Classification":

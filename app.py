@@ -1305,7 +1305,8 @@ if df_original is not None:
                                                 st.caption(f"🔧 Implementation: {rec['implementation']}")
                                 
                                 # Display analysis summary
-                                with st.expander("📊 **Detailed Analysis Summary**", expanded=False):
+                                st.markdown("### 📊 Detailed Analysis Summary")
+                                if st.button("🔍 Show Analysis Details", key="analysis_details_btn"):
                                     summary = recommendations['analysis_summary']
                                     
                                     col_sum1, col_sum2 = st.columns(2)
@@ -3424,13 +3425,26 @@ OPERATIONS PERFORMED:
                                     )
 
                                     if success and X is not None and y is not None:
+                                        # Additional validation checks
+                                        if len(X) == 0 or len(y) == 0:
+                                            st.error("❌ No data available after preprocessing. Please check your data.")
+                                            st.stop()
+                                        
+                                        if X.shape[1] == 0:
+                                            st.error("❌ No features available after preprocessing. Please check your feature selection.")
+                                            st.stop()
+                                            
                                         st.success("✅ Data prepared successfully!")
+                                        st.info(f"📊 Training dataset shape: {X.shape[0]} rows × {X.shape[1]} features")
 
                                         # Determine which models to train based on mode
                                         models_to_train = None
                                         if training_mode == "Custom Selection":
-                                            models_to_train = selected_models
-                                            st.info(f"🤖 Training selected models: {', '.join(selected_models)}")
+                                            models_to_train = selected_models if selected_models else []
+                                            if not models_to_train:
+                                                st.error("❌ No models selected for Custom Selection training!")
+                                                st.stop()
+                                            st.info(f"🤖 Training selected models: {', '.join(models_to_train)}")
                                         elif training_mode == "Quick Training (Fast)":
                                             # Quick models for fast training
                                             if problem_type == "Classification":
@@ -3445,6 +3459,11 @@ OPERATIONS PERFORMED:
                                             else:
                                                 models_to_train = ["Random Forest", "Gradient Boosting", "SVM", "Linear Regression", "K-Nearest Neighbors"]
                                             st.info(f"🎯 Comprehensive training with: {', '.join(models_to_train)}")
+                                        
+                                        # Validate models_to_train is not empty
+                                        if not models_to_train or len(models_to_train) == 0:
+                                            st.error("❌ No models available for training. Please check your configuration.")
+                                            st.stop()
 
                                         # Train models with enhanced progress tracking
                                         progress_container = st.container()
@@ -3483,12 +3502,17 @@ OPERATIONS PERFORMED:
                                                 )
                                                 
                                                 # Update progress as models complete
-                                                total_models = len(models_to_train)
-                                                for i, model_name in enumerate(models_to_train):
-                                                    current_model_text.text(f"🤖 Training: {model_name}")
-                                                    model_progress.progress((i + 1) / total_models)
-                                                    # Fix progress calculation to stay within 0.0-1.0 range
-                                                    overall_progress.progress(min(0.8, 0.2 + (0.6 * (i + 1) / total_models)))
+                                                if models_to_train and len(models_to_train) > 0:
+                                                    total_models = len(models_to_train)
+                                                    for i, model_name in enumerate(models_to_train):
+                                                        current_model_text.text(f"🤖 Training: {model_name}")
+                                                        model_progress.progress((i + 1) / total_models)
+                                                        # Fix progress calculation to stay within 0.0-1.0 range
+                                                        overall_progress.progress(min(0.8, 0.2 + (0.6 * (i + 1) / total_models)))
+                                                        time.sleep(0.1)  # Brief pause for visual feedback
+                                                else:
+                                                    st.error("❌ No models available for training progress tracking")
+                                                    total_models = 1
                                                     
                                                     # Show intermediate results
                                                     if model_name in results and 'score' in results[model_name]:
