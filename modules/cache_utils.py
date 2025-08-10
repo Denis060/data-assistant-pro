@@ -62,7 +62,7 @@ class DataCache:
                     logger.info(f"Cache expired for {cache_key}, recomputing...")
             except Exception as e:
                 # Smart error handling for cache corruption
-                from .error_handler import error_handler, display_smart_error
+                from .error_handler_v2 import error_handler, display_smart_error
                 
                 context = {
                     'cache_key': cache_key,

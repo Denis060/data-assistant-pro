@@ -24,7 +24,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC, SVR
 from .cache_utils import DataCache, with_progress_cache
-from .error_handler import error_handler, display_smart_error, SmartError, ErrorSeverity
+from .error_handler_v2 import error_handler, display_smart_error, SmartError, ErrorSeverity
 import hashlib
 import time
 

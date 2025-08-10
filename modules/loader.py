@@ -7,7 +7,7 @@ from typing import Optional, Tuple
 
 import pandas as pd
 import streamlit as st
-from .error_handler import error_handler, display_smart_error, SmartError, ErrorSeverity
+from .error_handler_v2 import error_handler, display_smart_error, SmartError, ErrorSeverity
 
 logger = logging.getLogger(__name__)
 
