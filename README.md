@@ -2,6 +2,15 @@
 
 A comprehensive, professional-grade Streamlit application for advanced data analysis, cleaning, exploration, and machine learning with enterprise-level features.
 
+## 📚 Documentation & Guides
+
+**Quick Start**: 
+- 📖 [Complete User Guide](USER_GUIDE.md) - Comprehensive step-by-step guide covering all features
+- 🎯 [Interactive Walkthrough](WALKTHROUGH_GUIDE.md) - Video scripts, tutorials, and workshop materials  
+- ⚡ [Quick Reference](QUICK_REFERENCE.md) - Cheat sheets, shortcuts, and troubleshooting guide
+
+**New Users**: Start with the [User Guide](USER_GUIDE.md) for complete instructions or the [Quick Reference](QUICK_REFERENCE.md) for immediate answers.
+
 ## ✨ Key Features
 
 ### 🔍 **Smart Data Loading**
