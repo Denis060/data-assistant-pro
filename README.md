@@ -1,6 +1,6 @@
-# 🚀 Data Assistant Pro - Enterprise-Grade Data Analysis Platform
+# Data Assistant Pro: Streamlit Data Analysis & AutoML App
 
-A comprehensive, professional-grade Streamlit application for advanced data analysis, cleaning, exploration, and machine learning with enterprise-level features.
+A Streamlit application for data loading, quality assessment, cleaning, exploratory analysis, and machine learning.
 
 ## 📚 Documentation & Guides
 
@@ -86,7 +86,7 @@ A comprehensive, professional-grade Streamlit application for advanced data anal
 - **Prediction Results**: Downloadable prediction reports with metadata
 - **Quality Audit Trail**: Complete log of all data quality improvements
 
-## 🛠 **Enterprise Features**
+## 🛠 **Engineering Features**
 
 ### ⚙️ **Configuration Management**
 - Environment-based configuration (development/production)
@@ -102,7 +102,7 @@ A comprehensive, professional-grade Streamlit application for advanced data anal
 - **Pre-commit Hooks**: Automated quality checks
 
 ### 🐳 **DevOps & Deployment**
-- **Docker Containerization**: Production-ready Docker setup
+- **Docker Containerization**: Docker and docker-compose setup
 - **CI/CD Pipeline**: GitHub Actions for automated testing and deployment  
 - **Development Tools**: Makefile for common tasks
 - **Environment Management**: Virtual environment with pinned dependencies
